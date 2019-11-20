@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<div class="panel-heading">
+    4.2. Upload dự toán bằng file Excel
+</div>
+
+<div class="panel-body">
+
+    <a href="@Url.Action("UpdateRole","HeThong")">TenDuToan</a> 
+
+
+    <div class="form-horizontal">
+
+        @using (Html.BeginForm("UploadExcel", "DuToan", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {       
+
+            <div class="form-group">
+                <div class="col-md-2">
+                    <input type="submit" value="Upload" />
+                </div>
+            </div>
+        }
+    </div>
+</div>

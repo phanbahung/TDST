@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "UploadXML";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<div class="panel-heading">
+    Upload CT bằng file XML
+</div>
+
+<div class="panel-body">
+    @using (Html.BeginForm("UploadXML", "ChungTu", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+        <div>
+            @Html.TextBox("file", "", new { type = "file" }) <br />
+
+            <input type="submit" value="Upload" />
+
+            @ViewBag.Message
+
+        </div>
+
+
+    }
+    </div>
+

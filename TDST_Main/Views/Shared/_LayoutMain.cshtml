@@ -1,0 +1,392 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title></title>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Assets/ui/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="~/Assets/ui/vendor/metisMenu/metisMenu.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/Assets/ui/dist/css/sb-admin-2.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="~/Assets/ui/vendor/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <!-- Data table -->   
+    <link href="~/Assets/table/media/css/jquery.dataTables_themeroller.css" rel="stylesheet" type="text/css" />
+    <link href="~/Assets/table/themes/smoothness/jquery-ui-1.8.4.custom.css" rel="stylesheet" type="text/css" />  
+        
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <style>
+        .navbar-default .navbar-nav > li.dropdown:hover > a, 
+        .navbar-default .navbar-nav > li.dropdown:hover > a:hover,
+        .navbar-default .navbar-nav > li.dropdown:hover > a:focus {
+            background-color: rgb(231, 231, 231);
+            color: rgb(85, 85, 85);}
+        li.dropdown:hover > .dropdown-menu {
+                display: block;
+        }
+        
+
+  </style>
+  
+
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <!--  <a class="navbar-brand" href="index.html">QUẢN LÝ THIẾT BỊ</a>-->
+                <span class="navbar-brand">TDST</span>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">0. Hệ thống</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="~/QLUser/user">0.1. Danh sách user</a></li>
+                        <li><a href="~/QLUser/nhom">0.2. Danh sách nhóm user</a></li>                        
+                        <li><a href="~/HeThong/dsrole">0.3. Danh sách role</a></li>
+                        <li><a href="~/QLUser/role">0.4. Log</a></li>      
+                        <li><a href="~/HeThong/index">0.5. Quản trị role</a></li>                        
+                    </ul>
+                </li>  
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">1. Danh mục</a>
+                    <ul class="dropdown-menu">                        
+                        <li><a href="~/DanhMuc/donvi">1.1. Danh mục đơn vị</a></li>
+                        <li><a href="~/DanhMuc/chuong">1.2. Danh mục CH</a></li>
+                        <li><a href="~/DanhMuc/tieumuc">1.3. Danh mục TM</a></li>
+                        <li><a href="~/DanhMuc/nhomchuong">1.4. Danh mục nhóm CH</a></li>
+                        <li><a href="~/DanhMuc/nhomtieumuc">1.5. Danh mục nhóm TM</a></li>                       
+                        
+                    </ul>
+                </li>  
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">2. Quản lý khoản thu</a>
+                    <ul class="dropdown-menu">                       
+                        <li><a href="~/NNT/index">2.1. Quản lý theo NNT</a></li>
+                        <li><a href="~/NNT/qltm">2.2. Quản lý theo TM</a></li>
+                    </ul>
+                </li>               
+
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">3. Bộ chỉ tiêu</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="~/BoChiTieu/index">3.1. DS bộ chỉ tiêu </a></li>                          
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">4. Dự toán QLTB</a>
+                    <ul class="dropdown-menu">                                                
+                        <li><a href="~/DuToan/tracuu">4.1.Tra cứu dự toán</a></li>
+                        <li><a href="~/DuToan/UploadExcel">4.2. Nhập dự toán</a></li>
+                        <li><a href="~/DuToan/UploadExcel">4.3. So sánh dự toán</a></li>
+                       
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">5. Quản lý CT</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="~/ChungTu/TraCuu">5.1. Tra cứu CT </a></li>
+                        <li><a href="~/ChungTu/UploadXML">5.2. Nhập CT</a></li>
+                        <li><a href="~/ChungTu/UploadXMLFiles">5.3. Nhập nhiều CT</a></li>                                                                                 
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">6. Báo cáo - Tổng hợp</a>
+                    <ul class="dropdown-menu">                        
+                        <li><a href="~/chart/index">Biểu đồ</a></li>  
+                        <li><a href="~/BaoCao/sotheodoi">Kết xuất và sổ theo dõi</a></li>                  
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>Cục Thuế cập nhật thiết bị gấp</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Hôm qua</em>
+                                    </span>
+                                </div>
+                                <div>Đề nghị anh chị cập nhật thiết bị để TCT lập dự trù...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>Read All Messages</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-messages -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-tasks">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 1</strong>
+                                        <span class="pull-right text-muted">40% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 2</strong>
+                                        <span class="pull-right text-muted">20% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                            <span class="sr-only">20% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 3</strong>
+                                        <span class="pull-right text-muted">60% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 4</strong>
+                                        <span class="pull-right text-muted">80% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete (danger)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Tasks</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-tasks -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li>
+                            <a href="#"><i class="fa fa-user fa-fw"></i> Tài khoản</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-gear fa-fw"></i> Cài đặt</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Đăng xuất</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+        </nav>
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header"></h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                       
+                            @RenderBody()
+                       
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="~/Assets/ui/vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Assets/ui/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="~/Assets/ui/vendor/metisMenu/metisMenu.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="~/Assets/ui/dist/js/sb-admin-2.js"></script>
+    <!-- Data Tabe JavaScript -->
+    <script src="~/Assets/table/media/js/jquery.dataTables.js"></script>
+   
+
+    <script src="~/Scripts/bc/bc.js"></script>
+      
+
+    <script type="text/javascript">
+	$(document).ready(function()
+	{
+		$('#example').dataTable(
+		{
+			"bJQueryUI": true,
+			"sPaginationType": "full_numbers"
+		});
+
+	}); // End ready
+
+    </script>
+</body>
+</html>

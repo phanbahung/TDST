@@ -1,0 +1,71 @@
+﻿@model IEnumerable<TDST_CRUD.ViewModels.NguoiNopThueViewModel>
+
+
+@{
+    ViewBag.Title = "DonViCungCap";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+
+<div class="panel-heading">
+    3.1. Danh sách dự toán
+</div>
+
+<div class="panel-body">
+
+    @using (Html.BeginForm())
+    {
+        <p>
+            @*Năm dự toán: @Html.DropDownList("SelectedNamDuToan", "Chọn năm dự toán")
+                Bộ chỉ tiêu: @Html.DropDownList("SelectedBoChiTieu", "Chọn Bộ chỉ tiêu")*@
+            <input type="submit" value="Lọc" class="btn btn-default" />
+
+        </p>
+    }
+
+    <table id="example" class="display" cellpadding="0" cellspacing="0" border="0">
+        <thead>           
+            <tr>
+                <th>ID</th>
+                <th>MST</th>
+                <th>MST</th>
+                <th>Mã đv quản lý</th>                
+                <th>Tên đơn vị quản lý</th> 
+                <th>NNT_TuNgay</th>
+                <th>NNT_DenNgay</th>                
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Count() > 0)
+            {
+                foreach (var item in @Model)
+                {
+                    <tr class="gradeA">
+                        <td>@item.Id</td>
+                        <td>@item.MST</td>
+                        <td>@item.TenNNT</td>
+                        <td>@item.MaDonVi</td>                        
+                        <td>@item.TenVietTat1</td>                        
+                        <td>@(item.TuNgay.HasValue ? item.TuNgay.Value.ToString("dd/MM/yyyy") : "")</td>
+                        <td>@(item.DenNgay.HasValue ? item.DenNgay.Value.ToString("dd/MM/yyyy") : "")</td>
+                        
+                        @*@(Model.HasValue ? Model.Value.ToString("dd/MM/yyyy") : " ")*@
+                    </tr>
+                }
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="rounded-foot-left" colspan='2' style="height: 14px"></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <br />
+
+
+
+
+
+</div>
+<!-- /.panel-body -->

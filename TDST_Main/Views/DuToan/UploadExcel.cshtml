@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "UploadExcel";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<div class="panel-heading">
+    4.2. Upload dự toán bằng file Excel
+</div>
+
+<div class="panel-body">
+
+    <div class="form-horizontal">
+
+        @using (Html.BeginForm("UploadExcel", "DuToan", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="form-group">
+                <div class="col-md-1">
+                   Chọn dự toán:
+                </div>
+                <div class="col-md-2">                   
+                    @Html.DropDownList("SelectedDuToan", "Chọn dự toán")
+                </div>
+            </div>
+
+
+           <div class="form-group">
+                <div class="col-md-1">
+                    File excel:
+                </div>
+                <div class="col-md-2">
+                    @Html.TextBox("file", "", new { type = "file" }) 
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-2">
+                    <input type="submit" value="Upload" />
+                </div>                                 
+            </div>
+
+            <div class="form-group">               
+                <div class="col-md-6">
+                   <strong>Lưu ý:</strong>  <br/> - Sheet name: MauNhapDuToan; <br/>
+                           - Đơn vị tính: VND.
+                </div>
+            </div>
+
+            <div class="form-group">                
+                <div class="col-md-7">
+                    @ViewBag.Message
+                </div>
+            </div>
+
+
+
+        }
+
+
+    </div>
+</div>

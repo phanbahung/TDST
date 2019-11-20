@@ -1,0 +1,31 @@
+﻿@model IEnumerable<TDST_CRUD.ViewModels.DuToanViewModel>
+
+@{
+    ViewBag.Title = "DonViCungCap";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+
+<div class="panel-heading">
+    3.1. Danh sách dự toán
+</div>
+
+<div class="panel-body">
+
+    @using (Html.BeginForm())
+    {
+        <p>
+            Năm dự toán: @Html.DropDownList("SelectedNam", "Chọn năm")
+            Qúy: @Html.DropDownList("SelectedQuy", "Chọn quý")
+            Dự toán: @Html.DropDownList("SelectedDuToan", "Chọn dự toán")           
+            <input type="submit" value="Chốt số thu" class="btn btn-default" />
+
+        </p>
+    }
+
+   
+
+
+
+</div>
+<!-- /.panel-body -->

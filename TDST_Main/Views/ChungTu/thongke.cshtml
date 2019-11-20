@@ -1,0 +1,44 @@
+﻿@model IEnumerable<TDST_CRUD.ViewModels.ThongKeChungTuViewModel>
+
+@{
+    ViewBag.Title = "Thống kê chứng từ theo ngày";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<div class="panel-heading">
+    4.3. Thống kê chứng từ
+</div>
+
+<div class="panel-body">
+
+
+
+
+    <table id="example" class="display" cellpadding="0" cellspacing="0" border="0">
+        <thead>
+            <tr>
+                <th>Ngày KB</th>
+                <th>Mã cq thu</th>
+                <th>Tên cq thu</th>
+                <th>Số lượng</th>
+                <th>Tổng tiền</th>
+                <th>Tên file</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ct in Model)
+            {
+                <tr>
+                    <td>@ct.Ngay_kbac</td>
+                    @*<td>@ct.Ngay_kbac.HasValue.ToString("dd/MM/yyyy")</td>*@
+                    <td>@ct.Ma_cqthu</td>
+                    <td>@ct.TenDonVi</td>
+                    <td>@ct.SoLuongChungTu</td>
+                    <td>@string.Format("{0:#,0}", ct.TongTien)</td>
+                    <td>@ct.FileName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

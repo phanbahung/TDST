@@ -1,0 +1,61 @@
+﻿@model IEnumerable<TDST_CRUD.EF.GiaoDich>
+
+@{
+    ViewBag.Title = "DonViCungCap";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<div class="panel-heading">
+    4.1. Tra cứu chứng từ
+</div>
+
+<div class="panel-body">
+
+
+    <table id="example" class="display" cellpadding="0" cellspacing="0" border="0">
+        <thead>
+            <tr>
+                <th>Khct_soct</th>
+                <th>MST</th>
+                <th width="450px">Tên NNT</th>                
+                <th>Ngày kbac</th>
+                <th>Ngày ht</th>
+                <th>Số tiền</th>
+                <th width="80px">CH-TM</th>
+                <th>Nhóm CH-TM</th>
+                <th>Mã Cq thu</th>
+                <th>Đv ql k.thu</th>
+                @*<th>Tên file</th>*@               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in @Model)
+            {
+                <tr class="gradeA">
+                    <td>  @item.Khct_soct</td>
+                    <td>  @item.Tin</td>
+                    <td>  @item.Ten_nnthue</td>                    
+                    <td>  @(item.Ngay_kbac.HasValue ? item.Ngay_kbac.Value.ToString("yyyy/MM/dd") : "")</td>                    
+                    <td>  @(item.Ngay_ht.HasValue ? item.Ngay_ht.Value.ToString("yyyy/MM/dd") : "")</td>                    
+                    <td>  @item.So_tien</td>                  
+                    <td>  @item.Ma_chuong (@item.NhomChuong)</td>
+                    <td>  @item.Ma_tmuc (@item.NhomTieuMuc) </td>
+                    <td>  @item.Ma_cqthu </td>
+                    <td>  @item.MaDonViQLKhoanThu </td>
+                    @*<td><a href="@Url.Action("file",new { @id =@item.FileName })">@item.FileName</a> </td>*@    
+                    @*<td><a href="/ChungTu/ThongKeFile?id=@item.FileChungTu">@item.FileChungTu</a> </td>*@
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="rounded-foot-left" colspan='2' style="height: 14px"></td>
+            </tr>
+        </tfoot>
+    </table>
+
+   
+
+
+</div>
+<!-- /.panel-body -->

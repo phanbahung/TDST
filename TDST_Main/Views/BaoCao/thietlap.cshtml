@@ -1,0 +1,115 @@
+﻿@model IEnumerable<TDST.Models.NoiDungBaoCao>
+
+@{
+    ViewBag.Title = "DonViCungCap";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<div class="panel-heading">
+    1.2. Danh mục đơn vị
+</div>
+
+<div class="panel-body">
+
+
+    <table id="example" class="display" cellpadding="0" cellspacing="0" border="0">
+        <thead>
+            <tr>
+                <th>Thuộc báo cáo</th>
+                <th>Id chỉ tiêu</th>               
+                <th>Tên chỉ tiêu</th>                
+                <th>Nhóm CH</th>                
+                <th>Nhóm TM</th>
+                <th>STT</th>
+                <th>Mã CT cha</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in @Model)
+            {
+                <tr class="gradeA">
+                    <td>@item.IdBC</td>
+                    <td>@item.IdCTBC </td>                 
+                    <td>@item.TenChiTieu </td>
+                    <td>@item.TenNhomChuong </td>
+                    <td>@item.TenNhomTieuMuc </td>
+                    <td>@item.STT </td>
+                    <td>@item.CTBCCha </td>
+                    <td><a href="#" onclick="return GetbyId('@item.IdCTBC')">Chi tiết</a> </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="rounded-foot-left" colspan='2' style="height: 14px"></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">X</button>
+                    <h4 class="modal-title" id="myModalLabel">Chi tiết đơn vị cung cấp</h4>
+                </div>
+                <div class="modal-body">               
+
+                    <form class="bootstrap-form needs-validation" novalidate>
+                        
+                        <div class="col-md-12 form-group form-inline">
+                            <label for="EmployeeId" class="col-sm-3 col-form-label">ID chỉ tiêu</label>
+                            <input type="text" class="form-control" id="IdCTBC" placeholder="Id - Mã hệ thống tự sinh" disabled="disabled" />
+                        </div>
+
+                        <div class="col-md-12 form-group form-inline">
+                            <label for="Name" class="col-sm-3 col-form-label">Tên chỉ tiêu</label>
+                            <input type="text" class="form-control" id="TenChiTieu" placeholder="Tên viết tắt, ví dụ: FPT" required autocomplete="off" />
+                            <div class="valid-feedback"></div>
+                            <div class="invalid-feedback">Không được để trống!</div>
+                        </div>
+
+                        <div class="col-md-12 form-group form-inline">
+                            <label for="Age" class="col-sm-3 col-form-label">STT</label>
+                            <input type="text" class="form-control" id="STT" placeholder="Tên đầy đủ, ví dụ: Công ty cổ phần FPT " />
+                        </div>
+
+                        <div class="col-md-12 form-group form-inline">
+                            <label for="Display" class="col-sm-3 col-form-label">Display</label>
+                            <input type="text" class="form-control" id="DisplayOnReport" placeholder="Tên đầy đủ, ví dụ: Công ty cổ phần FPT " />
+                        </div>
+
+                        <div class="col-md-12 form-group form-inline">
+                            <label for="Name" class="col-sm-3 col-form-label">CH</label>
+                            <input type="text" class="form-control" id="NhomCH" placeholder="Nhóm các CH" />
+                        </div>
+
+                        <div class="col-md-12 form-group form-inline">
+                            <label for="Name" class="col-sm-3 col-form-label">TM</label>
+                            <input type="text" class="form-control" id="NhomTM" placeholder="Nhóm các TM" />
+                        </div>
+
+                        <div class="col-md-12 form-group form-inline">
+                            <label for="DisplayOnReport" class="col-sm-3 col-form-label">Nhóm CH-TM</label>
+                            @Html.DropDownList("NhomChuong", (IEnumerable<SelectListItem>)ViewBag.ChuongList, new { @class = "form-control" })
+                            @Html.DropDownList("NhomMTM", (IEnumerable<SelectListItem>)ViewBag.TieuMucList, new { @class = "form-control" })
+                        </div>                       
+
+                    </form>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnAdd" onclick="return Add();">Đồng ý</button>
+                    <button type="button" class="btn btn-primary" id="btnUpdate" onclick="Update();">Lưu thay đổi</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>   <!-- /.modal  style="display:none;"   --->
+
+
+
+</div>
+<!-- /.panel-body -->
