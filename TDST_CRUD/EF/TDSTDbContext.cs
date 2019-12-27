@@ -22,8 +22,10 @@ namespace TDST_CRUD.EF
         public virtual DbSet<Group_Roles> Group_Roles { get; set; }
         public virtual DbSet<Group> Groups { get; set; }
         public virtual DbSet<NguoiNopThue> NguoiNopThues { get; set; }
+        public virtual DbSet<NhomCH_CH> NhomCH_CH { get; set; }
         public virtual DbSet<NhomChuong> NhomChuongs { get; set; }
         public virtual DbSet<NhomTieuMuc> NhomTieuMucs { get; set; }
+        public virtual DbSet<NhomTM_TM> NhomTM_TM { get; set; }
         public virtual DbSet<QuanLyNNT> QuanLyNNTs { get; set; }
         public virtual DbSet<QuanLyTM> QuanLyTMs { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
@@ -82,11 +84,15 @@ namespace TDST_CRUD.EF
                 .IsUnicode(false);
 
             modelBuilder.Entity<DuToanChiTiet>()
-                .Property(e => e.SoThue)
+                .Property(e => e.SoDuToanGiao)
                 .HasPrecision(18, 0);
 
             modelBuilder.Entity<DuToanChiTiet>()
                 .Property(e => e.SoThucHien)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<DuToanChiTiet>()
+                .Property(e => e.SoThucHien_KBac)
                 .HasPrecision(38, 0);
 
             modelBuilder.Entity<DuToanChiTiet>()
@@ -98,10 +104,6 @@ namespace TDST_CRUD.EF
                 .Property(e => e.MaDonVi_Tao)
                 .IsFixedLength()
                 .IsUnicode(false);
-
-            modelBuilder.Entity<DuToanChiTiet>()
-                .Property(e => e.SoThucHien_KBac)
-                .HasPrecision(38, 0);
 
             modelBuilder.Entity<DuToan>()
                 .Property(e => e.CoQuanBanHanh)
@@ -161,6 +163,16 @@ namespace TDST_CRUD.EF
                 .IsFixedLength()
                 .IsUnicode(false);
 
+            modelBuilder.Entity<NhomCH_CH>()
+                .Property(e => e.MaChuong)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<NhomCH_CH>()
+                .Property(e => e.UserUpdate)
+                .IsFixedLength()
+                .IsUnicode(false);
+
             modelBuilder.Entity<NhomChuong>()
                 .Property(e => e.Ds_MaChuong)
                 .IsFixedLength()
@@ -182,6 +194,16 @@ namespace TDST_CRUD.EF
                 .IsUnicode(false);
 
             modelBuilder.Entity<NhomTieuMuc>()
+                .Property(e => e.UserUpdate)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<NhomTM_TM>()
+                .Property(e => e.MaTieuMuc)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<NhomTM_TM>()
                 .Property(e => e.UserUpdate)
                 .IsFixedLength()
                 .IsUnicode(false);

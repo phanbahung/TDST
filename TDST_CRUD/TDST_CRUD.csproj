@@ -72,7 +72,9 @@
     <Compile Include="EF\LOG_UNGDUNG.cs" />
     <Compile Include="EF\NguoiNopThue.cs" />
     <Compile Include="EF\NhomChuong.cs" />
+    <Compile Include="EF\NhomCH_CH.cs" />
     <Compile Include="EF\NhomTieuMuc.cs" />
+    <Compile Include="EF\NhomTM_TM.cs" />
     <Compile Include="EF\QuanLyNNT.cs" />
     <Compile Include="EF\QuanLyTM.cs" />
     <Compile Include="EF\Role.cs" />

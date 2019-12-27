@@ -10,7 +10,7 @@ namespace TDST_CRUD.EF
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int IdNhomChuong { get; set; }
+        public long IdNhomChuong { get; set; }
 
         [StringLength(100)]
         public string TenNhomChuong { get; set; }

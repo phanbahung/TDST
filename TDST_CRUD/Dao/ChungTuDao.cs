@@ -59,7 +59,7 @@ namespace TDST_CRUD.Dao
 
         public long Insert_ChungTu(string khct_soct, string ten_nnthue, string ngay_kbac, string ngay_kb, string ngay_ht, string ky_thue, string ma_chuong
                                        , string ma_tmuc, string so_tien, string tk_co_dtl, string tin, string ma_cqthu
-                                        ,int nhomChuong, int nhomTieuMuc, string maDonVi, string fileName)
+                                        ,long nhomChuong, long nhomTieuMuc, string maDonVi, string fileName)
         {
 
             long returnId = 0;

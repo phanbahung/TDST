@@ -60,9 +60,9 @@ namespace TDST_CRUD.EF
         [StringLength(100)]
         public string FileChungTu { get; set; }
 
-        public int? NhomChuong { get; set; }
+        public long? NhomChuong { get; set; }
 
-        public int? NhomTieuMuc { get; set; }
+        public long? NhomTieuMuc { get; set; }
 
         [StringLength(50)]
         public string UserUpdate { get; set; }

@@ -44,7 +44,7 @@ namespace TDST.Controllers
                 int soLuongNhomCH = dsNhomCH.Count;
                 //int tm, ch;
                 string maDonVi_QL_KhoanThu;
-                int nhomChuong=0, nhomTieuMuc=0;
+                long nhomChuong=0, nhomTieuMuc=0;
 
 
                 string _FileName = "";
@@ -193,9 +193,9 @@ namespace TDST.Controllers
             //}
         }
 
-        private int Check_TM_Thuoc_NhomTM(List<NhomTieuMuc> dsNhomTM, string maTieuMuc)
+        private long Check_TM_Thuoc_NhomTM(List<NhomTieuMuc> dsNhomTM, string maTieuMuc)
         {
-            int result = -1;
+            long result = -1;
 
             for (int tm = 0; tm < dsNhomTM.Count; tm++)
             {
@@ -207,9 +207,9 @@ namespace TDST.Controllers
             return result;   
         }
 
-        private int Check_CH_Thuoc_NhomCH(List<NhomChuong> dsNhomCH, string maChuong)
+        private long Check_CH_Thuoc_NhomCH(List<NhomChuong> dsNhomCH, string maChuong)
         {
-            int result = -1;
+            long result = -1;
 
             for (int ch = 0; ch < dsNhomCH.Count; ch++)
             {

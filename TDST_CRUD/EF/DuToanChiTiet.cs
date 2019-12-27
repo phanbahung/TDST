@@ -20,14 +20,16 @@ namespace TDST_CRUD.EF
 
         public int? Quy { get; set; }
 
-        public decimal? SoThue { get; set; }
-
         public int? IdDuToan { get; set; }
 
         [StringLength(50)]
         public string TenVietTat { get; set; }
 
+        public decimal? SoDuToanGiao { get; set; }
+
         public decimal? SoThucHien { get; set; }
+
+        public decimal? SoThucHien_KBac { get; set; }
 
         [StringLength(50)]
         public string UserUpdate { get; set; }
@@ -36,8 +38,6 @@ namespace TDST_CRUD.EF
 
         [StringLength(10)]
         public string MaDonVi_Tao { get; set; }
-
-        public decimal? SoThucHien_KBac { get; set; }
 
         public virtual BoChiTieuChiTiet BoChiTieuChiTiet { get; set; }
 

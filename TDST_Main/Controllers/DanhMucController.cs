@@ -11,7 +11,7 @@ using TDST_CRUD.Dao;
 
 namespace TDST.Controllers
 {
-    public class DanhMucController : BaseController
+    public class DanhMucController : Controller
     {
         // GET: DanhMuc        
 
