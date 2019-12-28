@@ -1,0 +1,293 @@
+﻿
+@model IEnumerable<TDST_CRUD.EF.NhomCH_CH>
+
+
+@{
+    //Layout = null;
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    //var listNhomChuong = ViewBag.ListNhomChuongs as IEnumerable<TDST_CRUD.EF.NhomChuong>;
+    //var listNhomTieuMuc = ViewBag.ListNhomTieuMucs as IEnumerable<TDST_CRUD.EF.NhomTieuMuc>;
+    var IdNhomChuong = (int)ViewBag.IdNhomChuong;
+}
+
+
+<style type="text/css">
+    body {
+        font-family: Tahoma;
+        font-size: 10pt;
+    }
+
+    #tblBCT {
+        text-align: left;
+        border-collapse: separate;
+        border-spacing: 0;
+        border: 2px solid #2980b9;
+        width: 500px;
+        margin: 5px;
+        border-radius: .25rem;
+    }
+
+    thead tr:first-child {
+        text-align: center;
+        line-height: 10px;
+        font-size: 12pt;
+        font-family: Tahoma;
+        background: #2980b9;
+        color: #fff;
+        border: solid 1px white;
+    }
+
+
+    tfoot tr:first-child {
+        background: #2980b9;
+        font-size: 10pt;
+        color: white;
+    }
+
+
+    thead tr:last-child th {
+        border-bottom: 3px solid #ddd;
+    }
+
+    td:first-child, td:last-child {
+        text-align: center;
+        padding: 2px;
+    }
+</style>
+
+
+
+<table id="tblBCT" class="table" cellpadding="0" cellspacing="0">
+    <thead>
+        <tr>
+            <th style="width:20px;">Id</th>            
+            <th>Mã chương</th>
+            <th>Hiệu lực từ</th>
+            <th>Hiệu lực đến</th>
+            <th style="width:40px;">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count() > 0)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.IdNhomCH_CH</td>
+                    <td><input type="text" value="@item.MaChuong" style="width:90%;" /></td>
+                    <td><input type="text" value="@item.HieuLucTu" style="width:90%;" /></td>
+                    <td><input type="text" value="@item.HieuLucDen" style="width:90%;" /></td>
+                    <td><input type="button" value="Xóa" onclick="Remove(this)" /></td>
+                </tr>
+            }
+        }
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <td></td>
+            <td>Tên chỉ tiêu</td>
+            <td>STT</td>
+            <td>Nhóm CH</td>            
+            <td></td>
+        </tr>
+        <tr>
+            <td><span class="glyphicon glyphicon-name"></span></td>
+            <td><input type="text" id="txtTenChiTieu" style="width:90%;" /></td>
+            <td><input type="text" id="txtSTT" style="width:70%;" /></td>
+            <td></td>            
+            <td><input type="button" id="btnAdd" value="Thêm" data="@IdNhomChuong" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><input type="button" id="btnSave" value="Lưu thay đổi" /></td>
+            <td></td>
+            <td></td>           
+        </tr>
+    </tfoot>
+</table>
+<br />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
+
+<!--Bootstrap Draggable Row Table - Bootsnipp.com -->
+<script src="~/Assets/jquery-ui.js"></script>
+
+<script type="text/javascript">
+        $("body").on("click", "#btnAdd", function () {
+            //Reference the Name and Country TextBoxes.
+            var txtTenChiTieu = $("#txtTenChiTieu");
+            var txtSTT = $("#txtSTT");
+            var selNhomChuong = $("select#selNhomChuong");
+            var selNhomTieuMuc = $("select#selNhomTieuMuc");
+            var idBoChiTieu = $("#btnAdd").attr("data");
+
+            //Get the reference of the Table's TBODY element.
+            var tBody = $("#tblBCT > TBODY")[0];
+
+            //Add Row.
+            var row = tBody.insertRow(-1);
+            var customers = new Array();
+            var customer = {};
+            customer.TenChiTieu = txtTenChiTieu.val();
+            customer.STT = txtSTT.val();
+            customer.IdNhomChuong = selNhomChuong.val();
+            customer.IdNhomTieuMuc = selNhomTieuMuc.val();
+            customer.IdBoChiTieu = idBoChiTieu;
+            customers.push(customer);
+
+            //Send the JSON array to Controller using AJAX.
+            $.ajax({
+                type: "POST",
+                url: "/BoChiTieu/InsertChiTieu",
+                data: JSON.stringify(customers),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (r) {
+
+                    //1. Add Name cell. to table body
+                    var cell = $(row.insertCell(-1));
+                    cell.html(r);
+
+                    //2.  Name
+                    var cell = $(row.insertCell(-1));
+                    var inputName = $("<input />");
+                    inputName.attr("type", "text");
+                    inputName.val(txtTenChiTieu.val());
+                    cell.append(inputName);
+
+                    //3.  STT
+                    cell = $(row.insertCell(-1));
+                    var inputSTT = $("<input />");
+                    inputSTT.attr("type", "text");
+                    inputSTT.val(txtSTT.val());
+                    cell.append(inputSTT);
+
+                    // 4. Nhom CH
+                    cell = $(row.insertCell(-1));
+                    var newselNhomCH = selNhomChuong.clone().removeAttr('id');
+                    newselNhomCH.find('[value=""]').remove();// Xóa Dòng Chọn 1
+                    newselNhomCH.val(selNhomChuong.val()).prop('selected', true);
+                    cell.append(newselNhomCH);
+
+                    //5. Nhom TM
+                    cell = $(row.insertCell(-1));
+                    var newselNhomTM = selNhomTieuMuc.clone().removeAttr('id');
+                    newselNhomTM.find('[value=""]').remove();// Xóa Dòng Chọn 1
+                    newselNhomTM.val(selNhomTieuMuc.val()).prop('selected', true);
+                    cell.append(newselNhomTM);
+
+
+                    //6.  Add Button
+                    cell = $(row.insertCell(-1));
+                    var btnRemove = $("<input />");
+                    btnRemove.attr("type", "button");
+                    btnRemove.attr("onclick", "Remove(this);");
+                    btnRemove.val("Xóa");
+                    cell.append(btnRemove);
+
+                    //Clear the TextBoxes.
+                    txtTenChiTieu.val("");
+                    txtSTT.val("");
+
+                } // end succcess
+            });
+
+
+        }); // btnAdd
+
+        function Remove(button) {
+            //Determine the reference of the Row using the Button.
+            var row = $(button).closest("TR");
+            var id = $("TD", row).eq(0).html();
+            if (confirm("Bạn đang chọn xóa chỉ tiêu có Id =" + id)) {
+                //Get the reference of the Table.
+                var table = $("#tblCustomers")[0];
+
+                //Send the JSON array to Controller using AJAX.
+                $.ajax({
+                    type: "POST",
+                    url: "/BoChiTieu/DeleteChiTieu",
+                    data:{"id":id},
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (r) {
+                        alert(r + " record(s) deleted.");
+                        //Delete the Table row using it's Index.
+                        table.deleteRow(row[0].rowIndex);
+                    }
+                });
+
+
+            }
+        };
+
+
+
+
+        $("body").on("click", "#btnSave", function () {
+            //Loop through the Table rows and build a JSON array.
+            var customers = new Array();
+            $("#tblBCT TBODY TR").each(function () {
+                var row = $(this);
+                var customer = {};
+                customer.IdChiTieu = row.find("TD").eq(0).html();
+                customer.TenChiTieu =    row.children('td').eq(1).children('input').attr("value");
+                customer.STT =           row.children('td').eq(2).children('input').attr("value");
+                customer.IdNhomChuong =  row.children('td').eq(3).children('select').val();
+                customer.IdNhomTieuMuc = row.children('td').eq(4).children('select').val();
+                customers.push(customer);
+            });
+
+            //Send the JSON array to Controller using AJAX.
+            $.ajax({
+                type: "POST",
+                url: "/BoChiTieu/UpdateChiTieus",
+                data: JSON.stringify(customers),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (r) {
+                    alert(r + " record(s) inserted.");
+                }
+            });
+        });
+
+
+
+
+  /////////=================================================///////////////////////
+        var fixHelperModified = function (e, tr) {
+            var $originals = tr.children();
+            var $helper = tr.clone();
+            $helper.children().each(function (index) {
+                $(this).width($originals.eq(index).width())
+            });
+            return $helper;
+        },
+		updateIndex = function (e, ui) {
+		    $('td.index', ui.item.parent()).each(function (i) {
+		        //$(this).html(i + 1);
+		        $(this).children('input').val(i+1);
+		    });
+
+		};
+
+        $("#tblBCT tbody").sortable({
+            helper: fixHelperModified,
+            stop: updateIndex
+        }).disableSelection();
+
+        $("tbody").sortable({
+            distance: 5,
+            delay: 100,
+            opacity: 0.6,
+            cursor: 'move',
+            update: function () { }
+        });
+
+ /////////////=========================================////////////
+
+
+</script>

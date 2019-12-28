@@ -17,12 +17,12 @@
             font-size: 10pt;
         }
 
-        table {
+        #tblBCT {
             text-align: left;
             border-collapse: separate;
             border-spacing: 0;
             border: 2px solid #2980b9;
-            width: 700px;
+            width: 1200px;
             margin: 5px;
             border-radius: .25rem;
         }
@@ -42,35 +42,13 @@
             background: #2980b9;
             font-size: 10pt;
             color:white;
-        }
-
-        th:first-child,
-        td:first-child {
-            padding: 3px;
-        }
-
-        th {
-            font-weight: 200;
-        }
+        } 
+        
 
         thead tr:last-child th {
             border-bottom: 3px solid #ddd;
-        }
-
-
-        tbody tr:last-child td {
-            border: none;
-        }
-
-        tbody td {
-            border-bottom: 1px solid #ddd;
-            margin: 2px;
-        }
-
-         tbody tr {
-            padding: 2px;
-        }
-
+        }          
+        
         td:first-child,  td:last-child  {
             text-align: center;
             padding: 2px;
@@ -79,11 +57,11 @@
 
 
    
-    <table id="tblCustomers" class="table" cellpadding="0" cellspacing="0">
+    <table id="tblBCT" class="table" cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th >Id CT</th>
-                <th style="width:800px;">Name</th>
+                <th style="width:20px;">Id</th>
+                <th style="width:600px;">Tên chỉ tiêu</th>
                 <th style="width:10px;">STT</th>
                 <th style="width:40px;">Nhóm CH</th>
                 <th style="width:20px;">Nhóm TM</th>
@@ -118,7 +96,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td>Chỉ tiêu mới</td>
+                <td><span class="glyphicon glyphicon-name"></span></td>
                 <td><input type="text" id="txtTenChiTieu" style="width:90%;" /></td>
                 <td><input type="text" id="txtSTT" style="width:70%;" /></td>                               
                 <td>@Html.DropDownList("selNhomChuong", new SelectList(listNhomChuong, "IdNhomChuong", "TenNhomChuong"), "Chọn 1 giá trị")</td>
@@ -154,7 +132,7 @@
             var idBoChiTieu = $("#btnAdd").attr("data");
 
             //Get the reference of the Table's TBODY element.
-            var tBody = $("#tblCustomers > TBODY")[0];
+            var tBody = $("#tblBCT > TBODY")[0];
 
             //Add Row.
             var row = tBody.insertRow(-1);
@@ -259,7 +237,7 @@
         $("body").on("click", "#btnSave", function () {
             //Loop through the Table rows and build a JSON array.
             var customers = new Array();
-            $("#tblCustomers TBODY TR").each(function () {
+            $("#tblBCT TBODY TR").each(function () {
                 var row = $(this);
                 var customer = {};
                 customer.IdChiTieu = row.find("TD").eq(0).html();
@@ -303,7 +281,7 @@
 
 		};
 
-        $("#tblCustomers tbody").sortable({
+        $("#tblBCT tbody").sortable({
             helper: fixHelperModified,
             stop: updateIndex
         }).disableSelection();

@@ -39,7 +39,7 @@ namespace TDST.Controllers
                 DanhMucDao dmDao = new DanhMucDao();
                 ChungTuDao chungTuDao = new ChungTuDao();
                 List<NhomTieuMuc> dsNhomTM = dmDao.Get_NhomTieuMuc_ScanIsTrue();
-                List<NhomChuong> dsNhomCH = dmDao.DmNhomChuong();
+                List<NhomChuong> dsNhomCH = dmDao.Get_DmNhomChuong();
                 int soLuongNhomTM = dsNhomTM.Count;
                 int soLuongNhomCH = dsNhomCH.Count;
                 //int tm, ch;

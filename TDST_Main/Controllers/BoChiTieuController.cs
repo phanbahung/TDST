@@ -10,7 +10,7 @@ using TDST_CRUD.ViewModels;
 
 namespace TDST.Controllers
 {
-    public class BoChiTieuController : BaseController
+    public class BoChiTieuController : Controller
     {
         TDSTDbContext db = new TDSTDbContext();
         // GET: BoChiTieu
@@ -27,8 +27,8 @@ namespace TDST.Controllers
         {
             DanhMucDao dao = new DanhMucDao();
             BoChiTieuDao daoBCT = new BoChiTieuDao();
-            ViewBag.ListNhomChuongs = dao.DmNhomChuong();
-            ViewBag.ListNhomTieuMucs = dao.DmNhomTieuMuc();
+            ViewBag.ListNhomChuongs = dao.Get_DmNhomChuong();
+            ViewBag.ListNhomTieuMucs = dao.Get_DmNhomTieuMuc();
             ViewBag.IdBoChiTieu = id;
 
 

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Data>
+
+<Header><Version>1.1</Version>
+<Sender_Code>TTA0000000</Sender_Code>
+<Sender_Name>Trung tâm trao đổi trung ương</Sender_Name>
+<Receiver_Code>THU0000000</Receiver_Code>
+<Receiver_Name> Tổng Cục Thuế</Receiver_Name>
+<Tran_Code>61</Tran_Code>
+<Tran_Name>Chung tu thu NSNN</Tran_Name>
+<Msg_ID>TTA000000018473527</Msg_ID>
+<Msg_RefID>KBA000000144666890</Msg_RefID>
+<Send_Date>02/01/2019 10:08:02</Send_Date>
+<Original_Code>KBA5110000</Original_Code>
+<Original_Name>Kho bac trung uong</Original_Name>
+<Export_Date>02/01/2019</Export_Date>
+<Notes>THU</Notes>
+<Tran_Num>12</Tran_Num>
+<Path>KBA0000001/TTA0000000</Path>
+<NumMsg_InGroup>1</NumMsg_InGroup>
+<Msg_Status>SUCCESS</Msg_Status>
+
+</Header>
+
+<Body>
+
+<Transaction>
+<tran_no>KBA0000001431084012</tran_no>
+<lcn_owner>KBA5110000</lcn_owner>
+<ma_kbac>2061</ma_kbac>
+<ngay_kb>20181231</ngay_kb>
+<ma_nv>LYNTK</ma_nv>
+<so_bt>3</so_bt>
+<ma_dthu>98</ma_dthu>
+<so_ctu>0006086</so_ctu>
+<so_ct_nh />
+<ma_nntien />
+<ten_nntien>CONG TY CO PHAN NUOC GIAI KHAT SANEST KHANH HOA</ten_nntien>
+<dc_nntien>Quoc Lo 1A  thon My Thanh  Xa Cam Thinh Dong</dc_nntien>
+<tin>0106680443</tin>
+<ten_nnthue>Không xác định</ten_nnthue>
+<dia_chi>Quoc Lo 1A  thon My Thanh  Xa Cam Thinh Dong</dia_chi>
+<so_qdinh />
+<ngay_qdinh />
+<cq_qdinh />
+<ngay_kbac>31/12/2018</ngay_kbac>
+<ngay_ht>31/12/2018</ngay_ht>
+<ma_cqthu>1056198</ma_cqthu>
+<ma_xa>56TTT</ma_xa>
+<so_tkno>3931</so_tkno>
+<so_tkco>3581</so_tkco>
+<so_tkhq />
+<ngay_tkhq />
+<lh_xnk />
+<dvsdns>1056198</dvsdns>
+<ten_dvsdns>CUC THUE TINH KHANH HOA</ten_dvsdns>
+<mant>VND</mant><ty_gia>1</ty_gia>
+<tk_kh_nhan />
+<tn_kh_nhan>Cuc thue tinh Khanh Hoa</tn_kh_nhan>
+<dc_kh_nhan/>
+<tong_tien>123729</tong_tien>
+<ttien_nt>123729</ttien_nt>
+<so_tk_nnt>7111</so_tk_nnt>
+<ngay_nh>31/12/2018</ngay_nh>
+<ma_nh_a>79303001</ma_nh_a>
+<ma_nh_b>56701001</ma_nh_b>
+<ten>VP KBNN Khánh Hoà</ten>
+<ma_cqhquan>1056198</ma_cqhquan>
+<khct>KHH0898/18</khct>
+<khct_soct>KHH0898/180006086</khct_soct>
+<ngan_hang>Ngân hàng TMCP Sài gòn thương tín</ngan_hang>
+<ten_nh_b>KBNN Khánh Hoà</ten_nh_b>
+<so_bk /><ngay_bk /><ma_hq /><ma_hq_ph />
+<nien_do>1</nien_do>
+<so_khung /><so_tb />
+<ma_tinh>56</ma_tinh>
+<ma_huyen>000</ma_huyen>
+<kbc_ma_kbac_hoan />
+<hthuc_htra /><niendo_ht />
+<so_lenh_hoan />
+<ngay_lenh_hoan />
+<ma_chuong>558</ma_chuong>
+<ma_khoan>000</ma_khoan>
+<ma_tmuc>4927</ma_tmuc>
+<ma_tldt />
+<noi_dung>Tiền chậm nộp thuế tài nguyên khác còn lại.</noi_dung>
+<ky_thue>00/12/2018</ky_thue>
+<so_tien>123729</so_tien>
+<so_tiennt>123729</so_tiennt>
+<ma_dtiet>00000.00000.00000.00000</ma_dtiet>
+<ma_quy>01</ma_quy>
+<ma_dp>00</ma_dp>
+<id>1</id>
+<loai_ttin />
+<ma_kbac_thu />
+<tk_no_dtl>3931</tk_no_dtl>
+<tk_co_dtl>3581</tk_co_dtl>
+<ten_tk_no>Thanh toán bù trừ liên ngân hàng</ten_tk_no>
+<ten_tk_co>Tài khoản chờ xử lý các khoản thu của cơ quan thuế</ten_tk_co>
+<nien_do_dtl /><ky_ktt>1</ky_ktt>
+<dien_giai>NTDT+KB:2061-VP KBNN Khanh Hoa+NgayNT:31122018+MST:4201675916+DBHC:56TTT+TKNS:7111+CQT:1056198+LThue:01 (C:558-TM:4927-KT:12/2018-ST:2233-GChu:) (C:558-TM:4917-KT:12/2018-ST:121496-GChu:) Cuc thue tinh Khanh Hoa</dien_giai>
+<ghi_chu>MA_TLPC: khong xac dinh duoc</ghi_chu>
+<so_dndc /><kyhieu_ct_goc /><so_ct_goc /><ma_cqthu_kbt />
+<so_tham_chieu />
+<cqt_qlnt />
+<ctdc>0</ctdc>
+<tkn>02</tkn>
+<kln />
+<mst />
+<ten_mst /><dc_mst /><ma_tk />
+</Transaction>
+
+
+<Transaction><tran_no>KBA0000001431084013</tran_no><lcn_owner>KBA5110000</lcn_owner><ma_kbac>2061</ma_kbac><ngay_kb>20181231</ngay_kb><ma_nv>SYSUSERBID</ma_nv><so_bt>2</so_bt><ma_dthu>23</ma_dthu><so_ctu>4192545</so_ctu><so_ct_nh /><ma_nntien /><ten_nntien /><dc_nntien /><tin>0108203728-058</tin><ten_nnthue>CHI NHaNH KHaNH HoA . CoNG TY Co PH</ten_nnthue><dia_chi>aN K</dia_chi><so_qdinh /><ngay_qdinh /><cq_qdinh /><ngay_kbac>31/12/2018</ngay_kbac><ngay_ht>31/12/2018</ngay_ht><ma_cqthu>1056198</ma_cqthu><ma_xa>56TTT</ma_xa><so_tkno>1155</so_tkno><so_tkco>3581</so_tkco><so_tkhq /><ngay_tkhq /><lh_xnk /><dvsdns>1056198</dvsdns><ten_dvsdns>Cục thuế tỉnh Khánh Hòa</ten_dvsdns><mant>VND</mant><ty_gia>1</ty_gia><tk_kh_nhan>60110000899226</tk_kh_nhan><tn_kh_nhan /><dc_kh_nhan /><tong_tien>2000000</tong_tien><ttien_nt>2000000</ttien_nt><so_tk_nnt>60110000899226</so_tk_nnt><ngay_nh>31/12/2018</ngay_nh><ma_nh_a>56202001</ma_nh_a><ma_nh_b>56202001</ma_nh_b><ten>VP KBNN Khánh Hoà</ten><ma_cqhquan>1056198</ma_cqhquan><khct>KHH612318</khct><khct_soct>KHH6123184192545</khct_soct><ngan_hang>Ngân hàng TMCP Đầu tư và Phát triển Việt Nam - Chi nhánh Khánh Hoà</ngan_hang><ten_nh_b>Ngân hàng TMCP Đầu tư và Phát triển Việt Nam - Chi nhánh Khánh Hoà</ten_nh_b><so_bk /><ngay_bk /><ma_hq /><ma_hq_ph /><nien_do>1</nien_do><so_khung /><so_tb /><ma_tinh>56</ma_tinh><ma_huyen>000</ma_huyen><kbc_ma_kbac_hoan /><hthuc_htra /><niendo_ht /><so_lenh_hoan /><ngay_lenh_hoan /><ma_chuong>555</ma_chuong><ma_khoan>000</ma_khoan><ma_tmuc>2864</ma_tmuc><ma_tldt /><noi_dung>MB 2018 DDKD so 1234--</noi_dung><ky_thue>00/12/2018</ky_thue><so_tien>2000000</so_tien><so_tiennt>2000000</so_tiennt><ma_dtiet>00000.00000.00000.00000</ma_dtiet><ma_quy>01</ma_quy><ma_dp>00</ma_dp><id>1</id><loai_ttin /><ma_kbac_thu /><tk_no_dtl>1155</tk_no_dtl><tk_co_dtl>3581</tk_co_dtl><ten_tk_no>Tiền gửi chuyên thu bằng đồng Việt Nam tại Ngân hàng Đầu tư</ten_tk_no><ten_tk_co>Tài khoản chờ xử lý các khoản thu của cơ quan thuế</ten_tk_co><nien_do_dtl /><ky_ktt>1</ky_ktt><dien_giai /><ghi_chu>MA_TLPC (1): Khong co</ghi_chu><so_dndc /><kyhieu_ct_goc /><so_ct_goc /><ma_cqthu_kbt /><so_tham_chieu /><cqt_qlnt /><ctdc>0</ctdc><tkn>02</tkn><kln /><mst /><ten_mst /><dc_mst /><ma_tk /></Transaction><Transaction><tran_no>KBA0000001431084014</tran_no><lcn_owner>KBA5110000</lcn_owner><ma_kbac>2061</ma_kbac><ngay_kb>20181231</ngay_kb><ma_nv>SYSUSERVCB</ma_nv><so_bt>2</so_bt><ma_dthu>68</ma_dthu><so_ctu>5596698</so_ctu><so_ct_nh /><ma_nntien>4200554228</ma_nntien><ten_nntien>CÔNG TY CỔ PHẦN TÂN VIỆT</ten_nntien><dc_nntien>12 -14 Trần Phú, Phường Xương Huân</dc_nntien><tin>4200554228</tin><ten_nnthue>CÔNG TY CỔ PHẦN TÂN VIỆT</ten_nnthue><dia_chi>12 -14 Trần Phú, Phường Xương Huân</dia_chi><so_qdinh /><ngay_qdinh /><cq_qdinh /><ngay_kbac>31/12/2018</ngay_kbac><ngay_ht>31/12/2018</ngay_ht>
+<ma_cqthu>1056198</ma_cqthu><ma_xa>56TTT</ma_xa><so_tkno>1156</so_tkno><so_tkco>3581</so_tkco>
+<so_tkhq /><ngay_tkhq /><lh_xnk /><dvsdns>1056198</dvsdns><ten_dvsdns>CUC THUE TINH KHANH HOA</ten_dvsdns>
+<mant>VND</mant><ty_gia>1</ty_gia><tk_kh_nhan /><tn_kh_nhan /><dc_kh_nhan /><tong_tien>49314</tong_tien>
+<ttien_nt>49314</ttien_nt><so_tk_nnt>0061000146861</so_tk_nnt><ngay_nh>31/12/2018</ngay_nh><ma_nh_a>01203001</ma_nh_a>
+<ma_nh_b>56701001</ma_nh_b><ten>VP KBNN Khánh Hoà</ten><ma_cqhquan>1056198</ma_cqhquan><khct>KHO6168/18</khct>
+<khct_soct>KHO6168/185596698</khct_soct><ngan_hang>Vietcombank</ngan_hang><ten_nh_b>KBNN Khánh Hoà</ten_nh_b><so_bk />
+<ngay_bk /><ma_hq /><ma_hq_ph /><nien_do>1</nien_do><so_khung /><so_tb /><ma_tinh>56</ma_tinh><ma_huyen>000</ma_huyen>
+<kbc_ma_kbac_hoan /><hthuc_htra /><niendo_ht /><so_lenh_hoan /><ngay_lenh_hoan /><ma_chuong>559</ma_chuong><ma_khoan>000</ma_khoan>
+<ma_tmuc>4934</ma_tmuc><ma_tldt /><noi_dung>Tien cham nop thue tieu thu dac biet hang hoa san xuat kinh doanh trong nuoc khac con lai--</noi_dung>
+<ky_thue>01/11/2016</ky_thue><so_tien>49314</so_tien><so_tiennt>49314</so_tiennt><ma_dtiet>00000.00000.00000.00000</ma_dtiet><ma_quy>01</ma_quy>
+<ma_dp>00</ma_dp><id>1</id><loai_ttin /><ma_kbac_thu /><tk_no_dtl>1156</tk_no_dtl><tk_co_dtl>3581</tk_co_dtl><ten_tk_no>Tiền gửi chuyên thu bằng đồng Việt Nam tại Ngân hàng Ngoại thương</ten_tk_no><ten_tk_co>Tài khoản chờ xử lý các khoản thu của cơ quan thuế</ten_tk_co><nien_do_dtl /><ky_ktt>1</ky_ktt><dien_giai>VNTN.43802.TND.NTDT+KB:2061-VP KBNN Khánh Hoà+NgayNT:31122018+MST:4200554228+DBHC:56TTT+TKNS:7111+CQT:1056198+LThue:01(C:559-TM:4934-KT:11/2016-ST:49314-GChu:)</dien_giai><ghi_chu /><so_dndc /><kyhieu_ct_goc /><so_ct_goc /><ma_cqthu_kbt /><so_tham_chieu /><cqt_qlnt /><ctdc>0</ctdc><tkn>02</tkn><kln /><mst /><ten_mst /><dc_mst /><ma_tk /></Transaction><Transaction><tran_no>KBA0000001431084015</tran_no><lcn_owner>KBA5110000</lcn_owner><ma_kbac>2061</ma_kbac><ngay_kb>20181231</ngay_kb><ma_nv>HANPT</ma_nv><so_bt>1</so_bt><ma_dthu>99</ma_dthu><so_ctu>0000277</so_ctu><so_ct_nh /><ma_nntien /><ten_nntien>Không xác định</ten_nntien><dc_nntien /><tin>3600246811-006</tin><ten_nnthue>Chi nhánh Công ty Kao Việt Nam</ten_nnthue><dia_chi /><so_qdinh /><ngay_qdinh /><cq_qdinh /><ngay_kbac>31/12/2018</ngay_kbac><ngay_ht>31/12/2018</ngay_ht><ma_cqthu>1056198</ma_cqthu><ma_xa>56TTT</ma_xa><so_tkno>3866</so_tkno><so_tkco>7111</so_tkco><so_tkhq /><ngay_tkhq /><lh_xnk /><dvsdns>0000000</dvsdns><ten_dvsdns>CUC THUE TINH KHANH HOA</ten_dvsdns><mant>VND</mant><ty_gia>1</ty_gia><tk_kh_nhan /><tn_kh_nhan /><dc_kh_nhan /><tong_tien>674885</tong_tien><ttien_nt>674885</ttien_nt><so_tk_nnt /><ngay_nh /><ma_nh_a /><ma_nh_b /><ten>VP KBNN Khánh Hoà</ten><ma_cqhquan>1056198</ma_cqhquan><khct>LKB2061/18</khct><khct_soct>LKB2061/180000277</khct_soct><ngan_hang /><ten_nh_b /><so_bk /><ngay_bk /><ma_hq /><ma_hq_ph /><nien_do>1</nien_do><so_khung /><so_tb /><ma_tinh>56</ma_tinh><ma_huyen>000</ma_huyen><kbc_ma_kbac_hoan /><hthuc_htra /><niendo_ht /><so_lenh_hoan /><ngay_lenh_hoan /><ma_chuong>151</ma_chuong><ma_khoan>000</ma_khoan><ma_tmuc>1701</ma_tmuc><ma_tldt>51</ma_tldt><noi_dung>Thuế giá trị gia tăng hàng sản xuất, kinh doanh trong nước (gồm cả dịch vụ trong lĩnh vực dầu khí)</noi_dung><ky_thue /><so_tien>24025</so_tien><so_tiennt>24025</so_tiennt><ma_dtiet>02800.07200.00000.00000</ma_dtiet><ma_quy>01</ma_quy><ma_dp>00</ma_dp><id>1</id><loai_ttin /><ma_kbac_thu /><tk_no_dtl>3866</tk_no_dtl><tk_co_dtl>7111</tk_co_dtl><ten_tk_no>Lệnh chuyển Có</ten_tk_no><ten_tk_co>Thu ngân sách nhà nước</ten_tk_co><nien_do_dtl /><ky_ktt>1</ky_ktt><dien_giai>Công ty TNHH Kao Việt Nam: 3600246811-006 </dien_giai><ghi_chu /><so_dndc /><kyhieu_ct_goc /><so_ct_goc /><ma_cqthu_kbt /><so_tham_chieu /><cqt_qlnt /><ctdc>0</ctdc><tkn>01</tkn><kln /><mst /><ten_mst /><dc_mst /><ma_tk /></Transaction><Transaction><tran_no>KBA0000001431084015</tran_no><lcn_owner>KBA5110000</lcn_owner><ma_kbac>2061</ma_kbac><ngay_kb>20181231</ngay_kb><ma_nv>HANPT</ma_nv><so_bt>1</so_bt><ma_dthu>99</ma_dthu><so_ctu>0000277</so_ctu><so_ct_nh /><ma_nntien /><ten_nntien>Không xác định</ten_nntien><dc_nntien /><tin>3600246811-006</tin><ten_nnthue>Chi nhánh Công ty Kao Việt Nam</ten_nnthue><dia_chi /><so_qdinh /><ngay_qdinh /><cq_qdinh /><ngay_kbac>31/12/2018</ngay_kbac><ngay_ht>31/12/2018</ngay_ht><ma_cqthu>1056198</ma_cqthu><ma_xa>56TTT</ma_xa><so_tkno>3866</so_tkno><so_tkco>7111</so_tkco><so_tkhq /><ngay_tkhq /><lh_xnk /><dvsdns>0000000</dvsdns><ten_dvsdns>CUC THUE TINH KHANH HOA</ten_dvsdns><mant>VND</mant><ty_gia>1</ty_gia><tk_kh_nhan /><tn_kh_nhan /><dc_kh_nhan /><tong_tien>674885</tong_tien><ttien_nt>674885</ttien_nt><so_tk_nnt /><ngay_nh /><ma_nh_a /><ma_nh_b /><ten>VP KBNN Khánh Hoà</ten><ma_cqhquan>1056198</ma_cqhquan><khct>LKB2061/18</khct><khct_soct>LKB2061/180000277</khct_soct><ngan_hang /><ten_nh_b /><so_bk /><ngay_bk /><ma_hq /><ma_hq_ph /><nien_do>1</nien_do><so_khung /><so_tb /><ma_tinh>56</ma_tinh><ma_huyen>000</ma_huyen><kbc_ma_kbac_hoan /><hthuc_htra /><niendo_ht /><so_lenh_hoan /><ngay_lenh_hoan /><ma_chuong>151</ma_chuong><ma_khoan>000</ma_khoan><ma_tmuc>1749</ma_tmuc><ma_tldt>51</ma_tldt><noi_dung>Hàng hóa, dịch vụ khác</noi_dung><ky_thue /><so_tien>647010</so_tien><so_tiennt>647010</so_tiennt><ma_dtiet>02800.07200.00000.00000</ma_dtiet><ma_quy>01</ma_quy><ma_dp>00</ma_dp><id>2</id><loai_ttin /><ma_kbac_thu /><tk_no_dtl>3866</tk_no_dtl><tk_co_dtl>7111</tk_co_dtl><ten_tk_no>Lệnh chuyển Có</ten_tk_no><ten_tk_co>Thu ngân sách nhà nước</ten_tk_co><nien_do_dtl /><ky_ktt>1</ky_ktt><dien_giai>Công ty TNHH Kao Việt Nam: 3600246811-006 </dien_giai><ghi_chu /><so_dndc /><kyhieu_ct_goc /><so_ct_goc /><ma_cqthu_kbt /><so_tham_chieu /><cqt_qlnt /><ctdc>0</ctdc><tkn>01</tkn><kln /><mst /><ten_mst /><dc_mst /><ma_tk /></Transaction><Transaction><tran_no>KBA0000001431084015</tran_no><lcn_owner>KBA5110000</lcn_owner><ma_kbac>2061</ma_kbac><ngay_kb>20181231</ngay_kb><ma_nv>HANPT</ma_nv><so_bt>1</so_bt><ma_dthu>99</ma_dthu><so_ctu>0000277</so_ctu><so_ct_nh /><ma_nntien /><ten_nntien>Không xác định</ten_nntien><dc_nntien /><tin>3600246811-006</tin><ten_nnthue>Chi nhánh Công ty Kao Việt Nam</ten_nnthue><dia_chi /><so_qdinh /><ngay_qdinh /><cq_qdinh /><ngay_kbac>31/12/2018</ngay_kbac><ngay_ht>31/12/2018</ngay_ht><ma_cqthu>1056198</ma_cqthu><ma_xa>56TTT</ma_xa><so_tkno>3866</so_tkno><so_tkco>7111</so_tkco><so_tkhq /><ngay_tkhq /><lh_xnk /><dvsdns>0000000</dvsdns><ten_dvsdns>CUC THUE TINH KHANH HOA</ten_dvsdns><mant>VND</mant><ty_gia>1</ty_gia><tk_kh_nhan /><tn_kh_nhan /><dc_kh_nhan /><tong_tien>674885</tong_tien><ttien_nt>674885</ttien_nt><so_tk_nnt /><ngay_nh /><ma_nh_a /><ma_nh_b /><ten>VP KBNN Khánh Hoà</ten><ma_cqhquan>1056198</ma_cqhquan><khct>LKB2061/18</khct><khct_soct>LKB2061/180000277</khct_soct><ngan_hang /><ten_nh_b /><so_bk /><ngay_bk /><ma_hq /><ma_hq_ph /><nien_do>1</nien_do><so_khung /><so_tb /><ma_tinh>56</ma_tinh><ma_huyen>000</ma_huyen><kbc_ma_kbac_hoan /><hthuc_htra /><niendo_ht /><so_lenh_hoan /><ngay_lenh_hoan /><ma_chuong>151</ma_chuong><ma_khoan>000</ma_khoan><ma_tmuc>4944</ma_tmuc><ma_tldt>2</ma_tldt><noi_dung>Tiền chậm nộp các khoản khác điều tiết100% ngân sách địa phương theo quy định của pháp luật do ngành thuế quản lý</noi_dung><ky_thue /><so_tien>3850</so_tien><so_tiennt>3850</so_tiennt><ma_dtiet>00000.10000.00000.00000</ma_dtiet><ma_quy>01</ma_quy><ma_dp>00</ma_dp><id>3</id><loai_ttin /><ma_kbac_thu /><tk_no_dtl>3866</tk_no_dtl><tk_co_dtl>7111</tk_co_dtl><ten_tk_no>Lệnh chuyển Có</ten_tk_no><ten_tk_co>Thu ngân sách nhà nước</ten_tk_co><nien_do_dtl /><ky_ktt>1</ky_ktt><dien_giai>Công ty TNHH Kao Việt Nam: 3600246811-006 </dien_giai><ghi_chu /><so_dndc /><kyhieu_ct_goc /><so_ct_goc /><ma_cqthu_kbt /><so_tham_chieu /><cqt_qlnt /><ctdc>0</ctdc><tkn>01</tkn><kln /><mst /><ten_mst /><dc_mst /><ma_tk /></Transaction><Transaction><tran_no>KBA0000001431084018</tran_no><lcn_owner>KBA5110000</lcn_owner><ma_kbac>2061</ma_kbac><ngay_kb>20181231</ngay_kb><ma_nv>LYNTK</ma_nv><so_bt>1</so_bt><ma_dthu>98</ma_dthu><so_ctu>0006084</so_ctu><so_ct_nh /><ma_nntien /><ten_nntien>Nguyễn Thị Vui</ten_nntien><dc_nntien>Dia Chi:85/2 Phương Sài, Nha Trang</dc_nntien><tin>856114788</tin><ten_nnthue>NGUYEN THI VUI</ten_nnthue><dia_chi>Dia Chi:85/2 Phương Sài, Nha Trang</dia_chi><so_qdinh /><ngay_qdinh /><cq_qdinh /><ngay_kbac>31/12/2018</ngay_kbac><ngay_ht>31/12/2018</ngay_ht><ma_cqthu>1056198</ma_cqthu><ma_xa>56TTT</ma_xa><so_tkno>3931</so_tkno><so_tkco>7111</so_tkco><so_tkhq /><ngay_tkhq /><lh_xnk /><dvsdns>1056198</dvsdns><ten_dvsdns>CUC THUE TINH KHANH HOA</ten_dvsdns><mant>VND</mant><ty_gia>1</ty_gia><tk_kh_nhan /><tn_kh_nhan>CUC THUE TINH KHANH HOA</tn_kh_nhan><dc_kh_nhan /><tong_tien>231000</tong_tien><ttien_nt>231000</ttien_nt><so_tk_nnt>7111</so_tk_nnt><ngay_nh>31/12/2018</ngay_nh><ma_nh_a>48204018</ma_nh_a><ma_nh_b>56701001</ma_nh_b><ten>VP KBNN Khánh Hoà</ten><ma_cqhquan>1056198</ma_cqhquan><khct>KHH0898/18</khct><khct_soct>KHH0898/180006084</khct_soct><ngan_hang>Ngân hàng Nông nghiệp và Phát triển nông thôn Việt Nam - Văn phòng Đại diện khu vực Miền Trung</ngan_hang><ten_nh_b>KBNN Khánh Hoà</ten_nh_b><so_bk /><ngay_bk /><ma_hq /><ma_hq_ph /><nien_do>1</nien_do><so_khung /><so_tb /><ma_tinh>56</ma_tinh><ma_huyen>000</ma_huyen><kbc_ma_kbac_hoan /><hthuc_htra /><niendo_ht /><so_lenh_hoan /><ngay_lenh_hoan /><ma_chuong>557</ma_chuong><ma_khoan>000</ma_khoan><ma_tmuc>1015</ma_tmuc><ma_tldt>51</ma_tldt><noi_dung>Thuế thu nhập từ chuyển nhượng chứng khoán</noi_dung><ky_thue>00/12/2018</ky_thue><so_tien>231000</so_tien>
+<so_tiennt>231000</so_tiennt>
+
+
+<ma_dtiet>02800.07200.00000.00000</ma_dtiet><ma_quy>01</ma_quy><ma_dp>00</ma_dp><id>1</id><loai_ttin /><ma_kbac_thu /><tk_no_dtl>3931</tk_no_dtl>
+<tk_co_dtl>7111</tk_co_dtl>
+<ten_tk_no>Thanh toán bù trừ liên ngân hàng</ten_tk_no><ten_tk_co>Thu ngân sách nhà nước</ten_tk_co><nien_do_dtl /><ky_ktt>1</ky_ktt><dien_giai>NGUYEN THI VUI CT THUE TNCN THEO TB SO 7724/TB-CT.MST: 8561147884.CHUONG: 557. TIEU MUC: 1015 CUC THUE TINH KHANH HOA</dien_giai><ghi_chu>MA_TLPC: khong xac dinh duoc</ghi_chu><so_dndc /><kyhieu_ct_goc /><so_ct_goc /><ma_cqthu_kbt /><so_tham_chieu /><cqt_qlnt /><ctdc>0</ctdc><tkn>01</tkn><kln /><mst /><ten_mst /><dc_mst /><ma_tk /></Transaction><Transaction><tran_no>KBA0000001431084019</tran_no><lcn_owner>KBA5110000</lcn_owner><ma_kbac>2061</ma_kbac><ngay_kb>20181231</ngay_kb><ma_nv>LYNTK</ma_nv><so_bt>2</so_bt><ma_dthu>98</ma_dthu>
+
+
+
+<so_ctu>0006085</so_ctu><so_ct_nh /><ma_nntien /><ten_nntien>Nguyễn Thị Vui</ten_nntien><dc_nntien>Dia Chi:85/2 Phương Sài, Nha Trang</dc_nntien><tin>8561147884</tin><ten_nnthue>NGUYEN THI VUI</ten_nnthue><dia_chi>Dia Chi:85/2 Phương Sài, Nha Trang</dia_chi><so_qdinh /><ngay_qdinh /><cq_qdinh /><ngay_kbac>31/12/2018</ngay_kbac><ngay_ht>31/12/2018</ngay_ht><ma_cqthu>1056198</ma_cqthu><ma_xa>56TTT</ma_xa><so_tkno>3931</so_tkno><so_tkco>7111</so_tkco><so_tkhq /><ngay_tkhq /><lh_xnk /><dvsdns>1056198</dvsdns><ten_dvsdns>CUC THUE TINH KHANH HOA</ten_dvsdns><mant>VND</mant><ty_gia>1</ty_gia><tk_kh_nhan /><tn_kh_nhan>CUC THUE TINH KHANH HOA</tn_kh_nhan><dc_kh_nhan /><tong_tien>775000</tong_tien><ttien_nt>775000</ttien_nt><so_tk_nnt>7111</so_tk_nnt><ngay_nh>31/12/2018</ngay_nh><ma_nh_a>48204018</ma_nh_a><ma_nh_b>56701001</ma_nh_b><ten>VP KBNN Khánh Hoà</ten><ma_cqhquan>1056198</ma_cqhquan><khct>KHH0898/18</khct><khct_soct>KHH0898/180006085</khct_soct><ngan_hang>Ngân hàng Nông nghiệp và Phát triển nông thôn Việt Nam - Văn phòng Đại diện khu vực Miền Trung</ngan_hang><ten_nh_b>KBNN Khánh Hoà</ten_nh_b><so_bk /><ngay_bk /><ma_hq /><ma_hq_ph /><nien_do>1</nien_do><so_khung /><so_tb /><ma_tinh>56</ma_tinh><ma_huyen>000</ma_huyen><kbc_ma_kbac_hoan /><hthuc_htra /><niendo_ht /><so_lenh_hoan /><ngay_lenh_hoan /><ma_chuong>557</ma_chuong><ma_khoan>000</ma_khoan><ma_tmuc>1004</ma_tmuc><ma_tldt>51</ma_tldt><noi_dung>Thuế thu nhập từ đầu tư vốn của cá nhân</noi_dung><ky_thue>00/12/2018</ky_thue><so_tien>775000</so_tien><so_tiennt>775000</so_tiennt><ma_dtiet>02800.07200.00000.00000</ma_dtiet><ma_quy>01</ma_quy><ma_dp>00</ma_dp><id>1</id><loai_ttin /><ma_kbac_thu /><tk_no_dtl>3931</tk_no_dtl><tk_co_dtl>7111</tk_co_dtl><ten_tk_no>Thanh toán bù trừ liên ngân hàng</ten_tk_no><ten_tk_co>Thu ngân sách nhà nước</ten_tk_co><nien_do_dtl /><ky_ktt>1</ky_ktt><dien_giai>NGUYEN THI VUI CT THUE TNCN THEO CHUONG 557. TIEU MUC 1004. MST: 8561147884 CUC THUE TINH KHANH HOA</dien_giai><ghi_chu>MA_TLPC: khong xac dinh duoc</ghi_chu><so_dndc /><kyhieu_ct_goc /><so_ct_goc /><ma_cqthu_kbt /><so_tham_chieu /><cqt_qlnt /><ctdc>0</ctdc><tkn>01</tkn><kln /><mst /><ten_mst /><dc_mst /><ma_tk /></Transaction><Transaction><tran_no>KBA0000001431084020</tran_no><lcn_owner>KBA5110000</lcn_owner><ma_kbac>2061</ma_kbac><ngay_kb>20181231</ngay_kb><ma_nv>SYSUSERAGR</ma_nv><so_bt>1</so_bt><ma_dthu>22</ma_dthu><so_ctu>7390986</so_ctu><so_ct_nh /><ma_nntien /><ten_nntien /><dc_nntien /><tin>0102183722-007</tin><ten_nnthue>Công ty CP Bảo hiểm Ngân hàng Nông nghiệp - Chi nhánh Khánh Hòa</ten_nnthue><dia_chi>45 Lam Sơn, Phường Phước Hòa</dia_chi><so_qdinh /><ngay_qdinh /><cq_qdinh /><ngay_kbac>31/12/2018</ngay_kbac><ngay_ht>31/12/2018</ngay_ht><ma_cqthu>1056198</ma_cqthu><ma_xa>56TTT</ma_xa><so_tkno>1153</so_tkno><so_tkco>7111</so_tkco><so_tkhq /><ngay_tkhq /><lh_xnk /><dvsdns>1056198</dvsdns><ten_dvsdns>CUC THUE TINH KHANH HOA</ten_dvsdns><mant>VND</mant><ty_gia>1</ty_gia><tk_kh_nhan /><tn_kh_nhan /><dc_kh_nhan /><tong_tien>57126695</tong_tien><ttien_nt>57126695</ttien_nt><so_tk_nnt /><ngay_nh>31/12/2018</ngay_nh><ma_nh_a>56204001</ma_nh_a><ma_nh_b>56204001</ma_nh_b><ten>VP KBNN Khánh Hoà</ten><ma_cqhquan>1056198</ma_cqhquan><khct>KHH612218</khct><khct_soct>KHH6122187390986</khct_soct><ngan_hang>Agribank tỉnh Khánh Hoà</ngan_hang><ten_nh_b>Agribank tỉnh Khánh Hoà</ten_nh_b><so_bk /><ngay_bk /><ma_hq /><ma_hq_ph /><nien_do>1</nien_do><so_khung /><so_tb /><ma_tinh>56</ma_tinh><ma_huyen>000</ma_huyen><kbc_ma_kbac_hoan /><hthuc_htra /><niendo_ht /><so_lenh_hoan /><ngay_lenh_hoan /><ma_chuong>557</ma_chuong><ma_khoan>000</ma_khoan><ma_tmuc>1003</ma_tmuc><ma_tldt>51</ma_tldt><noi_dung>Thuế thu nhập từ hoạt động sản xuất, kinh doanh của cá nhân; --</noi_dung><ky_thue>01/04/2018</ky_thue><so_tien>57126695</so_tien><so_tiennt>57126695</so_tiennt><ma_dtiet>02800.07200.00000.00000</ma_dtiet><ma_quy>01</ma_quy><ma_dp>00</ma_dp>
+
+<id>1</id><loai_ttin />
+<ma_kbac_thu /><tk_no_dtl>1153</tk_no_dtl><tk_co_dtl>7111</tk_co_dtl>
+<ten_tk_no>Tiền gửi chuyên thu bằng đồng Việt Nam tại Ngân hàng Nông nghiệp</ten_tk_no>
+<ten_tk_co>Thu ngân sách nhà nước</ten_tk_co><nien_do_dtl /><ky_ktt>1</ky_ktt><dien_giai /><ghi_chu>MA_TLPC (1): Khong co</ghi_chu>
+<so_dndc /><kyhieu_ct_goc /><so_ct_goc /><ma_cqthu_kbt /><so_tham_chieu /><cqt_qlnt /><ctdc>0</ctdc><tkn>01</tkn><kln /><mst />
+<ten_mst /><dc_mst /><ma_tk /></Transaction><Transaction><tran_no>KBA0000001431084021</tran_no><lcn_owner>KBA5110000</lcn_owner>
+<ma_kbac>2061</ma_kbac><ngay_kb>20181231</ngay_kb><ma_nv>SYSUSERBID</ma_nv><so_bt>1</so_bt><ma_dthu>23</ma_dthu>
+
+
+<so_ctu>4191223</so_ctu>
+<so_ct_nh /><ma_nntien /><ten_nntien /><dc_nntien /><tin>4201089492</tin>
+
+<ten_nnthue>CONG TY CO PHAN GIAM DINH HANG HOA</ten_nnthue>
+<dia_chi>VA HA351 Le Hong Phong, Phuong Phuoc Hoa</dia_chi><so_qdinh /><ngay_qdinh /><cq_qdinh /><ngay_kbac>30/12/2018</ngay_kbac>
+<ngay_ht>31/12/2018</ngay_ht><ma_cqthu>1056198</ma_cqthu><ma_xa>56TTT</ma_xa><so_tkno>1155</so_tkno><so_tkco>7111</so_tkco><so_tkhq />
+<ngay_tkhq /><lh_xnk /><dvsdns>1056198</dvsdns><ten_dvsdns>Cục thuế tỉnh Khánh Hòa</ten_dvsdns><mant>VND</mant><ty_gia>1</ty_gia>
+<tk_kh_nhan>60110000899226</tk_kh_nhan><tn_kh_nhan /><dc_kh_nhan /><tong_tien>701915</tong_tien><ttien_nt>701915</ttien_nt>
+<so_tk_nnt>60110000899226</so_tk_nnt><ngay_nh>31/12/2018</ngay_nh><ma_nh_a>56202001</ma_nh_a><ma_nh_b>56202001</ma_nh_b><ten>VP KBNN Khánh Hoà</ten>
+<ma_cqhquan>1056198</ma_cqhquan><khct>KHH612318</khct>
+
+<khct_soct>KHH6123184191223</khct_soct><ngan_hang>Ngân hàng TMCP Đầu tư và Phát triển Việt Nam - Chi nhánh Khánh Hoà</ngan_hang>
+<ten_nh_b>Ngân hàng TMCP Đầu tư và Phát triển Việt Nam - Chi nhánh Khánh Hoà</ten_nh_b><so_bk /><ngay_bk /><ma_hq /><ma_hq_ph />
+<nien_do>1</nien_do><so_khung /><so_tb /><ma_tinh>56</ma_tinh><ma_huyen>000</ma_huyen><kbc_ma_kbac_hoan /><hthuc_htra /><niendo_ht />
+<so_lenh_hoan /><ngay_lenh_hoan /><ma_chuong>557</ma_chuong><ma_khoan>000</ma_khoan><ma_tmuc>1001</ma_tmuc><ma_tldt>51</ma_tldt>
+<noi_dung>Q3--</noi_dung><ky_thue>00/09/2018</ky_thue><so_tien>689300</so_tien><so_tiennt>689300</so_tiennt>
+
+
+
+
+
+<ma_dtiet>02800.07200.00000.00000</ma_dtiet><ma_quy>01</ma_quy><ma_dp>00</ma_dp><id>1</id><loai_ttin /><ma_kbac_thu />
+<tk_no_dtl>1155</tk_no_dtl><tk_co_dtl>7111</tk_co_dtl><ten_tk_no>Tiền gửi chuyên thu bằng đồng Việt Nam tại Ngân hàng Đầu tư</ten_tk_no>
+<ten_tk_co>Thu ngân sách nhà nước</ten_tk_co><nien_do_dtl /><ky_ktt>1</ky_ktt><dien_giai /><ghi_chu /><so_dndc /><kyhieu_ct_goc />
+<so_ct_goc /><ma_cqthu_kbt /><so_tham_chieu /><cqt_qlnt /><ctdc>0</ctdc><tkn>01</tkn><kln /><mst /><ten_mst /><dc_mst />
+<ma_tk /></Transaction><Transaction><tran_no>KBA0000001431084021</tran_no><lcn_owner>KBA5110000</lcn_owner>
+<ma_kbac>2061</ma_kbac><ngay_kb>20181231</ngay_kb><ma_nv>SYSUSERBID</ma_nv><so_bt>1</so_bt><ma_dthu>23</ma_dthu>
+<so_ctu>4191223</so_ctu><so_ct_nh /><ma_nntien /><ten_nntien /><dc_nntien /><tin>4201089492</tin>
+<ten_nnthue>CONG TY CO PHAN GIAM DINH HANG HOA</ten_nnthue><dia_chi>VA HA351 Le Hong Phong, Phuong Phuoc Hoa</dia_chi><so_qdinh />
+<ngay_qdinh /><cq_qdinh /><ngay_kbac>30/12/2018</ngay_kbac><ngay_ht>31/12/2018</ngay_ht><ma_cqthu>1056198</ma_cqthu><ma_xa>56TTT</ma_xa>
+<so_tkno>1155</so_tkno><so_tkco>7111</so_tkco><so_tkhq /><ngay_tkhq /><lh_xnk /><dvsdns>1056198</dvsdns>
+<ten_dvsdns>Cục thuế tỉnh Khánh Hòa</ten_dvsdns><mant>VND</mant><ty_gia>1</ty_gia><tk_kh_nhan>60110000899226</tk_kh_nhan><tn_kh_nhan />
+<dc_kh_nhan /><tong_tien>701915</tong_tien><ttien_nt>701915</ttien_nt><so_tk_nnt>60110000899226</so_tk_nnt><ngay_nh>31/12/2018</ngay_nh>
+<ma_nh_a>56202001</ma_nh_a><ma_nh_b>56202001</ma_nh_b><ten>VP KBNN Khánh Hoà</ten><ma_cqhquan>1056198</ma_cqhquan>
+
+
+<khct>KHH612318</khct>
+<khct_soct>KHH6123184191223</khct_soct><ngan_hang>Ngân hàng TMCP Đầu tư và Phát triển Việt Nam - Chi nhánh Khánh Hoà</ngan_hang>
+<ten_nh_b>Ngân hàng TMCP Đầu tư và Phát triển Việt Nam - Chi nhánh Khánh Hoà</ten_nh_b><so_bk /><ngay_bk /><ma_hq /><ma_hq_ph />
+<nien_do>1</nien_do><so_khung /><so_tb /><ma_tinh>56</ma_tinh><ma_huyen>000</ma_huyen><kbc_ma_kbac_hoan /><hthuc_htra /><niendo_ht />
+<so_lenh_hoan /><ngay_lenh_hoan /><ma_chuong>557</ma_chuong><ma_khoan>000</ma_khoan><ma_tmuc>4917</ma_tmuc><ma_tldt>51</ma_tldt>
+<noi_dung>Q3--</noi_dung><ky_thue>00/09/2018</ky_thue><so_tien>12615</so_tien><so_tiennt>12615</so_tiennt>
+<ma_dtiet>02800.07200.00000.00000</ma_dtiet><ma_quy>01</ma_quy><ma_dp>00</ma_dp><id>2</id><loai_ttin /><ma_kbac_thu />
+<tk_no_dtl>1155</tk_no_dtl><tk_co_dtl>7111</tk_co_dtl><ten_tk_no>Tiền gửi chuyên thu bằng đồng Việt Nam tại Ngân hàng Đầu tư</ten_tk_no>
+<ten_tk_co>Thu ngân sách nhà nước</ten_tk_co><nien_do_dtl /><ky_ktt>1</ky_ktt><dien_giai /><ghi_chu /><so_dndc /><kyhieu_ct_goc />
+<so_ct_goc /><ma_cqthu_kbt /><so_tham_chieu /><cqt_qlnt /><ctdc>0</ctdc><tkn>01</tkn><kln /><mst /><ten_mst /><dc_mst /><ma_tk /></Transaction>
+<Transaction><tran_no>KBA0000001431084023</tran_no><lcn_owner>KBA5110000</lcn_owner><ma_kbac>2061</ma_kbac><ngay_kb>20181231</ngay_kb><ma_nv>SYSUSERICB</ma_nv><so_bt>1</so_bt><ma_dthu>24</ma_dthu><so_ctu>0004335</so_ctu><so_ct_nh /><ma_nntien /><ten_nntien /><dc_nntien /><tin>4200523727</tin><ten_nnthue>CÔNG TY CỔ PHẦN SÁCH VÀ THIẾT BỊ TRƯỜNG HỌC KHÁNH HÒA</ten_nnthue><dia_chi>03 Nguyễn Thị Minh Khai, Phường Lộc Thọ</dia_chi><so_qdinh /><ngay_qdinh /><cq_qdinh /><ngay_kbac>31/12/2018</ngay_kbac><ngay_ht>31/12/2018</ngay_ht><ma_cqthu>1056198</ma_cqthu><ma_xa>56TTT</ma_xa><so_tkno>1154</so_tkno><so_tkco>7111</so_tkco><so_tkhq /><ngay_tkhq /><lh_xnk /><dvsdns>1056198</dvsdns><ten_dvsdns>CUC THUE TINH KHANH HOA</ten_dvsdns><mant>VND</mant><ty_gia>1</ty_gia><tk_kh_nhan />
+<tn_kh_nhan /><dc_kh_nhan /><tong_tien>700000</tong_tien><ttien_nt>700000</ttien_nt><so_tk_nnt>117000022254</so_tk_nnt>
+<ngay_nh>31/12/2018</ngay_nh><ma_nh_a>56201001</ma_nh_a><ma_nh_b>56701001</ma_nh_b><ten>VP KBNN Khánh Hoà</ten>
+<ma_cqhquan>1056198</ma_cqhquan><khct>KHH612418</khct>
+<khct_soct>KHH6124180004335</khct_soct><ngan_hang>NH TMCP Công thương Việt Nam - Chi nhánh Khánh Hòa</ngan_hang>
+<ten_nh_b>KBNN Khánh Hoà</ten_nh_b><so_bk /><ngay_bk /><ma_hq /><ma_hq_ph /><nien_do>1</nien_do><so_khung /><so_tb /><ma_tinh>56</ma_tinh>
+<ma_huyen>000</ma_huyen><kbc_ma_kbac_hoan /><hthuc_htra /><niendo_ht /><so_lenh_hoan /><ngay_lenh_hoan /><ma_chuong>557</ma_chuong>
+<ma_khoan>000</ma_khoan><ma_tmuc>4268</ma_tmuc><ma_tldt>1</ma_tldt><noi_dung>Phạt vi phạm hành chính trong lĩnh vực thuế TNCN do ngành Thuế thực hiện;nộp chậm tờ khai thuế tncn quý 3/2018--</noi_dung><ky_thue>00/12/2018</ky_thue><so_tien>700000</so_tien><so_tiennt>700000</so_tiennt><ma_dtiet>10000.00000.00000.00000</ma_dtiet><ma_quy>01</ma_quy><ma_dp>00</ma_dp><id>1</id><loai_ttin /><ma_kbac_thu /><tk_no_dtl>1154</tk_no_dtl><tk_co_dtl>7111</tk_co_dtl><ten_tk_no>Tiền gửi chuyên thu bằng đồng Việt Nam tại Ngân hàng Công thương</ten_tk_no><ten_tk_co>Thu ngân sách nhà nước</ten_tk_co><nien_do_dtl />
+<ky_ktt>1</ky_ktt><dien_giai>Nop Thue Dien Tu</dien_giai><ghi_chu /><so_dndc /><kyhieu_ct_goc /><so_ct_goc />
+<ma_cqthu_kbt /><so_tham_chieu /><cqt_qlnt /><ctdc>0</ctdc><tkn>01</tkn><kln /><mst /><ten_mst /><dc_mst /><ma_tk />
+</Transaction><Transaction><tran_no>KBA0000001431084024</tran_no><lcn_owner>KBA5110000</lcn_owner><ma_kbac>2061</ma_kbac>
+<ngay_kb>20181231</ngay_kb><ma_nv>SYSUSERICB</ma_nv><so_bt>2</so_bt><ma_dthu>24</ma_dthu><so_ctu>0004336</so_ctu><so_ct_nh />
+<ma_nntien /><ten_nntien /><dc_nntien /><tin>0301378892-023</tin><ten_nnthue>NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BẢN VIỆT - CHI NHÁNH NHA TRANG</ten_nnthue><dia_chi>Số 14 Ngô Gia Tự, Phường Phước Tiến</dia_chi><so_qdinh /><ngay_qdinh /><cq_qdinh /><ngay_kbac>31/12/2018</ngay_kbac><ngay_ht>31/12/2018</ngay_ht><ma_cqthu>1056198</ma_cqthu><ma_xa>56TTT</ma_xa><so_tkno>1154</so_tkno><so_tkco>7111</so_tkco><so_tkhq /><ngay_tkhq /><lh_xnk /><dvsdns>1056198</dvsdns><ten_dvsdns>CUC THUE TINH KHANH HOA</ten_dvsdns><mant>VND</mant><ty_gia>1</ty_gia><tk_kh_nhan /><tn_kh_nhan /><dc_kh_nhan /><tong_tien>58797566</tong_tien><ttien_nt>58797566</ttien_nt><so_tk_nnt>224440100</so_tk_nnt><ngay_nh>31/12/2018</ngay_nh><ma_nh_a>56201001</ma_nh_a><ma_nh_b>56701001</ma_nh_b><ten>VP KBNN Khánh Hoà</ten><ma_cqhquan>1056198</ma_cqhquan><khct>KHH612418</khct><khct_soct>KHH6124180004336</khct_soct><ngan_hang>NH TMCP Công thương Việt Nam - Chi nhánh Khánh Hòa</ngan_hang><ten_nh_b>KBNN Khánh Hoà</ten_nh_b><so_bk /><ngay_bk /><ma_hq /><ma_hq_ph /><nien_do>1</nien_do><so_khung /><so_tb /><ma_tinh>56</ma_tinh><ma_huyen>000</ma_huyen><kbc_ma_kbac_hoan /><hthuc_htra /><niendo_ht /><so_lenh_hoan /><ngay_lenh_hoan /><ma_chuong>557</ma_chuong><ma_khoan>000</ma_khoan><ma_tmuc>1001</ma_tmuc><ma_tldt>51</ma_tldt><noi_dung>Thue thu nhap tu tien luong, tien cong--</noi_dung><ky_thue>31/12/2018</ky_thue><so_tien>58797566</so_tien><so_tiennt>58797566</so_tiennt><ma_dtiet>02800.07200.00000.00000</ma_dtiet><ma_quy>01</ma_quy><ma_dp>00</ma_dp><id>1</id><loai_ttin /><ma_kbac_thu /><tk_no_dtl>1154</tk_no_dtl><tk_co_dtl>7111</tk_co_dtl><ten_tk_no>Tiền gửi chuyên thu bằng đồng Việt Nam tại Ngân hàng Công thương</ten_tk_no><ten_tk_co>Thu ngân sách nhà nước</ten_tk_co><nien_do_dtl /><ky_ktt>1</ky_ktt><dien_giai>NOP NSNN</dien_giai><ghi_chu /><so_dndc /><kyhieu_ct_goc /><so_ct_goc /><ma_cqthu_kbt /><so_tham_chieu /><cqt_qlnt /><ctdc>0</ctdc><tkn>01</tkn><kln /><mst /><ten_mst /><dc_mst /><ma_tk /></Transaction><Transaction><tran_no>KBA0000001431084025</tran_no><lcn_owner>KBA5110000</lcn_owner><ma_kbac>2061</ma_kbac><ngay_kb>20181231</ngay_kb>
+<ma_nv>SYSUSERVCB</ma_nv><so_bt>1</so_bt><ma_dthu>68</ma_dthu><so_ctu>5596697</so_ctu><so_ct_nh /><ma_nntien>4201068090</ma_nntien><ten_nntien>CÔNG TY TRÁCH NHIỆM HỮU HẠN FUJIURA NHA TRANG</ten_nntien><dc_nntien>Lô F7-F8 Khu Công nghiệp Suối dầu, Xã Suối Tân</dc_nntien><tin>4201068090</tin><ten_nnthue>CÔNG TY TRÁCH NHIỆM HỮU HẠN FUJIURA NHA TRANG</ten_nnthue><dia_chi>Lô F7-F8 Khu Công nghiệp Suối dầu, Xã Suối Tân</dia_chi><so_qdinh /><ngay_qdinh /><cq_qdinh /><ngay_kbac>31/12/2018</ngay_kbac><ngay_ht>31/12/2018</ngay_ht><ma_cqthu>1056198</ma_cqthu><ma_xa>56TTT</ma_xa><so_tkno>1156</so_tkno><so_tkco>7111</so_tkco><so_tkhq /><ngay_tkhq /><lh_xnk /><dvsdns>1056198</dvsdns><ten_dvsdns>CUC THUE TINH KHANH HOA</ten_dvsdns><mant>VND</mant><ty_gia>1</ty_gia>
+<tk_kh_nhan /><tn_kh_nhan /><dc_kh_nhan /><tong_tien>3553723</tong_tien><ttien_nt>3553723</ttien_nt><so_tk_nnt>0061000833057</so_tk_nnt><ngay_nh>31/12/2018</ngay_nh><ma_nh_a>01203001</ma_nh_a><ma_nh_b>56701001</ma_nh_b><ten>VP KBNN Khánh Hoà</ten><ma_cqhquan>1056198</ma_cqhquan><khct>KHO6168/18</khct><khct_soct>KHO6168/185596697</khct_soct><ngan_hang>Vietcombank</ngan_hang><ten_nh_b>KBNN Khánh Hoà</ten_nh_b><so_bk /><ngay_bk /><ma_hq /><ma_hq_ph /><nien_do>1</nien_do><so_khung /><so_tb /><ma_tinh>56</ma_tinh><ma_huyen>000</ma_huyen><kbc_ma_kbac_hoan /><hthuc_htra /><niendo_ht /><so_lenh_hoan /><ngay_lenh_hoan /><ma_chuong>557</ma_chuong><ma_khoan>000</ma_khoan><ma_tmuc>1001</ma_tmuc><ma_tldt>51</ma_tldt><noi_dung>Thue thu nhap tu tien luong, tien cong--</noi_dung><ky_thue>01/12/2018</ky_thue><so_tien>3553723</so_tien><so_tiennt>3553723</so_tiennt><ma_dtiet>02800.07200.00000.00000</ma_dtiet><ma_quy>01</ma_quy><ma_dp>00</ma_dp><id>1</id><loai_ttin /><ma_kbac_thu /><tk_no_dtl>1156</tk_no_dtl><tk_co_dtl>7111</tk_co_dtl><ten_tk_no>Tiền gửi chuyên thu bằng đồng Việt Nam tại Ngân hàng Ngoại thương</ten_tk_no><ten_tk_co>Thu ngân sách nhà nước</ten_tk_co><nien_do_dtl /><ky_ktt>1</ky_ktt><dien_giai>VNTN.43663.TND.NTDT+KB:2061-VP KBNN Khánh Hoà+NgayNT:31122018+MST:4201068090+DBHC:56TTT+TKNS:7111+CQT:1056198+LThue:01(C:557-TM:1001-KT:12/2018-ST:3553723-GChu:)</dien_giai><ghi_chu /><so_dndc /><kyhieu_ct_goc /><so_ct_goc /><ma_cqthu_kbt /><so_tham_chieu /><cqt_qlnt /><ctdc>0</ctdc><tkn>01</tkn><kln /><mst /><ten_mst /><dc_mst /><ma_tk /></Transaction><Transaction><tran_no>KBA0000001431084026</tran_no><lcn_owner>KBA5110000</lcn_owner><ma_kbac>2061</ma_kbac><ngay_kb>20181231</ngay_kb><ma_nv>SYSUSERVCB</ma_nv><so_bt>3</so_bt>
+<ma_dthu>68</ma_dthu><so_ctu>5597175</so_ctu><so_ct_nh /><ma_nntien>4200554228</ma_nntien><ten_nntien>CÔNG TY CỔ PHẦN TÂN VIỆT</ten_nntien><dc_nntien>12 -14 Trần Phú, Phường Xương Huân</dc_nntien><tin>4200554228</tin><ten_nnthue>CÔNG TY CỔ PHẦN TÂN VIỆT</ten_nnthue><dia_chi>12 -14 Trần Phú, Phường Xương Huân</dia_chi><so_qdinh />
+<ngay_qdinh /><cq_qdinh /><ngay_kbac>31/12/2018</ngay_kbac><ngay_ht>31/12/2018</ngay_ht><ma_cqthu>1056198</ma_cqthu><ma_xa>56TTT</ma_xa><so_tkno>1156</so_tkno><so_tkco>7111</so_tkco><so_tkhq /><ngay_tkhq /><lh_xnk /><dvsdns>1056198</dvsdns><ten_dvsdns>CUC THUE TINH KHANH HOA</ten_dvsdns><mant>VND</mant><ty_gia>1</ty_gia><tk_kh_nhan /><tn_kh_nhan /><dc_kh_nhan /><tong_tien>600034</tong_tien><ttien_nt>600034</ttien_nt><so_tk_nnt>0061000146861</so_tk_nnt><ngay_nh>31/12/2018</ngay_nh><ma_nh_a>01203001</ma_nh_a><ma_nh_b>56701001</ma_nh_b><ten>VP KBNN Khánh Hoà</ten><ma_cqhquan>1056198</ma_cqhquan><khct>KHO6168/18</khct><khct_soct>KHO6168/185597175</khct_soct><ngan_hang>Vietcombank</ngan_hang><ten_nh_b>KBNN Khánh Hoà</ten_nh_b><so_bk /><ngay_bk /><ma_hq /><ma_hq_ph /><nien_do>1</nien_do><so_khung /><so_tb /><ma_tinh>56</ma_tinh><ma_huyen>000</ma_huyen><kbc_ma_kbac_hoan /><hthuc_htra /><niendo_ht /><so_lenh_hoan /><ngay_lenh_hoan /><ma_chuong>557</ma_chuong><ma_khoan>000</ma_khoan><ma_tmuc>4917</ma_tmuc><ma_tldt>51</ma_tldt><noi_dung>Tien cham nop thue thu nhap ca nhan--</noi_dung><ky_thue>01/12/2015</ky_thue><so_tien>600034</so_tien>
+<so_tiennt>600034</so_tiennt><ma_dtiet>02800.07200.00000.00000</ma_dtiet><ma_quy>01</ma_quy><ma_dp>00</ma_dp><id>1</id>
+<loai_ttin /><ma_kbac_thu /><tk_no_dtl>1156</tk_no_dtl><tk_co_dtl>7111</tk_co_dtl><ten_tk_no>Tiền gửi chuyên thu bằng đồng Việt Nam tại Ngân hàng Ngoại thương</ten_tk_no><ten_tk_co>Thu ngân sách nhà nước</ten_tk_co><nien_do_dtl /><ky_ktt>1</ky_ktt><dien_giai>VNTN.43828.TND.NTDT+KB:2061-VP KBNN Khánh Hoà+NgayNT:31122018+MST:4200554228+DBHC:56TTT+TKNS:7111+CQT:1056198+LThue:01(C:559-TM:4917-KT:12/2015-ST:600034-GChu:)</dien_giai><ghi_chu>MA_TLPC (1): Khong co</ghi_chu><so_dndc /><kyhieu_ct_goc /><so_ct_goc /><ma_cqthu_kbt />
+<so_tham_chieu /><cqt_qlnt /><ctdc>0</ctdc><tkn>01</tkn><kln /><mst /><ten_mst /><dc_mst /><ma_tk />
+
+
+</Transaction>
+</Body>
+<Signature>
+
+<SignatureValue>Nd04d7VES3FqWb+IanAjCn7IljA1Sfspg1EMbS9zVObyjZsi+PdxgjpOL2gT/orFXrs6fgngCP7H
+
+
+
+qwUVc6YhKhbMdsmEYmYnnEiAlo4gSBe8iH70NS4py/gmFXpoOBQPRVv/+XQYKtRfUDKDkhVgEzEy
+Bg2nU9HgepnAxUMTAcUcErVH8f3actavux81PnuaFR0vW5Z/CaLLDYlipNvxsviNUQjRdf7cQnYl
+yTxei61S9ZH6VjfkBnOkmBSS+sE2qhTlcz7U8wFRP2bUwKthVTLAOQfkycGFRVdRPIRvf1+07kPF
+81FIwiB6e5aCtzNmnvoZBze9Or2KJ6w94ly+2w==</SignatureValue><SerialNumber>TDTT_KBA</SerialNumber>
+<chu_ky_kt>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</chu_ky_kt><ma_ktt>HOAINT02</ma_ktt><ten_ktt>Hoai02 Nguyen Thi</ten_ktt></Signature>
+
+</Data>

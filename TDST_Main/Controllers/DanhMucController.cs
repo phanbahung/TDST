@@ -36,7 +36,7 @@ namespace TDST.Controllers
         public ActionResult Chuong()
         {
             DanhMucDao dao = new DanhMucDao();
-            return View(dao.DmChuong());
+            return View(dao.Get_DmChuong());
         }
 
         [HttpGet]
@@ -44,8 +44,19 @@ namespace TDST.Controllers
         public ActionResult NhomChuong()
         {
             DanhMucDao dao = new DanhMucDao();
-            return View(dao.DmNhomChuong());
+            return View(dao.Get_DmNhomChuong());
         }
+
+        [HasCredential(RoleID = "DANHMUC_NhomChuong_Get", MoTa = "Hiển thị nhóm chương")]
+        public ActionResult EditNhomChuong(long id)
+        {
+            DanhMucDao dao = new DanhMucDao();            
+            ViewBag.DmChuongs = dao.Get_DmChuong();
+            ViewBag.IdNhomChuong = id;                 
+            return View(dao.Get_DmNhomChuong_ById(id));
+           
+        }
+
 
         #endregion
 
@@ -58,14 +69,14 @@ namespace TDST.Controllers
         public ActionResult TieuMuc()
         {
             DanhMucDao dao = new DanhMucDao();
-            return View(dao.DmTieuMuc());
+            return View(dao.Get_DmTieuMuc());
         }
 
         public ActionResult NhomTieuMuc()
         {
             DanhMucDao dao = new DanhMucDao();
 
-            List <NhomTieuMuc> nhomTMs = dao.DmNhomTieuMuc();
+            List <NhomTieuMuc> nhomTMs = dao.Get_DmNhomTieuMuc();
             int j;
             string ketQua;
             ketQua = "";

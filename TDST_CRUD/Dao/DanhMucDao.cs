@@ -24,25 +24,35 @@ namespace TDST_CRUD.Dao
         public List<DonVi> Get_DmDonVi()
         {           
             return db.DonVis.OrderBy(x=>x.STT).ToList();
-        }       
-     
-       
-        public List<Chuong> DmChuong()
+        }
+
+        #region Chương ,nhóm chương
+        public List<Chuong> Get_DmChuong()
         {
             return db.Chuongs.ToList();
         }
 
-        public List<NhomChuong> DmNhomChuong()
+        public List<NhomChuong> Get_DmNhomChuong()
         {
+            //return db.NhomChuongs.ToList();
             return db.NhomChuongs.ToList();
         }
 
-        public List<TieuMuc> DmTieuMuc()
+        public List<NhomCH_CH> Get_DmNhomChuong_ById(long id)
+        {
+            //return db.NhomChuongs.ToList();
+            return db.NhomCH_CH.Where(x=>x.IdNhomChuong==id).ToList();
+        }
+
+
+        #endregion
+
+        public List<TieuMuc> Get_DmTieuMuc()
         {
             return db.TieuMucs.ToList();
         }
 
-        public List<NhomTieuMuc> DmNhomTieuMuc()
+        public List<NhomTieuMuc> Get_DmNhomTieuMuc()
         {
             return db.NhomTieuMucs.ToList();
         }

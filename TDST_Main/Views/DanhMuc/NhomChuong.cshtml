@@ -16,8 +16,8 @@
         <thead>
             <tr>
                 <th>Id hệ thống</th>                
-                <th>Tên nhóm chương</th>
-                <th width="400px">DS mã chương</th>
+                <th>Tên nhóm chương</th>                
+                <th>Đơn vị tạo</th>        
                 <th>Action</th>
             </tr>
         </thead>
@@ -26,9 +26,10 @@
             {
                 <tr class="gradeA">
                     <td>@item.IdNhomChuong</td>
-                    <td>@item.TenNhomChuong </td>
-                    <td>@item.Ds_MaChuong </td>
-                    <td><a href="#" onclick="return getbyID('@item.IdNhomChuong')">Chi tiết</a> </td>
+                    <td>@item.TenNhomChuong </td>         
+                    <td>@item.MaDonVi_Tao </td>
+                    <td>@Html.ActionLink("Chi tiết", "editnhomchuong", new { id = item.IdNhomChuong }) </td>                       
+                    @*<td><a href="#" onclick="return getbyID('@item.IdNhomChuong')">Chi tiết</a> </td>*@
                 </tr>
             }
         </tbody>
