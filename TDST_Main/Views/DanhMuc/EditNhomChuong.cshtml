@@ -86,16 +86,16 @@
     <tfoot>
         <tr>
             <td></td>
-            <td>Tên chỉ tiêu</td>
-            <td>STT</td>
-            <td>Nhóm CH</td>            
+            <td>Mã chương</td>
+            <td>Hiệu lực từ</td>
+            <td>Hiệu lực đến</td>            
             <td></td>
         </tr>
         <tr>
             <td><span class="glyphicon glyphicon-name"></span></td>
-            <td><input type="text" id="txtTenChiTieu" style="width:90%;" /></td>
-            <td><input type="text" id="txtSTT" style="width:70%;" /></td>
-            <td></td>            
+            <td><input type="text" id="txtMaChuong" style="width:90%;" /></td>
+            <td><input type="text" id="txtHieuLucTu" style="width:70%;" /></td>
+            <td><input type="text" id="txtHieuLucDen" style="width:70%;" /></td>>            
             <td><input type="button" id="btnAdd" value="Thêm" data="@IdNhomChuong" /></td>
         </tr>
         <tr>
@@ -118,11 +118,10 @@
 <script type="text/javascript">
         $("body").on("click", "#btnAdd", function () {
             //Reference the Name and Country TextBoxes.
-            var txtTenChiTieu = $("#txtTenChiTieu");
-            var txtSTT = $("#txtSTT");
-            var selNhomChuong = $("select#selNhomChuong");
-            var selNhomTieuMuc = $("select#selNhomTieuMuc");
-            var idBoChiTieu = $("#btnAdd").attr("data");
+            var maChuong = $("#txtMaChuong").val();
+            var hieuLucTu = $("#txtHieuLucTu").val();
+            var hieuLucDen = $("txtHieuLucDen").val();            
+            var idNhomChuong = $("#btnAdd").attr("data");
 
             //Get the reference of the Table's TBODY element.
             var tBody = $("#tblBCT > TBODY")[0];
@@ -131,11 +130,10 @@
             var row = tBody.insertRow(-1);
             var customers = new Array();
             var customer = {};
-            customer.TenChiTieu = txtTenChiTieu.val();
-            customer.STT = txtSTT.val();
-            customer.IdNhomChuong = selNhomChuong.val();
-            customer.IdNhomTieuMuc = selNhomTieuMuc.val();
-            customer.IdBoChiTieu = idBoChiTieu;
+            customer.MaChuong = maChuong;
+            customer.HieuLucTu = hieuLucTu;
+            customer.HieuLucDen = hieuLucDen;
+            customer.IdNhomChuong = idNhomChuong;           
             customers.push(customer);
 
             //Send the JSON array to Controller using AJAX.
@@ -151,34 +149,27 @@
                     var cell = $(row.insertCell(-1));
                     cell.html(r);
 
-                    //2.  Name
+                    //1.  MaChuong
                     var cell = $(row.insertCell(-1));
-                    var inputName = $("<input />");
-                    inputName.attr("type", "text");
-                    inputName.val(txtTenChiTieu.val());
-                    cell.append(inputName);
+                    var inputCol1 = $("<input />");
+                    inputCol1.attr("type", "text");
+                    inputCol1.val(maChuong);
+                    cell.append(inputCol1);
 
-                    //3.  STT
+                    //2.  HieuLucTU
                     cell = $(row.insertCell(-1));
-                    var inputSTT = $("<input />");
-                    inputSTT.attr("type", "text");
-                    inputSTT.val(txtSTT.val());
-                    cell.append(inputSTT);
+                    var inputCol2 = $("<input />");
+                    inputCol2.attr("type", "text");
+                    inputCol2.val(hieuLucTu);
+                    cell.append(inputCol2);
 
-                    // 4. Nhom CH
+                    //3.  HieuLucTU
                     cell = $(row.insertCell(-1));
-                    var newselNhomCH = selNhomChuong.clone().removeAttr('id');
-                    newselNhomCH.find('[value=""]').remove();// Xóa Dòng Chọn 1
-                    newselNhomCH.val(selNhomChuong.val()).prop('selected', true);
-                    cell.append(newselNhomCH);
-
-                    //5. Nhom TM
-                    cell = $(row.insertCell(-1));
-                    var newselNhomTM = selNhomTieuMuc.clone().removeAttr('id');
-                    newselNhomTM.find('[value=""]').remove();// Xóa Dòng Chọn 1
-                    newselNhomTM.val(selNhomTieuMuc.val()).prop('selected', true);
-                    cell.append(newselNhomTM);
-
+                    var inputCol3 = $("<input />");
+                    inputCol3.attr("type", "text");
+                    inputCol3.val(hieuLucDen);
+                    cell.append(inputCol3);
+                  
 
                     //6.  Add Button
                     cell = $(row.insertCell(-1));
@@ -189,8 +180,9 @@
                     cell.append(btnRemove);
 
                     //Clear the TextBoxes.
-                    txtTenChiTieu.val("");
-                    txtSTT.val("");
+                    txtMaChuong.val("");
+                    txtHieuLucTu.val("");
+                    txtHieuLucDen.val("");
 
                 } // end succcess
             });

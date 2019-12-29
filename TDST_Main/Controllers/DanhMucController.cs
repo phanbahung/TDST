@@ -58,6 +58,23 @@ namespace TDST.Controllers
         }
 
 
+        [HasCredential(RoleID = "BOCHITIEU_InsertChiTieu", MoTa = "Cho phép thêm một chỉ tiêu mới")]
+        public JsonResult InsertChuong_Into_NhomCH_CH(List<BoChiTieuChiTiet> chiTieus)
+        {
+            int idChiTieu = 0;// khởi tạo
+            TDSTDbContext db = new TDSTDbContext();
+
+            //Check for NULL.
+            if (chiTieus != null)
+            {
+                db.BoChiTieuChiTiets.Add(chiTieus[0]);
+                db.SaveChanges();
+                idChiTieu = chiTieus[0].IdChiTieu;
+            }
+            return Json(idChiTieu);// insertedRecords);
+        }
+
+
         #endregion
 
 
