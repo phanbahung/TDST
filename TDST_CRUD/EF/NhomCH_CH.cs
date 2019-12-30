@@ -16,10 +16,8 @@ namespace TDST_CRUD.EF
         [StringLength(10)]
         public string MaChuong { get; set; }
 
-        [Column(TypeName = "date")]
         public DateTime? HieuLucTu { get; set; }
 
-        [Column(TypeName = "date")]
         public DateTime? HieuLucDen { get; set; }
 
         [StringLength(50)]

@@ -158,7 +158,7 @@ namespace TDST.Controllers
             doc.Load(Server.MapPath("~/UploadXML/") + _FileName);
 
             var chungtu = new ChungTuDao();
-            long res = 0;
+            //long res = 0;
             
             //Loop through the selected Nodes.
             foreach (XmlNode node in doc.SelectNodes("/Data/Body/Transaction"))
