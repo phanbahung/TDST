@@ -618,6 +618,8 @@
     <Compile Include="Controllers\HeThongController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\NhomChuongController.cs" />
+    <Compile Include="Controllers\NhomTieuMucController.cs" />
     <Compile Include="Controllers\NNTController.cs" />
     <Compile Include="Controllers\QLUserController.cs" />
     <Compile Include="Controllers\RaSoatController.cs" />
@@ -648,7 +650,6 @@
     <Content Include="Views\ChungTu\UploadXML.cshtml" />
     <Content Include="Views\BaoCao\Index.cshtml" />
     <Content Include="Views\DuToan\UploadExcel.cshtml" />
-    <Content Include="Views\DanhMuc\NhomChuong.cshtml" />
     <Content Include="Views\DanhMuc\NhomTieuMuc.cshtml" />
     <Content Include="Views\DuToan\tracuu.cshtml" />
     <Content Include="Views\BoChiTieu\Create.cshtml" />
@@ -746,7 +747,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\HeThong\Index.cshtml" />
     <Content Include="Views\HeThong\DsRole.cshtml" />
-    <Content Include="Views\DanhMuc\EditNhomChuong.cshtml" />
+    <Content Include="Views\NhomChuong\edit.cshtml" />
+    <Content Include="Views\NhomChuong\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -758,6 +760,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="UploadXMLs\" />
     <Folder Include="UploadXML\" />
+    <Folder Include="Views\NhomTieuMuc\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TDST_CRUD\TDST_CRUD.csproj">

@@ -38,7 +38,7 @@ namespace TDST_CRUD.Dao
             return db.NhomChuongs.ToList();
         }
 
-        public List<NhomCH_CH> Get_DmNhomChuong_ById(long id)
+        public List<NhomCH_CH> Get_ChiTietNhomChuong_ById(long id)
         {
             //return db.NhomChuongs.ToList();
             return db.NhomCH_CH.Where(x=>x.IdNhomChuong==id).ToList();

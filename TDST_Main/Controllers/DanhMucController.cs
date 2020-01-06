@@ -37,25 +37,8 @@ namespace TDST.Controllers
         {
             DanhMucDao dao = new DanhMucDao();
             return View(dao.Get_DmChuong());
-        }
-
-        [HttpGet]
-        [HasCredential(RoleID = "DANHMUC_NhomChuong_Get", MoTa = "Hiển thị nhóm chương")]
-        public ActionResult NhomChuong()
-        {
-            DanhMucDao dao = new DanhMucDao();
-            return View(dao.Get_DmNhomChuong());
-        }
-
-        [HasCredential(RoleID = "DANHMUC_NhomChuong_Get", MoTa = "Hiển thị nhóm chương")]
-        public ActionResult EditNhomChuong(long id)
-        {
-            DanhMucDao dao = new DanhMucDao();            
-            ViewBag.DmChuongs = dao.Get_DmChuong();
-            ViewBag.IdNhomChuong = id;                 
-            return View(dao.Get_DmNhomChuong_ById(id));
-           
-        }
+        }       
+       
 
 
         [HasCredential(RoleID = "BOCHITIEU_InsertChiTieu", MoTa = "Cho phép thêm một chỉ tiêu mới")]
