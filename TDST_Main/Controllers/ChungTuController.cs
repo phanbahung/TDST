@@ -10,6 +10,7 @@ using TDST.Models;
 using TDST_CRUD.Dao;
 using TDST_CRUD.EF;
 using TDST_CRUD.ViewModels;
+using PhanQuyen.Models;
 
 namespace TDST.Controllers
 {
@@ -158,7 +159,7 @@ namespace TDST.Controllers
             doc.Load(Server.MapPath("~/UploadXML/") + _FileName);
 
             var chungtu = new ChungTuDao();
-            long res = 0;
+            //long res = 0;
             
             //Loop through the selected Nodes.
             foreach (XmlNode node in doc.SelectNodes("/Data/Body/Transaction"))

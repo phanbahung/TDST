@@ -6,7 +6,9 @@ using System.Web.Mvc;
 using ViewModels;
 using TDST.Common;
 using TDST_CRUD.Dao;
-using TDST_CRUD.ViewModels;
+
+using PhanQuyen.DAO;
+using PhanQuyen.Models;
 
 namespace TDST.Controllers
 {

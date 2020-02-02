@@ -7,6 +7,7 @@ using System.Xml;
 using System.Collections.Generic;
 using TDST_CRUD.EF;
 using TDST_CRUD.Dao;
+using PhanQuyen.Models;
 
 
 namespace TDST.Controllers
@@ -37,24 +38,37 @@ namespace TDST.Controllers
         {
             DanhMucDao dao = new DanhMucDao();
             return View(dao.Get_DmChuong());
-        }       
-       
+        } 
 
 
-        [HasCredential(RoleID = "BOCHITIEU_InsertChiTieu", MoTa = "Cho phép thêm một chỉ tiêu mới")]
-        public JsonResult InsertChuong_Into_NhomCH_CH(List<BoChiTieuChiTiet> chiTieus)
+        [HasCredential(RoleID = "DANHMUC_AddChuong_To_NhomChuong", MoTa = "Thêm Chương vào Nhóm Chương (do NSD định nghĩa)")]
+        public JsonResult Add_Chuong_To_NhomChuong(List<NhomCH_CH> entities)
         {
-            int idChiTieu = 0;// khởi tạo
+            long id = 0;// khởi tạo
             TDSTDbContext db = new TDSTDbContext();
 
             //Check for NULL.
-            if (chiTieus != null)
+            if (entities != null)
             {
-                db.BoChiTieuChiTiets.Add(chiTieus[0]);
+                db.NhomCH_CH.Add(entities[0]);
                 db.SaveChanges();
-                idChiTieu = chiTieus[0].IdChiTieu;
+                id = entities[0].IdNhomCH_CH;
             }
-            return Json(idChiTieu);// insertedRecords);
+            return Json(id);// insertedRecords;
+        }
+
+        [HasCredential(RoleID = "DANHMUC_RemoveChuong_From_NhomChuong", MoTa = "Xóa Chương khỏi NhómChương (do NSD định nghĩa)")]
+        public JsonResult Remove_Chuong_From_NhomChuong(long? id)
+        {
+            TDSTDbContext db = new TDSTDbContext();
+            //Check for NULL.
+            //if (id != null)
+            {
+                NhomCH_CH item = db.NhomCH_CH.Find(id);
+                db.NhomCH_CH.Remove(item);
+                db.SaveChanges();
+            }
+            return Json("");// insertedRecords);
         }
 
 

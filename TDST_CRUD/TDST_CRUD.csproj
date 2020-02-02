@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -11,6 +12,8 @@
     <AssemblyName>TDST_CRUD</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,11 +34,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -57,9 +60,6 @@
     <Compile Include="Dao\DuToanDao.cs" />
     <Compile Include="Dao\DanhMucDao.cs" />
     <Compile Include="Dao\NguoiNopThueDao.cs" />
-    <Compile Include="Dao\QLUserDao.cs" />
-    <Compile Include="Dao\RoleDao.cs" />
-    <Compile Include="Dao\UserDao.cs" />
     <Compile Include="EF\BoChiTieu.cs" />
     <Compile Include="EF\BoChiTieuChiTiet.cs" />
     <Compile Include="EF\Chuong.cs" />
@@ -67,32 +67,30 @@
     <Compile Include="EF\DuToan.cs" />
     <Compile Include="EF\DuToanChiTiet.cs" />
     <Compile Include="EF\GiaoDich.cs" />
-    <Compile Include="EF\Group.cs" />
-    <Compile Include="EF\Group_Roles.cs" />
     <Compile Include="EF\LOG_UNGDUNG.cs" />
     <Compile Include="EF\NguoiNopThue.cs" />
     <Compile Include="EF\NhomChuong.cs" />
     <Compile Include="EF\NhomCH_CH.cs" />
     <Compile Include="EF\NhomTieuMuc.cs" />
     <Compile Include="EF\NhomTM_TM.cs" />
+    <Compile Include="EF\PGroup.cs" />
+    <Compile Include="EF\PGroup_Roles.cs" />
+    <Compile Include="EF\PGroup_Users.cs" />
+    <Compile Include="EF\PRole.cs" />
+    <Compile Include="EF\PUser.cs" />
     <Compile Include="EF\QuanLyNNT.cs" />
     <Compile Include="EF\QuanLyTM.cs" />
-    <Compile Include="EF\Role.cs" />
     <Compile Include="EF\sysdiagram.cs" />
     <Compile Include="EF\TDSTDbContext.cs" />
     <Compile Include="EF\TieuMuc.cs" />
     <Compile Include="EF\UDController.cs" />
-    <Compile Include="EF\User.cs" />
-    <Compile Include="EF\User_Groups.cs" />
     <Compile Include="ViewModels\BoChiTieuViewModel.cs" />
     <Compile Include="ViewModels\ChiTieuViewModel.cs" />
     <Compile Include="ViewModels\BCDuToanViewModel.cs" />
     <Compile Include="ViewModels\Chart_LuyKeViewModel.cs" />
-    <Compile Include="ViewModels\CredentialViewModel.cs" />
     <Compile Include="ViewModels\DonVi_QL_NNTViewModel.cs" />
     <Compile Include="ViewModels\DuToanViewModel.cs" />
     <Compile Include="ViewModels\FileChungTuViewModel.cs" />
-    <Compile Include="ViewModels\Login_ViewModel.cs" />
     <Compile Include="ViewModels\NguoiNopThueViewModel.cs" />
     <Compile Include="ViewModels\Quy_ViewModel.cs" />
     <Compile Include="ViewModels\ThongKeChungTuViewModel.cs" />
@@ -106,6 +104,14 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using TDST.Models;
 using TDST_CRUD.EF;
+using PhanQuyen.Models;
 
 namespace TDST.Controllers
 {

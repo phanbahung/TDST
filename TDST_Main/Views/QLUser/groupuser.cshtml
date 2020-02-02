@@ -1,0 +1,49 @@
+﻿@model IEnumerable<TDST_CRUD.EF.PGroup_Users>
+
+@{
+    ViewBag.Title = "DonViCungCap";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<div class="panel-heading">
+    1.2. Danh sách user thuộc group
+</div>
+
+<div class="panel-body">
+
+
+    <table id="example" class="display" cellpadding="0" cellspacing="0" border="0">
+        <thead>
+            <tr>
+                <th>Id user</th>
+                <th>User name</th>
+                <th>full name</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in @Model)
+            {
+                <tr class="gradeA">
+                    <td>@item.IdUG</td>
+                    <td>@item.UserName </td>
+                    <td>@item.UserName </td>
+                    <td>@item.UserName </td>
+                    <td><a href="#" onclick="return getbyID('@item.IdUG')">Chi tiết</a> </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="rounded-foot-left" colspan='2' style="height: 14px"></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    
+
+
+
+</div>
+<!-- /.panel-body -->

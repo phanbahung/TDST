@@ -1,12 +1,8 @@
 ﻿
 @model IEnumerable<TDST_CRUD.EF.NhomCH_CH>
 
-
-@{
-    //Layout = null;
-    Layout = "~/Views/Shared/_LayoutMain.cshtml";
-    //var listNhomChuong = ViewBag.ListNhomChuongs as IEnumerable<TDST_CRUD.EF.NhomChuong>;
-    //var listNhomTieuMuc = ViewBag.ListNhomTieuMucs as IEnumerable<TDST_CRUD.EF.NhomTieuMuc>;
+@{    
+    Layout = "~/Views/Shared/_LayoutMain.cshtml"; 
     var IdNhomChuong = (int)ViewBag.IdNhomChuong;
 }
 
@@ -22,7 +18,7 @@
         border-collapse: separate;
         border-spacing: 0;
         border: 2px solid #2980b9;
-        width: 500px;
+        width: 600px;
         margin: 5px;
         border-radius: .25rem;
     }
@@ -74,7 +70,7 @@
             {
                 <tr>
                     <td>@item.IdNhomCH_CH</td>
-                    <td><input type="text" value="@item.MaChuong" style="width:90%;" /></td>
+                    <td><input type="text" value="@item.MaChuong" style="width:50%;" /></td>
                     <td><input type="text" value="@item.HieuLucTu" style="width:90%;" /></td>
                     <td><input type="text" value="@item.HieuLucDen" style="width:90%;" /></td>
                     <td><input type="button" value="Xóa" onclick="Remove(this)" /></td>
@@ -94,8 +90,13 @@
         <tr>
             <td><span class="glyphicon glyphicon-name"></span></td>
             <td><input type="text" id="txtMaChuong" style="width:90%;" /></td>
+<<<<<<< HEAD:TDST_Main/Views/NhomChuong/edit.cshtml
             <td><input type="text" id="txtHieuLucTu" style="width:70%;" /></td>
             <td><input type="text" id="txtHieuLucDen" style="width:70%;" /></td>>
+=======
+            <td><input type="text" id="txtHieuLucTu" style="width:90%;" /></td>
+            <td><input type="text" id="txtHieuLucDen" style="width:90%;" /></td>>            
+>>>>>>> fff574aa0b5d671417d8c6cbfd73d223355aab89:TDST_Main/Views/DanhMuc/EditNhomChuong.cshtml
             <td><input type="button" id="btnAdd" value="Thêm" data="@IdNhomChuong" /></td>
         </tr>
         <tr>
@@ -139,7 +140,7 @@
             //Send the JSON array to Controller using AJAX.
             $.ajax({
                 type: "POST",
-                url: "/BoChiTieu/InsertChiTieu",
+                url: "/DanhMuc/Add_Chuong_To_NhomChuong",
                 data: JSON.stringify(customers),
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
@@ -156,14 +157,14 @@
                     inputCol1.val(maChuong);
                     cell.append(inputCol1);
 
-                    //2.  HieuLucTU
+                    //2.  HieuLucTu
                     cell = $(row.insertCell(-1));
                     var inputCol2 = $("<input />");
                     inputCol2.attr("type", "text");
                     inputCol2.val(hieuLucTu);
                     cell.append(inputCol2);
 
-                    //3.  HieuLucTU
+                    //3.  HieuLucDen
                     cell = $(row.insertCell(-1));
                     var inputCol3 = $("<input />");
                     inputCol3.attr("type", "text");

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -21,6 +22,8 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -604,7 +607,6 @@
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Common\Encryptor.cs" />
     <Compile Include="Common\ExcelUploadConfig.cs" />
-    <Compile Include="Common\HasCredentialAttribute.cs" />
     <Compile Include="Common\UploadHelper.cs" />
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\BaoCaoController.cs" />
@@ -632,8 +634,6 @@
     <Compile Include="Models\BaoCaoTongHop.cs" />
     <Compile Include="Models\FileModel.cs" />
     <Compile Include="Models\GroupingModels.cs" />
-    <Compile Include="Models\AttributeModel.cs" />
-    <Compile Include="Models\ReflectionController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -741,7 +741,6 @@
     <Content Include="Views\User\Home.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\QLUser\user.cshtml" />
-    <Content Include="Views\QLUser\nhom.cshtml" />
     <Content Include="Views\QLUser\role.cshtml" />
     <None Include="Properties\PublishProfiles\TDST.pubxml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -749,6 +748,8 @@
     <Content Include="Views\HeThong\DsRole.cshtml" />
     <Content Include="Views\NhomChuong\edit.cshtml" />
     <Content Include="Views\NhomChuong\Index.cshtml" />
+    <Content Include="Views\QLUser\group.cshtml" />
+    <Content Include="Views\QLUser\groupuser.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -763,6 +764,10 @@
     <Folder Include="Views\NhomTieuMuc\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PhanQuyen\PhanQuyen.csproj">
+      <Project>{8c69f79c-759b-46a8-976c-4d476053c272}</Project>
+      <Name>PhanQuyen</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TDST_CRUD\TDST_CRUD.csproj">
       <Project>{76f20d86-a070-4234-8db2-53514d6b4faf}</Project>
       <Name>TDST_CRUD</Name>
@@ -793,6 +798,14 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

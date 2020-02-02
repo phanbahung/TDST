@@ -19,21 +19,21 @@ namespace TDST_CRUD.EF
         public virtual DbSet<DuToanChiTiet> DuToanChiTiets { get; set; }
         public virtual DbSet<DuToan> DuToans { get; set; }
         public virtual DbSet<GiaoDich> GiaoDichs { get; set; }
-        public virtual DbSet<Group_Roles> Group_Roles { get; set; }
-        public virtual DbSet<Group> Groups { get; set; }
         public virtual DbSet<NguoiNopThue> NguoiNopThues { get; set; }
         public virtual DbSet<NhomCH_CH> NhomCH_CH { get; set; }
         public virtual DbSet<NhomChuong> NhomChuongs { get; set; }
         public virtual DbSet<NhomTieuMuc> NhomTieuMucs { get; set; }
         public virtual DbSet<NhomTM_TM> NhomTM_TM { get; set; }
+        public virtual DbSet<PGroup_Roles> PGroup_Roles { get; set; }
+        public virtual DbSet<PGroup_Users> PGroup_Users { get; set; }
+        public virtual DbSet<PGroup> PGroups { get; set; }
+        public virtual DbSet<PRole> PRoles { get; set; }
+        public virtual DbSet<PUser> PUsers { get; set; }
         public virtual DbSet<QuanLyNNT> QuanLyNNTs { get; set; }
         public virtual DbSet<QuanLyTM> QuanLyTMs { get; set; }
-        public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TieuMuc> TieuMucs { get; set; }
         public virtual DbSet<UDController> UDControllers { get; set; }
-        public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<User_Groups> User_Groups { get; set; }
         public virtual DbSet<LOG_UNGDUNG> LOG_UNGDUNG { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -148,11 +148,6 @@ namespace TDST_CRUD.EF
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Group_Roles>()
-                .Property(e => e.RoleName)
-                .IsFixedLength()
-                .IsUnicode(false);
-
             modelBuilder.Entity<NguoiNopThue>()
                 .Property(e => e.MST)
                 .IsFixedLength()
@@ -208,6 +203,45 @@ namespace TDST_CRUD.EF
                 .IsFixedLength()
                 .IsUnicode(false);
 
+            modelBuilder.Entity<PGroup_Roles>()
+                .Property(e => e.RoleName)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PGroup_Users>()
+                .Property(e => e.UserName)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PRole>()
+                .Property(e => e.ActionName)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PRole>()
+                .Property(e => e.ControllerName)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PRole>()
+                .Property(e => e.RoleName)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PUser>()
+                .Property(e => e.IdUser)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PUser>()
+                .Property(e => e.UserName)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PUser>()
+                .Property(e => e.Password)
+                .IsUnicode(false);
+
             modelBuilder.Entity<QuanLyNNT>()
                 .Property(e => e.MST)
                 .IsFixedLength();
@@ -237,21 +271,6 @@ namespace TDST_CRUD.EF
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Role>()
-                .Property(e => e.ActionName)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Role>()
-                .Property(e => e.ControllerName)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Role>()
-                .Property(e => e.RoleName)
-                .IsFixedLength()
-                .IsUnicode(false);
-
             modelBuilder.Entity<TieuMuc>()
                 .Property(e => e.MaTieuMuc)
                 .IsFixedLength()
@@ -269,25 +288,6 @@ namespace TDST_CRUD.EF
 
             modelBuilder.Entity<UDController>()
                 .Property(e => e.ControllerName)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<User>()
-                .Property(e => e.IdUser)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<User>()
-                .Property(e => e.UserName)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<User>()
-                .Property(e => e.Password)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<User_Groups>()
-                .Property(e => e.UserName)
                 .IsFixedLength()
                 .IsUnicode(false);
 

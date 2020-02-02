@@ -7,6 +7,8 @@ using System.Web.Mvc;
 using TDST.Models;
 using TDST_CRUD.Dao;
 using TDST_CRUD.EF;
+using PhanQuyen.Models;
+using PhanQuyen.DAO;
 
 namespace TDST.Controllers
 {
@@ -27,7 +29,7 @@ namespace TDST.Controllers
         public void UpdateRole()
         {
             ReflectionController reflection = new ReflectionController();          
-            Role role = new Role();
+            PRole role = new PRole();
             List<AttributeModel> listAttrib;
             RoleDao daoRole = new RoleDao();
             daoRole.Truncate_RoleTabe();

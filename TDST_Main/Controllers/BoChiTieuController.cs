@@ -6,7 +6,8 @@ using System.Linq;
 using System.Data.Entity.Infrastructure;
 using TDST_CRUD.Dao;
 
-using TDST_CRUD.ViewModels;
+using PhanQuyen.Models;
+
 
 namespace TDST.Controllers
 {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TDST_CRUD.Dao;
+using PhanQuyen.DAO;
 
 namespace TDST.Controllers
 {
@@ -22,7 +23,18 @@ namespace TDST.Controllers
             return View(daoQLUser.ListUser());
         }
 
-        public ActionResult nhom()
+        public ActionResult group()
+        {
+            QLUserDao daoQLUser = new QLUserDao();
+            return View(daoQLUser.ListGroup());
+        }
+
+        public ActionResult groupuser(string id)
+        {
+            QLUserDao daoQLUser = new QLUserDao();
+            return View(daoQLUser.ListUser_ByGroup(int.Parse(id)));
+        }
+        public ActionResult grouprole()
         {
             QLUserDao daoQLUser = new QLUserDao();
             return View(daoQLUser.ListGroup());
