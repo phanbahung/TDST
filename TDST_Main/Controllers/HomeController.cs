@@ -14,7 +14,7 @@ namespace TDST.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        [HasCredential(RoleID = "ORDER_UPDATESTATUS", MoTa ="kkeke")]
+        //[HasCredential(RoleID = "ORDER_UPDATESTATUS", MoTa ="kkeke")]
         public ActionResult Index()
         {
             ReflectionController reflection = new ReflectionController();

@@ -10,7 +10,7 @@ namespace PhanQuyen.Models
 {
     public class ReflectionController
     {
-        //Lảy danh sách các Controller
+        //Lảy danh sách các Controller 
         public List<Type> GetControllers(string namespaces)
         {
             List<Type> listController = new List<Type>();

@@ -22,7 +22,7 @@ namespace PhanQuyen.DAO
 
         public void Truncate_RoleTabe()
         {
-            db.Database.ExecuteSqlCommand("TRUNCATE TABLE Roles");
+            db.Database.ExecuteSqlCommand("TRUNCATE TABLE PRoles");
             //db.SaveChanges();            
         }
 

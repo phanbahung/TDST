@@ -96,7 +96,7 @@ namespace PhanQuyen.DAO
         {
             var user = db.PUsers.Single(x => x.UserName == userName);
             var data = (from ug in db.PGroup_Users
-                        join g in db.PGroups on ug.IdUG equals g.IdGroup
+                        join g in db.PGroups on ug.IdGU equals g.IdGroup
                         join ga in db.PGroup_Roles on g.IdGroup equals ga.IdGR
                         where ug.UserName == user.UserName
                         select new CredentialViewModel

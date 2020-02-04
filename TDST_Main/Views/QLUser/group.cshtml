@@ -9,17 +9,32 @@
     1.2. Thiết lập group
 </div>
 
-<div class="panel-body">
+@section jsFooter{
 
+<script type="text/javascript">
+	//$(document).ready(function()
+	//{
+	//	var table = $('#example1').dataTable(
+	//	{
+	//		"bJQueryUI": true,
+	//		"sPaginationType": "full_numbers"
+	//	});
+
+	//}); // End ready
+
+</script>
+
+}
+
+<div class="panel-body">
 
     <table id="example" class="display" cellpadding="0" cellspacing="0" border="0">
         <thead>
-            <tr>
-                <th>Id hệ thống</th>
+            <tr>                
                 <th>Id group</th>
                 <th>Tên group</th>
-                <th>Thêm user vào group</th>
-                <th>Thêm role vào group</th>
+                <th>User thuộc group</th>
+                <th>Role của group</th>
             </tr>
         </thead>
         <tbody>
@@ -27,10 +42,15 @@
             {
                 <tr class="gradeA">
                     <td>@item.IdGroup</td>
-                    <td>@item.GroupName </td>
-                    <td>@item.GroupName </td>
-                    <td><a href="#" onclick="return getbyID('@item.IdGroup')">Chi tiết</a> </td>
-                    <td><a href="#" onclick="return getbyID('@item.IdGroup')">Chi tiết</a> </td>
+                    <td>@item.GroupName </td>                    
+                    <td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalUser" onclick="return ListUserByGroup('@item.IdGroup')">
+                            Chi tiết
+                        </button> </td>
+                    <td>
+                        <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalRole" onclick="return ListRoleByGroup('@item.IdGroup')">
+                            Chi tiết
+                        </button>
+                    </td>
                 </tr>
             }
         </tbody>
@@ -40,44 +60,82 @@
             </tr>
         </tfoot>
     </table>
-
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+    
+   
+    <!-- modal User style="display:none;"   --->
+    <div class="modal fade" id="modalUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">X</button>
-                    <h4 class="modal-title" id="myModalLabel">Chi tiết đơn vị cung cấp</h4>
+                    <h4 class="modal-title" id="myModalLabel">Danh sách user thuộc nhóm <span class="hidden" id="IdGroup"></span> </h4>
                 </div>
                 <div class="modal-body">
-
-                    <form class="bootstrap-form needs-validation" novalidate>
-                        <div class="form-group">
-                            <label for="EmployeeId">ID</label>
-                            <input type="text" class="form-control" id="Id" placeholder="Id - Mã hệ thống tự sinh" disabled="disabled" />
-
-                        </div>
-                        <div class="form-group">
-                            <label for="Name">Tên viết tắt</label>
-                            <input type="text" class="form-control" id="MaDonViCC" placeholder="Tên viết tắt, ví dụ: FPT" required autocomplete="off" />
-                            <div class="valid-feedback"></div>
-                            <div class="invalid-feedback">Không được để trống!</div>
-                        </div>
-                        <div class="form-group">
-                            <label for="Age">Tên đầy đủ</label>
-                            <input type="text" class="form-control" id="TenDonViCC" placeholder="Tên đầy đủ, ví dụ: Công ty cổ phần FPT " />
-                        </div>
-                    </form>
-
+                    <table id="example1" class="display" cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th>User name</th>
+                                <th>Action</th>                                     
+                            </tr>
+                        </thead>
+                        <tbody>
+                           
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td class="rounded-foot-left" colspan='2' style="height: 14px"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="inputNewUser" type="text" placeholder="User name cần thêm"/></td>
+                                <td><button type="button" class="btn btn-success"  onclick="return AddUserToGroup()">Thêm user vào nhóm </button></td>
+                            </tr>
+                        </tfoot>
+                    </table>                    
 
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btnAdd" onclick="return Add();">Đồng ý</button>
-                    <button type="button" class="btn btn-primary" id="btnUpdate" onclick="Update();">Lưu thay đổi</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                <div class="modal-footer">                   
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Đóng</button>
                 </div>
             </div>
         </div>
-    </div>   <!-- /.modal  style="display:none;"   --->
+    </div>   <!-- /.modal User style="display:none;"   --->
+
+    <!-- modal Role style="display:none;"   --->
+    <div class="modal fade" id="modalRole" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">X</button>
+                    <h4 class="modal-title" id="myModalLabel">Danh sách Role thuộc nhóm <span class="hidden" id="IdGroup"></span> </h4>
+                </div>
+                <div class="modal-body">
+                    <table id="example2" class="display" cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th>Role name</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                        <tfoot>
+                            <tr>
+                                <td class="rounded-foot-left" colspan='2' style="height: 14px"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="inputNewRole" type="text" placeholder="Role name cần thêm" /></td>
+                                <td><button type="button" class="btn btn-success" onclick="return AddRoleToGroup()">Thêm Role vào nhóm </button></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>   <!-- /.modal Role style="display:none;"   --->
+
 
 
 

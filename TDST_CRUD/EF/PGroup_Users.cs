@@ -9,7 +9,7 @@ namespace TDST_CRUD.EF
     public partial class PGroup_Users
     {
         [Key]
-        public int IdUG { get; set; }
+        public int IdGU { get; set; }
 
         [StringLength(50)]
         public string UserName { get; set; }

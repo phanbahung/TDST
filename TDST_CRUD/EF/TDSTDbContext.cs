@@ -229,11 +229,6 @@ namespace TDST_CRUD.EF
                 .IsUnicode(false);
 
             modelBuilder.Entity<PUser>()
-                .Property(e => e.IdUser)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PUser>()
                 .Property(e => e.UserName)
                 .IsFixedLength()
                 .IsUnicode(false);

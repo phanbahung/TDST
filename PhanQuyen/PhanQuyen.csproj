@@ -56,11 +56,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\QLUserDao.cs" />
+    <Compile Include="DAO\Group_RoleDao.cs" />
+    <Compile Include="DAO\Group_UserDao.cs" />
     <Compile Include="DAO\RoleDao.cs" />
     <Compile Include="DAO\UserDao.cs" />
     <Compile Include="Models\AttributeModel.cs" />
     <Compile Include="Models\CredentialViewModel.cs" />
+    <Compile Include="Models\GroupRole_ViewModel.cs" />
+    <Compile Include="Models\GroupUser_ViewModel.cs" />
     <Compile Include="Models\HasCredentialAttribute.cs" />
     <Compile Include="Models\Login_ViewModel.cs" />
     <Compile Include="Models\PConstants.cs" />

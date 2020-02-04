@@ -10,8 +10,7 @@ namespace TDST_CRUD.EF
     public partial class PUser
     {
         [Key]
-        [StringLength(50)]
-        public string IdUser { get; set; }
+        public int IdUser { get; set; }
 
         [Required]
         [StringLength(50)]
