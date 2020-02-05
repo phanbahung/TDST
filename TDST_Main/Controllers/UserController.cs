@@ -19,7 +19,8 @@ namespace TDST.Controllers
         {
             var session = (UserLogin)Session[Common.CommonConstants.USER_SESSION];
             UserDao dao = new UserDao();
-            List<CredentialViewModel> listCredentials = new List<CredentialViewModel>();
+            //List<CredentialViewModel> listCredentials = new List<CredentialViewModel>();
+            List<string> listCredentials = new List<string>();
             if (session != null)
             {
                 listCredentials = dao.GetListCredential_By_UserName(session.UserName);

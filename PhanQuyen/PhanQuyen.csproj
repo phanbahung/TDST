@@ -68,6 +68,7 @@
     <Compile Include="Models\Login_ViewModel.cs" />
     <Compile Include="Models\PConstants.cs" />
     <Compile Include="Models\ReflectionController.cs" />
+    <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

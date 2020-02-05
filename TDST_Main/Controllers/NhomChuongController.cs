@@ -12,7 +12,7 @@ using PhanQuyen.Models;
 
 namespace TDST.Controllers
 {
-    public class NhomChuongController : Controller
+    public class NhomChuongController : BaseController
     {
         // GET: NhomChuong
         [HttpGet]

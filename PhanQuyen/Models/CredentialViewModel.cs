@@ -8,10 +8,10 @@ namespace PhanQuyen.Models
     public class CredentialViewModel
     {   
            
-        public string IdGroup { get; set; }
+        public int IdGroup { get; set; }
         public string GroupName { get; set; }
 
-        public string IdAction { get; set; }
+        public string RoleName { get; set; }
         public string ActionName { get; set; }
         public string ControllerName { get; set; }      
         

@@ -17,8 +17,8 @@ namespace TDST.Controllers
         //[HasCredential(RoleID = "ORDER_UPDATESTATUS", MoTa ="kkeke")]
         public ActionResult Index()
         {
-            ReflectionController reflection = new ReflectionController();
-            List<Type> listController = reflection.GetControllers("TDST");
+            ReflectionHoLaoController reflection = new ReflectionHoLaoController();
+            List<Type> listController = reflection.GetControllers("TDST.Controllers");
             string result = "<ul>";
             foreach (Type controller in listController)
             {
@@ -34,7 +34,7 @@ namespace TDST.Controllers
 
                     foreach(AttributeModel attrib in listAttrib)
                     {
-                        result += "<li>" + attrib.RoleId + "</li>";
+                        result += "<li>" + attrib.RoleId + " - "+attrib.MoTa+"</li>";
                     }
 
                     result += "</ul>";

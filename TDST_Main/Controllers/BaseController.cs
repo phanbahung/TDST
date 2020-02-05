@@ -7,6 +7,7 @@ using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using PhanQuyen.Models;
 
 namespace TDST.Controllers
 {
@@ -33,10 +34,10 @@ namespace TDST.Controllers
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             var session = (UserLogin)Session[CommonConstants.USER_SESSION];
-            if (session == null)
+            if (session == null)// Chưa đăng nhập
             {
                 filterContext.Result = new RedirectToRouteResult(new
-                    RouteValueDictionary(new { controller = "User", action = "Index"}));
+                    RouteValueDictionary(new { controller = "Login", action = "Index"}));
             }
             base.OnActionExecuting(filterContext);
         }

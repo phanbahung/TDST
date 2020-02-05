@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using TDST_CRUD.Dao;
 using PhanQuyen.DAO;
 using TDST_CRUD.EF;
 using System.Net;
 
 namespace TDST.Controllers
 {
-    public class QLUserController : Controller
+    public class QLUserController : BaseController
     {
         // GET: QLUser
         public ActionResult Index()
@@ -25,6 +24,7 @@ namespace TDST.Controllers
             return View(daoQLUser.ListUser());
         }
 
+        [HttpGet]
         public ActionResult group()
         {
             Group_UserDao daoQLUser = new Group_UserDao();

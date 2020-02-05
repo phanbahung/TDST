@@ -610,7 +610,6 @@
     <Compile Include="Common\Encryptor.cs" />
     <Compile Include="Common\ExcelUploadConfig.cs" />
     <Compile Include="Common\UploadHelper.cs" />
-    <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\BaoCaoController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BoChiTieuController.cs" />
@@ -636,6 +635,7 @@
     <Compile Include="Models\BaoCaoTongHop.cs" />
     <Compile Include="Models\FileModel.cs" />
     <Compile Include="Models\GroupingModels.cs" />
+    <Compile Include="Models\ReflectionHoLaoController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -751,6 +751,7 @@
     <Content Include="Views\NhomChuong\edit.cshtml" />
     <Content Include="Views\NhomChuong\Index.cshtml" />
     <Content Include="Views\QLUser\group.cshtml" />
+    <Content Include="Views\Shared\403.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

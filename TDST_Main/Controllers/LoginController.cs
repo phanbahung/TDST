@@ -18,26 +18,12 @@ namespace TDST.Controllers
         public ActionResult Index()
         {
             return View();
-        }
-
-        public ActionResult Home()
-        {
-            var session = (UserLogin)Session[Common.CommonConstants.USER_SESSION];
-            UserDao dao = new UserDao();
-            List<CredentialViewModel> listCredentials = new List<CredentialViewModel>();
-            if (session != null)
-            {
-                listCredentials = dao.GetListCredential_By_UserName(session.UserName);
-            }
-
-
-            return View(listCredentials);
-        }
+        }       
 
         public ActionResult Logout()
         {
             Session[CommonConstants.USER_SESSION] = null;
-            return Redirect("/User/Index");
+            return Redirect("/Login/Index");
         }
 
         public ActionResult Login(Login_ViewModel model)

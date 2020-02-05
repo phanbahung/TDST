@@ -92,20 +92,27 @@ namespace PhanQuyen.DAO
         //}
 
 
-        public List<CredentialViewModel> GetListCredential_By_UserName(string userName)
+        public List<string> GetListCredential_By_UserName(string userName)
         {
             var user = db.PUsers.Single(x => x.UserName == userName);
-            var data = (from ug in db.PGroup_Users
-                        join g in db.PGroups on ug.IdGU equals g.IdGroup
-                        join ga in db.PGroup_Roles on g.IdGroup equals ga.IdGR
-                        where ug.UserName == user.UserName
-                        select new CredentialViewModel
-                        {
-                            //RoleID = a.RoleID,
+            var data = (from gu in db.PGroup_Users                       
+                        join gr in db.PGroup_Roles on gu.IdGroup equals gr.IdGroup
+                        where gu.UserName == user.UserName
+                        select gr.RoleName.ToString()).ToList();
+                        //select new CredentialViewModel
+                        //{                             
+                        //    RoleName = gr.RoleName,
+                        //    IdGroup = g.IdGroup,
+                        //    GroupName = g.GroupName
                             //UserGroupID = a.UserGroupID
-                        });
+                            //public string IdGroup { get; set; }
+                            //public string GroupName { get; set; }
+                            //public string RoleName { get; set; }
+                            //public string ActionName { get; set; }
+                            //public string ControllerName { get; set; }
+                        //});
             
-            return data.ToList();
+            return data;
         }
 
 
