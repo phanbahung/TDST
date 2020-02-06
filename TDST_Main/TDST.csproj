@@ -748,7 +748,6 @@
     <Content Include="Views\Shared\403.cshtml" />
     <Content Include="Views\Login\PermissionDenied.cshtml" />
     <Content Include="Views\NhomTieuMuc\NhomTieuMuc.cshtml" />
-    <Content Include="Views\QLRole\QuanTriRole.cshtml" />
     <Content Include="Views\QLRole\DsRole.cshtml" />
     <Content Include="Views\DanhMuc\TieuMuc.cshtml" />
     <Content Include="Views\NhomChuong\NhomChuong.cshtml" />

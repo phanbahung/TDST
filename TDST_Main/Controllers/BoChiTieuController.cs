@@ -11,7 +11,7 @@ using PhanQuyen.Models;
 
 namespace TDST.Controllers
 {
-    public class BoChiTieuController : Controller
+    public class BoChiTieuController : BaseController
     {
         TDSTDbContext db = new TDSTDbContext();
         // GET: BoChiTieu
@@ -117,7 +117,7 @@ namespace TDST.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [HasCredential(RoleID = "BOCHITIEU_CreateBCT_Post", MoTa = "cho pehsp thêm một BCT mới")]
+        [HasCredential(RoleID = "BOCHITIEU_CreateBCT_Post", MoTa = "Tạo BCT mới")]
         public ActionResult Create([Bind(Include = "TenBoChiTieu,Nam")]BoChiTieu bct)
         {
             try

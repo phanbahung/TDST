@@ -200,6 +200,10 @@
                     txtSTT.val("");
 
                 } // end succcess
+                ,
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
             });
 
 
@@ -224,6 +228,9 @@
                         alert(r + " record(s) deleted.");
                         //Delete the Table row using it's Index.
                         table.deleteRow(row[0].rowIndex);
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
                     }
                 });
 
@@ -257,6 +264,9 @@
                 dataType: "json",
                 success: function (r) {
                     alert(r + " record(s) inserted.");
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
                 }
             });
         });

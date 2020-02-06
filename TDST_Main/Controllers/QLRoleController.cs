@@ -16,12 +16,6 @@ namespace TDST.Controllers
 {
     public class QLRoleController : BaseController
     {
-        // GET: HeThong
-        //[HasCredential(RoleID = "HETHONG_QuanTriRole_Get", MoTa = "Hiển thị màn hình quản trị role - ADMIN dùng")]
-        public ActionResult QuanTriRole()
-        {
-            return View();
-        }
 
         //[HasCredential(RoleID = "HETHONG_QuanTriRole_DanhSach", MoTa = "Hiển thị danh sách role")]
         public ActionResult DsRole()
@@ -31,7 +25,8 @@ namespace TDST.Controllers
         }
 
         //[HasCredential(RoleID = "HETHONG_QuanTriRole_Post", MoTa = "Chức năng cập nhật role - ADMIN dùng")]
-        public void UpdateRole()
+        
+        public void  UpdateRole()
         {
             ReflectionHoLaoController reflection = new ReflectionHoLaoController();
             PRole role = new PRole();
