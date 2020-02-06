@@ -18,7 +18,12 @@ namespace TDST.Controllers
         public ActionResult Index()
         {
             return View();
-        }       
+        }
+
+        public ActionResult PermissionDenied()
+        {
+            return View();
+        }
 
         public ActionResult Logout()
         {

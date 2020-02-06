@@ -9,7 +9,6 @@ namespace TDST_CRUD.EF
     public partial class PGroup_Roles
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long IdGR { get; set; }
 
         public int? IdGroup { get; set; }

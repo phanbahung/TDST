@@ -25,9 +25,7 @@ function ListUserByGroup(Id)
                   [result[i].UserName,
                   "<input type='button' id='" + result[i].UserName + "' class='btn btn-danger' value='Xóa user khỏi nhóm' onclick='RemoveUserFromGroup(this);'>"
                   ]);
-            }
-
-          
+            }          
 
         },
         error: function (errormessage) {
@@ -64,6 +62,9 @@ function RemoveUserFromGroup(button) {
                 // alert(r + " record(s) deleted.");
                 //row.remove();
                 $('#example1').dataTable().fnDeleteRow(row[0]);
+            } ,
+            error: function (errormessage) {
+                alert(errormessage.responseText);
             }
         }); // end ajax
 
@@ -94,15 +95,17 @@ function AddUserToGroup() {
             success: function (r) {
 
                 // alert(" record(s) deleted.");
-                if (r == "0")
-                    {
-                        $('#example1').dataTable().fnAddData(
-                                    [userName,
-                                      "<input type='button' id='" + userName + "' class='btn btn-danger' value='Xóa user khỏi nhóm' onclick='RemoveUserFromGroup(this);'>"]);
-                        $('#inputNewUser').val("");
-                    }
-                else   alert(r);
-            }
+                if (r == "0") {
+                    $('#example1').dataTable().fnAddData(
+                                [userName,
+                                  "<input type='button' id='" + userName + "' class='btn btn-danger' value='Xóa user khỏi nhóm' onclick='RemoveUserFromGroup(this);'>"]);
+                    $('#inputNewUser').val("");
+                }
+               
+            },            
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
         }); // end ajax
 
     

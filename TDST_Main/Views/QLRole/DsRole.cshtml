@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TDST_CRUD.EF.Group>
+﻿@model IEnumerable<TDST_CRUD.EF.PRole>
 
 @{
     ViewBag.Title = "DonViCungCap";
@@ -6,17 +6,18 @@
 }
 
 <div class="panel-heading">
-    1.2. Danh mục đơn vị
+    0.3. Sanh sách role
 </div>
 
 <div class="panel-body">
 
-
     <table id="example" class="display" cellpadding="0" cellspacing="0" border="0">
         <thead>
             <tr>
-                <th>Id hệ thống</th>
-                <th>Mã chương</th>               
+                <th>Id Role</th>
+                <th>Role</th>
+                <th>Mô tả</th>
+                <th>Controller</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -24,9 +25,11 @@
             @foreach (var item in @Model)
             {
                 <tr class="gradeA">
-                    <td>@item.IdGroup</td>
-                    <td>@item.GroupName </td>                    
-                    <td><a href="#" onclick="return getbyID('@item.IdGroup')">Chi tiết</a> </td>
+                    <td>@item.IdRole</td>
+                    <td>@item.RoleName </td>
+                    <td>@item.MoTa </td>
+                    <td>@item.ControllerName </td>
+                    <td>@item.ActionName </td>
                 </tr>
             }
         </tbody>

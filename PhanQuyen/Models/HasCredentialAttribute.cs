@@ -25,6 +25,7 @@ namespace PhanQuyen.Models
 
             // if (privilegeLevels.Contains(this.RoleID) || session.GroupID == CommonConstants.ADMIN_GROUP)
             if (privilegeLevels.Contains(this.RoleID))
+            //if (privilegeLevels.Contains("USER_ListUserByGroup_Get"))
             {
                 return true;
             }
@@ -36,10 +37,26 @@ namespace PhanQuyen.Models
         }
         protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
         {
-            filterContext.Result = new ViewResult
+            filterContext.HttpContext.Response.StatusCode = 401;
+
+
+
+         if (filterContext.HttpContext.Request.IsAjaxRequest())
             {
-                ViewName = "~/Views/Shared/403.cshtml"
-            };
+                filterContext.Result = new JsonResult
+                {
+                    Data = new { data = "Bạn không được phân quyền chức năng này! (" + this.RoleID +")"},
+                    ContentEncoding = System.Text.Encoding.UTF8,
+                    ContentType = "application/json",
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                };
+            }
+            else
+
+                filterContext.Result = new ViewResult
+                {
+                    ViewName = "~/Views/Login/PermissionDenied.cshtml"
+                };
         }
         private List<string> GetCredentialByLoggedInUser(string userName)
         {

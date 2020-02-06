@@ -98,7 +98,7 @@ namespace PhanQuyen.DAO
             var data = (from gu in db.PGroup_Users                       
                         join gr in db.PGroup_Roles on gu.IdGroup equals gr.IdGroup
                         where gu.UserName == user.UserName
-                        select gr.RoleName.ToString()).ToList();
+                        select gr.RoleName.ToString().Trim()).ToList();
                         //select new CredentialViewModel
                         //{                             
                         //    RoleName = gr.RoleName,

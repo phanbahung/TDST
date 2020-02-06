@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "DonViCungCap";
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    var ListRoles = ViewBag.listRoles as IEnumerable<TDST_CRUD.EF.PRole>;
 }
 
 <div class="panel-heading">
@@ -71,6 +72,7 @@
                     <h4 class="modal-title" id="myModalLabel">Danh sách user thuộc nhóm <span class="hidden" id="IdGroup"></span> </h4>
                 </div>
                 <div class="modal-body">
+
                     <table id="example1" class="display" cellpadding="0" cellspacing="0" border="0">
                         <thead>
                             <tr>
@@ -89,6 +91,7 @@
                                 <td><input id="inputNewUser" type="text" placeholder="User name cần thêm"/></td>
                                 <td><button type="button" class="btn btn-success"  onclick="return AddUserToGroup()">Thêm user vào nhóm </button></td>
                             </tr>
+</tr>
                         </tfoot>
                     </table>                    
 
@@ -122,9 +125,14 @@
                                 <td class="rounded-foot-left" colspan='2' style="height: 14px"></td>
                             </tr>
                             <tr>
-                                <td><input id="inputNewRole" type="text" placeholder="Role name cần thêm" /></td>
+                                <td> @Html.DropDownList("selRole", new SelectList(ListRoles, "RoleName", "RoleName"), " -- Chọn role --")</td>
                                 <td><button type="button" class="btn btn-success" onclick="return AddRoleToGroup()">Thêm Role vào nhóm </button></td>
                             </tr>
+
+                                                        @*<tr>
+            <td> <span id="thongBaoMmodalRole"></span>              </td>
+            <input id="inputNewRole" type="text" placeholder="Role name cần thêm" />
+        </tr>*@
                         </tfoot>
                     </table>
 

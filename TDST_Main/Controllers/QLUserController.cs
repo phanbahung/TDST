@@ -6,18 +6,15 @@ using System.Web.Mvc;
 using PhanQuyen.DAO;
 using TDST_CRUD.EF;
 using System.Net;
+using PhanQuyen.Models;
 
 namespace TDST.Controllers
 {
     public class QLUserController : BaseController
-    {
-        // GET: QLUser
-        public ActionResult Index()
-        {
-            return View();
-        }
+    {      
 
         // GET: QLUser
+        //[HasCredential(RoleID = "USER_DanhSachUser_Get", MoTa = "Hiển thị danh sách user")]
         public ActionResult user()
         {
             Group_UserDao daoQLUser = new Group_UserDao();
@@ -25,20 +22,17 @@ namespace TDST.Controllers
         }
 
         [HttpGet]
+        //[HasCredential(RoleID = "USER_DanhSachGroupUser_Get", MoTa = "Hiển thị danh sách nhóm user")]
         public ActionResult group()
         {
             Group_UserDao daoQLUser = new Group_UserDao();
+            RoleDao daoRole = new RoleDao();
+            ViewBag.ListRoles = daoRole.Get_DS_Role();
             return View(daoQLUser.ListGroup());
-        }      
-
-        public ActionResult role()
-        {
-            Group_RoleDao dao = new Group_RoleDao();
-            return View(dao.ListRoles());
         }
 
-        #region Grup_Usser
-
+        #region Group_User
+        //[HasCredential(RoleID = "USER_ListUserByGroup_Get", MoTa = "Hiển thị danh sách user theo nhóm")]
         public JsonResult ListUserByGroup(string id)
         {
             Group_UserDao daoQLUser = new Group_UserDao();
@@ -46,6 +40,7 @@ namespace TDST.Controllers
             return Json(dvcc, JsonRequestBehavior.AllowGet);
         }
 
+        [HasCredential(RoleID = "USER_RemoveUserFromGroup_Post", MoTa = "Xóa User khỏi nhóm")]
         public JsonResult RemoveUserFromGroup(string id)
         {
             Group_UserDao dao = new Group_UserDao();
@@ -56,7 +51,7 @@ namespace TDST.Controllers
             //}
             return Json("0");// insertedRecords);
         }
-
+        [HasCredential(RoleID = "USER_AddUserToGroup_Post", MoTa = "Thêm User vào nhóm")]
         public JsonResult AddUserToGroup(string userName, string group)
         {
             long idNewNhatKy = 0;// khởi tạo
@@ -74,46 +69,7 @@ namespace TDST.Controllers
             }
             return Json(ketQua);// insertedRecords);
         }
-        #endregion
-
-        #region Grup_Usser
-
-        public JsonResult ListRoleByGroup(string id)
-        {
-            Group_RoleDao daoQLRole = new Group_RoleDao();
-            var dvcc = daoQLRole.ListRole_ByGroup(int.Parse(id)).ToList();
-            return Json(dvcc, JsonRequestBehavior.AllowGet);
-        }
-
-        public JsonResult RemoveRoleFromGroup(string id)
-        {
-            Group_RoleDao dao = new Group_RoleDao();
-            var kq = dao.RemoveRoleFromGroup(id);
-            //Check for NULL.
-            //if (id != null)
-            //{              
-            //}
-            return Json("0");// insertedRecords);
-        }
-
-        public JsonResult AddRoleToGroup(string RoleName, string group)
-        {
-            long idNewNhatKy = 0;// khởi tạo
-            string ketQua = "";
-            Group_RoleDao dao = new Group_RoleDao();
-            PGroup_Roles newRole = new PGroup_Roles();
-            newRole.RoleName = RoleName;
-            newRole.IdGroup = int.Parse(group);
-
-            //Check for NULL.
-            //if (chiTieus != null)
-            {
-                ketQua = dao.AddRoleToGroup(newRole);
-                idNewNhatKy = newRole.IdGR;
-            }
-            return Json(ketQua);// insertedRecords);
-        }
-        #endregion
+        #endregion      
 
     }
 }

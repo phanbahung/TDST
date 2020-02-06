@@ -17,7 +17,7 @@ namespace PhanQuyen.DAO
 
         public List<PRole> Get_DS_Role()
         {
-            return db.PRoles.ToList();
+            return db.PRoles.OrderBy(x=>x.RoleName).ToList();
         }
 
         public void Truncate_RoleTabe()

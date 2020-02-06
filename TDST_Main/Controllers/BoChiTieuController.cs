@@ -16,14 +16,14 @@ namespace TDST.Controllers
         TDSTDbContext db = new TDSTDbContext();
         // GET: BoChiTieu
         [HttpGet]
-        [HasCredential(RoleID = "BOCHITIEU_VIEW", MoTa = "Hiển thị form bộ chỉ tiêu")]
+        //[HasCredential(RoleID = "BOCHITIEU_VIEW", MoTa = "Hiển thị form bộ chỉ tiêu")]
         public ActionResult Index()
         {
             BoChiTieuDao dao = new BoChiTieuDao();
             return View(dao.Ds_BoChiTieu());
         }
 
-        [HasCredential(RoleID = "BOCHITIEU_VIEW_TO_EDIT", MoTa = "Hiển thị form ds chỉ tiêu của BCT cụ thể")]
+        //[HasCredential(RoleID = "BOCHITIEU_FORM_TO_EDIT", MoTa = "Hiển thị form ds chỉ tiêu của BCT cụ thể")]
         public ActionResult edit(int id)
         {
             DanhMucDao dao = new DanhMucDao();
@@ -103,7 +103,7 @@ namespace TDST.Controllers
             }
         }
 
-        [HasCredential(RoleID = "BOCHITIEU_CreateBCT_Get", MoTa = "Hiển thị màn hình thêm chỉ tiêu mới")]
+        //[HasCredential(RoleID = "BOCHITIEU_CreateBCT_Get", MoTa = "Hiển thị màn hình thêm chỉ tiêu mới")]
         public ActionResult Create()
         {
         //    string[] strings = new[] {["",""],["", ""]};
@@ -148,6 +148,7 @@ namespace TDST.Controllers
         }
 
         [HttpPost]
+        [HasCredential(RoleID = "BOCHITIEU_Update_BoChiTieus", MoTa = "Cho phép update các thay đổi của Bộ chỉ tiêu trong BCT")]
         public ActionResult UpdateNoiDungBTC(BoChiTieuChiTiet chitieu)
         {
             using (TDSTDbContext entities = new TDSTDbContext())

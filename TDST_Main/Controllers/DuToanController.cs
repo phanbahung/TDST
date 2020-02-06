@@ -18,12 +18,12 @@ namespace TDST.Controllers
     public class DuToanController : BaseController
     {
         public ActionResult Index()
-        {           
-
+        { 
             ViewBag.Title = "Home Page";
             return View();
         }
 
+        //[HasCredential(RoleID = "DUTOAN_TraCuu_Get", MoTa = "Hiển thị màn hình tra cứu dự toán")]
         public ActionResult tracuu(int? SelectedNamDuToan, int? SelectedBoChiTieu)
         {
             var duToanDao = new DuToanDao();
@@ -40,7 +40,7 @@ namespace TDST.Controllers
 
 
         [HttpGet]
-        [HasCredential(RoleID = "DUTOAN_UploadExcel_Get", MoTa = "Hiển thị màn hình upload")]
+        //[HasCredential(RoleID = "DUTOAN_UploadExcel_Get", MoTa = "Hiển thị màn hình upload")]
         public ActionResult UploadExcel(int? SelectedDuToan)
         {
             //SetViewBag_DuToan(SelectedDuToan);
@@ -145,8 +145,7 @@ namespace TDST.Controllers
         }
        
 
-        [HttpGet]
-        [HasCredential(RoleID = "DUTOAN_UploadExcel_Post", MoTa = "Cho phép upload file excel dự toán vào UD")]
+        [HttpGet]        
         public ActionResult Create()
         {
             SetViewBag();
@@ -154,7 +153,7 @@ namespace TDST.Controllers
         }      
 
         [HttpPost]
-        [HasCredential(RoleID = "DUTOAN_UploadExcel_Post", MoTa = "Cho phép upload file excel dự toán vào UD")]
+        [HasCredential(RoleID = "DUTOAN_Create_TaoDuToan_Post", MoTa = "Tạo tệp dự toán")]
         public ActionResult Create(DuToan duToan)
         {
             if (ModelState.IsValid)
@@ -746,7 +745,7 @@ namespace TDST.Controllers
 
 
         [HttpGet]
-        [HasCredential(RoleID = "DUTOAN_UploadExcel_Post", MoTa = "Cho phép upload file excel dự toán vào UD")]
+        [HasCredential(RoleID = "DUTOAN_UploadExcel_DuToanGiao_Get", MoTa = "Hiển thị màn hình upload file excel giao dự toán")]
         public FileContentResult DuToan_Giao(int id)
         {
             // Gọi lại hàm để tạo file excel
@@ -773,7 +772,7 @@ namespace TDST.Controllers
         }
 
         [HttpGet]
-        [HasCredential(RoleID = "DUTOAN_UploadExcel_Post", MoTa = "Cho phép upload file excel dự toán vào UD")]
+        //[HasCredential(RoleID = "DUTOAN_UploadExcel_Post", MoTa = "Cho phép upload file excel dự toán vào UD")]
         public FileContentResult DuToan_SoThucHien(int id)
         {
             // Gọi lại hàm để tạo file excel
@@ -800,7 +799,7 @@ namespace TDST.Controllers
         }
 
         [HttpGet]
-        [HasCredential(RoleID = "DUTOAN_UploadExcel_Post", MoTa = "Cho phép upload file excel dự toán vào UD")]
+       // [HasCredential(RoleID = "DUTOAN_UploadExcel_Post", MoTa = "Cho phép upload file excel dự toán vào UD")]
         public FileContentResult ChotSo_KhoBac(int id)
         {
             // Gọi lại hàm để tạo file excel

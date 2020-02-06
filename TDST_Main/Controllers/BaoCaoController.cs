@@ -14,6 +14,7 @@ using TDST;
 using System.Data.SqlClient;
 using TDST_CRUD.Dao;
 using TDST_CRUD.ViewModels;
+using PhanQuyen.Models;
 
 namespace TDST.Controllers
 {
@@ -25,6 +26,7 @@ namespace TDST.Controllers
             return View();
         }
 
+        [HasCredential(RoleID = "BaoCao_sotheodoi", MoTa = "In sổ theo dõi")]
         public ActionResult sotheodoi(int? SelectedNamDuToan, int? SelectedBoChiTieu)
         {
             var duToanDao = new DuToanDao();
@@ -39,6 +41,7 @@ namespace TDST.Controllers
             return View(model);
         }
 
+        [HasCredential(RoleID = "BaoCao_ChotSo_View", MoTa = "Hiển thị màn hình chốt số")]
         public ActionResult chotso()
         {
             //=== Năm dự toán : NamDuToan
@@ -65,6 +68,7 @@ namespace TDST.Controllers
             return View();
         }
         [HttpPost]
+        [HasCredential(RoleID = "BaoCao_ChotSo_Update", MoTa = "Thao tác chốt số")]
         public ActionResult chotso(int? SelectedNam, int? SelectedQuy, int? SelectedDuToan)
         {
             //=== Năm dự toán : NamDuToan

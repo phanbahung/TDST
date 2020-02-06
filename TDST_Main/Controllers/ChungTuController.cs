@@ -17,8 +17,7 @@ namespace TDST.Controllers
     public class ChungTuController : BaseController
     {
         
-        [HttpGet]
-        [HasCredential(RoleID = "CHUNGTU_UploadXMLFiles_Get", MoTa = "Hiển thị màn hình upload file XML")]
+        [HttpGet]        
         public ActionResult UploadXMLFiles()
         {
             return View();

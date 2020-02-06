@@ -4,9 +4,9 @@ function ListRoleByGroup(Id)
     //alert("con cac");
     var myURL;
     if (location.hostname == "localhost")
-        myURL = "/QLUser/ListRoleByGroup/";
+        myURL = "/QLRole/ListRoleByGroup/";
     else
-        myURL = "/kk/QLUser/ListRoleByGroup/";
+        myURL = "/kk/QLRole/ListRoleByGroup/";
 
     $('#inputNewRole').val("");
 
@@ -26,8 +26,6 @@ function ListRoleByGroup(Id)
                   "<input type='button' id='" + result[i].RoleName + "' class='btn btn-danger' value='Xóa Role khỏi nhóm' onclick='RemoveRoleFromGroup(this);'>"
                   ]);
             }
-
-          
 
         },
         error: function (errormessage) {
@@ -49,9 +47,9 @@ function RemoveRoleFromGroup(button) {
     if (confirm("Bạn đang chọn xóa 1 dòng?")) {
         var urlRemove;
         if (location.hostname == "localhost")
-            urlRemove = "/QLUser/RemoveRoleFromGroup";
+            urlRemove = "/QLRole/RemoveRoleFromGroup";
         else
-            urlRemove = "/nk/QLUser/RemoveRoleFromGroup";
+            urlRemove = "/nk/QLRole/RemoveRoleFromGroup";
 
         //Send the JSON array to Controller using AJAX.
         $.ajax({
@@ -64,6 +62,9 @@ function RemoveRoleFromGroup(button) {
                 // alert(r + " record(s) deleted.");
                 //row.remove();
                 $('#example2').dataTable().fnDeleteRow(row[0]);
+            } ,
+            error: function (errormessage) {
+                alert(errormessage.responseText);
             }
         }); // end ajax
 
@@ -74,15 +75,16 @@ function RemoveRoleFromGroup(button) {
 
 // --- Begin AddRoleToGroup=================        
 function AddRoleToGroup() {   
-    var RoleName = $("input#inputNewRole").val();
+    //var RoleName = $("input#inputNewRole").val();
+    var RoleName = $("select#selRole").val();
     var group = $("span#IdGroup").text();
     //alert(id);
    
         var urlAdd;
         if (location.hostname == "localhost")
-            urlAdd = "/QLUser/AddRoleToGroup";
+            urlAdd = "/QLRole/AddRoleToGroup";
         else
-            urlAdd = "/nk/QLUser/AddRoleToGroup";
+            urlAdd = "/nk/QLRole/AddRoleToGroup";
 
         //Send the JSON array to Controller using AJAX.
         $.ajax({
@@ -92,7 +94,6 @@ function AddRoleToGroup() {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (r) {
-
                 // alert(" record(s) deleted.");
                 if (r == "0")
                     {
@@ -102,6 +103,9 @@ function AddRoleToGroup() {
                         $('#inputNewRole').val("");
                     }
                 else   alert(r);
+            },
+            error: function (errormessage) {
+                alert(errormessage.responseText);
             }
         }); // end ajax
 
