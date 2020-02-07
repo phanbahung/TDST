@@ -105,6 +105,7 @@
     <Content Include="Assets\jquery\jquery-1.7.2.min.js" />
     <Content Include="Assets\js\phanquyen\group_role.js" />
     <Content Include="Assets\js\phanquyen\group_user.js" />
+    <Content Include="Assets\js\phanquyen\validate_bootstrap_3.js" />
     <Content Include="Assets\table\logo\logo.ico" />
     <Content Include="Assets\table\media\css\demo_page.css" />
     <Content Include="Assets\table\media\css\demo_table.css" />
