@@ -6,7 +6,7 @@ using PhanQuyen.Models;
 //using PagedList;
 using System.Configuration;
 
-//using Common;
+using PhanQuyen.Common;
 
 
 namespace PhanQuyen.DAO
@@ -26,27 +26,15 @@ namespace PhanQuyen.DAO
         //    return entity.Id;
         //}
 
-        //public bool Update(User entity)
-        //{
-        //    try
-        //    {
-        //        var user = db.Users.Find(entity.Id);
+        public bool UpdateUser(PUser entity)
+        {          
+            var user = db.PUsers.Find(entity.IdUser);
+            user.FullName = entity.FullName;
+            user.Status = entity.Status;
+            db.SaveChanges();
+            return true;                  
 
-        //        if (!string.IsNullOrEmpty(entity.Password))
-        //        {
-        //            user.Password = entity.Password;
-        //        }
-
-        //        db.SaveChanges();
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        //logging
-        //        return false;
-        //    }
-
-        //}
+        }
 
         //public bool ChangePass(string userName, string newPass)
         //{
@@ -82,14 +70,34 @@ namespace PhanQuyen.DAO
             return db.PUsers.SingleOrDefault(x => x.UserName == userName);
         }
 
+        public List<PUser> GetByIdUser(int idUser)      
+        {
+            var nk = (from u in db.PUsers
+                      where (u.IdUser == idUser)
+                      select new
+                      {
+                          IdUser = u.IdUser,
+                          UserName = u.UserName,
+                          FullName = u.FullName,
+                          Status = u.Status
+                      })
+                            .ToList()
+                            .Select(x => new PUser()
+                            {
+                                IdUser = x.IdUser,
+                                UserName = x.UserName != null ? x.UserName.Trim() : string.Empty,
+                                FullName = x.FullName != null ? x.FullName.Trim() : string.Empty,
+                                Status = x.Status == null ? false: x.Status ,                                
+                            });
+
+            return nk.ToList();
+
+
+        }
         //public long GetIdByUserName(string userName)
         //{
         //    return db.Users.SingleOrDefault(x => x.UserName == userName).Id;
-        //}
-        //public User ViewDetail(int id)
-        //{
-        //    return db.Users.Find(id);
-        //}
+        //}     
 
 
         public List<string> GetListCredential_By_UserName(string userName)
@@ -140,7 +148,22 @@ namespace PhanQuyen.DAO
         public int Login(string userName, string passWord, bool isLoginAdmin = false)
         {
             var result =   db.PUsers.SingleOrDefault(x => x.UserName == userName);
-            return 1;                          
+
+            if (result != null)
+            {
+                if (result.Password.Trim()!= passWord.Trim())
+                {
+                    return PConstants.LOGIN_PASS_WRONG;
+                }
+                else if (result.Status == false)
+                {
+                    return PConstants.LOGIN_USER_LOCKED;
+                }
+                else return PConstants.LOGIN_SUCCESS;    
+            }
+                  
+                return PConstants.LOGIN_USER_NOT_EXIST;
+
         }
 
         //public bool ChangeStatus(long id)

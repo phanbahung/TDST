@@ -7,6 +7,7 @@ using System.Web.Routing;
 using PhanQuyen.Models;
 
 
+
 namespace PhanQuyen.Models
 {
     public class HasCredentialAttribute : AuthorizeAttribute
@@ -15,7 +16,7 @@ namespace PhanQuyen.Models
         public string MoTa { set; get; }
         protected override bool AuthorizeCore(HttpContextBase httpContext)
         {
-            var session = (UserLogin)HttpContext.Current.Session[PConstants.USER_SESSION];
+            var session = (UserLogin)HttpContext.Current.Session[Common.PConstants.USER_SESSION];
             if (session == null)
             {
                 return false;
@@ -24,6 +25,7 @@ namespace PhanQuyen.Models
             List<string> privilegeLevels = this.GetCredentialByLoggedInUser(session.UserName); // Call another method to get rights of the user from DB
 
             // if (privilegeLevels.Contains(this.RoleID) || session.GroupID == CommonConstants.ADMIN_GROUP)
+
             if (privilegeLevels.Contains(this.RoleID))
             //if (privilegeLevels.Contains("USER_ListUserByGroup_Get"))
             {
@@ -60,7 +62,7 @@ namespace PhanQuyen.Models
         }
         private List<string> GetCredentialByLoggedInUser(string userName)
         {
-            var credentials = (List<string>)HttpContext.Current.Session[PConstants.SESSION_CREDENTIALS];
+            var credentials = (List<string>)HttpContext.Current.Session[Common.PConstants.SESSION_CREDENTIALS];
             return credentials;
         }
     }

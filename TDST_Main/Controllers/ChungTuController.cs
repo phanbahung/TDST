@@ -114,7 +114,6 @@ namespace TDST.Controllers
                                 // countChungTu = 0;
                             }
 
-
                         } // end for                    
                           //---------- End insert into db
 
@@ -139,7 +138,6 @@ namespace TDST.Controllers
         [HttpPost]
         public ActionResult UploadXML(HttpPostedFileBase file)
         {
-
             NguoiNopThueDao nntDao = new NguoiNopThueDao();
             string _FileName = "";
             string[] arr_MaCqThu = { "1056198", "1056196", "1056258", "1056256", "1056259", "1056257", "1056351", "1056348" };

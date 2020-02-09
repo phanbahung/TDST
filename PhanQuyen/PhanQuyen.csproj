@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Encryptor.cs" />
     <Compile Include="DAO\Group_RoleDao.cs" />
     <Compile Include="DAO\Group_UserDao.cs" />
     <Compile Include="DAO\RoleDao.cs" />
@@ -66,7 +67,8 @@
     <Compile Include="Models\GroupUser_ViewModel.cs" />
     <Compile Include="Models\HasCredentialAttribute.cs" />
     <Compile Include="Models\Login_ViewModel.cs" />
-    <Compile Include="Models\PConstants.cs" />
+    <Compile Include="Common\PConstants.cs" />
+    <Compile Include="Models\PUser_InputModel.cs" />
     <Compile Include="Models\ReflectionController.cs" />
     <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

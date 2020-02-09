@@ -48,24 +48,56 @@ namespace PhanQuyen.DAO
             return nk.ToList();
         }
 
-        public int RemoveUserFromGroup (string userName)
+
+        public List<GroupUser_ViewModel> ListGroup_ByUser(string userName)
         {
-            PGroup_Users entity = db.PGroup_Users.Where(x => x.UserName == userName).SingleOrDefault();
+
+            var nk = (from u in db.PGroup_Users
+                      join g in db.PGroups on u.IdGroup equals g.IdGroup
+                      where (u.UserName == userName)
+                      select new
+                      {
+                          IdGroup = u.IdGroup,
+                          GroupName = g.GroupName,
+                          UserName = u.UserName,
+                          IdGU = u.IdGU,
+                      }).ToList()
+                      .Select(x => new GroupUser_ViewModel()
+                      {
+                          IdGroup = x.IdGroup,
+                          GroupName = x.GroupName,
+                          UserName = x.UserName,
+                          IdGU = x.IdGU
+                      });
+
+            return nk.ToList();
+        }
+        public int RemoveUserFromGroup (string userName, int idGroup)
+        {
+            PGroup_Users entity = db.PGroup_Users.Where(x => x.UserName == userName&x.IdGroup==idGroup).SingleOrDefault();
             db.PGroup_Users.Remove(entity);
             db.SaveChanges();
            return 0;
         }
-     
+
+        public int RemoveGroupFromUser(string userName, int idGroup)
+        {
+            PGroup_Users entity = db.PGroup_Users.Where(x => x.UserName == userName & x.IdGroup == idGroup).SingleOrDefault();
+            db.PGroup_Users.Remove(entity);
+            db.SaveChanges();
+            return 0;
+        }
+
 
         public string AddUserToGroup(PGroup_Users entity)
         {
             string ketQua = "";
             // B1-- Không tồn tại user này
-            int countUser = db.PUsers.Where(x => x.UserName == entity.UserName).ToList().Count();
+            int countUser = db.PUsers.Where(x => x.UserName == entity.UserName).ToList().Count();           
             if (countUser>0)
             {
                 // 2-- Đã có trong nhóm hay chưa
-                countUser = db.PGroup_Users.Where(x => x.UserName == entity.UserName).ToList().Count();
+                countUser = db.PGroup_Users.Where(x => x.UserName == entity.UserName&x.IdGroup==entity.IdGroup).ToList().Count();
                 if (countUser == 0)
                 {
                     db.PGroup_Users.Add(entity);
@@ -80,7 +112,7 @@ namespace PhanQuyen.DAO
         }
 
         #endregion Quản lý GroupUser
-        
+
 
         //public long Insert(User entity)
         //{

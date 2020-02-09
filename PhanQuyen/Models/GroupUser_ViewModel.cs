@@ -10,7 +10,8 @@ namespace PhanQuyen.Models
     {
         public int IdGU { get; set; }
         public string UserName { get; set; }
-        public int? IdGroup { get; set; }        
+        public int? IdGroup { get; set; }
+        public string GroupName { get; set; }
     }
 }
 

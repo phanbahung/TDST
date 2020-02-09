@@ -83,7 +83,6 @@
     <Compile Include="EF\sysdiagram.cs" />
     <Compile Include="EF\TDSTDbContext.cs" />
     <Compile Include="EF\TieuMuc.cs" />
-    <Compile Include="EF\UDController.cs" />
     <Compile Include="ViewModels\BoChiTieuViewModel.cs" />
     <Compile Include="ViewModels\ChiTieuViewModel.cs" />
     <Compile Include="ViewModels\BCDuToanViewModel.cs" />

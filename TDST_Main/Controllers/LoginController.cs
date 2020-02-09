@@ -9,6 +9,7 @@ using TDST_CRUD.Dao;
 
 using PhanQuyen.DAO;
 using PhanQuyen.Models;
+using PhanQuyen.Common;
 
 namespace TDST.Controllers
 {
@@ -37,7 +38,7 @@ namespace TDST.Controllers
             {
                 var dao = new UserDao();
                 var result = dao.Login(model.UserName, Encryptor.MD5Hash(model.Password), false);
-                if (result == 1)
+                if (result == PConstants.LOGIN_SUCCESS)
                 {
                     var user = dao.GetByUserName(model.UserName);
                     var userSession = new UserLogin();
@@ -50,26 +51,19 @@ namespace TDST.Controllers
                     Session.Add(CommonConstants.USER_SESSION, userSession);
                     return RedirectToAction("Home", "User");
                 }
-                else if (result == 0)
+                else if (result == PConstants.LOGIN_USER_NOT_EXIST)
                 {
                     ModelState.AddModelError("", "Tài khoản không tồn tại.");
                 }
-                else if (result == -1)
+                else if (result == PConstants.LOGIN_USER_LOCKED)
                 {
                     ModelState.AddModelError("", "Tài khoản đang bị khoá.");
                 }
-                else if (result == -2)
+                else if (result == PConstants.LOGIN_PASS_WRONG)
                 {
                     ModelState.AddModelError("", "Mật khẩu không đúng.");
                 }
-                else if (result == -3)
-                {
-                    ModelState.AddModelError("", "Tài khoản của bạn không có quyền đăng nhập.");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "Đăng nhập không đúng.");
-                }
+              
             }
             return View("Index");
         }

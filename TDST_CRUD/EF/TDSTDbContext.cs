@@ -19,6 +19,7 @@ namespace TDST_CRUD.EF
         public virtual DbSet<DuToanChiTiet> DuToanChiTiets { get; set; }
         public virtual DbSet<DuToan> DuToans { get; set; }
         public virtual DbSet<GiaoDich> GiaoDichs { get; set; }
+        public virtual DbSet<LOG_UNGDUNG> LOG_UNGDUNG { get; set; }
         public virtual DbSet<NguoiNopThue> NguoiNopThues { get; set; }
         public virtual DbSet<NhomCH_CH> NhomCH_CH { get; set; }
         public virtual DbSet<NhomChuong> NhomChuongs { get; set; }
@@ -33,8 +34,6 @@ namespace TDST_CRUD.EF
         public virtual DbSet<QuanLyTM> QuanLyTMs { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TieuMuc> TieuMucs { get; set; }
-        public virtual DbSet<UDController> UDControllers { get; set; }
-        public virtual DbSet<LOG_UNGDUNG> LOG_UNGDUNG { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -145,6 +144,31 @@ namespace TDST_CRUD.EF
 
             modelBuilder.Entity<GiaoDich>()
                 .Property(e => e.UserUpdate)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LOG_UNGDUNG>()
+                .Property(e => e.FieldName)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LOG_UNGDUNG>()
+                .Property(e => e.TableName)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LOG_UNGDUNG>()
+                .Property(e => e.UserUpdate)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LOG_UNGDUNG>()
+                .Property(e => e.IDValue)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LOG_UNGDUNG>()
+                .Property(e => e.MaDonVi)
                 .IsFixedLength()
                 .IsUnicode(false);
 
@@ -278,36 +302,6 @@ namespace TDST_CRUD.EF
 
             modelBuilder.Entity<TieuMuc>()
                 .Property(e => e.Loai)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<UDController>()
-                .Property(e => e.ControllerName)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<LOG_UNGDUNG>()
-                .Property(e => e.FieldName)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<LOG_UNGDUNG>()
-                .Property(e => e.TableName)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<LOG_UNGDUNG>()
-                .Property(e => e.UserUpdate)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<LOG_UNGDUNG>()
-                .Property(e => e.IDValue)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<LOG_UNGDUNG>()
-                .Property(e => e.MaDonVi)
                 .IsFixedLength()
                 .IsUnicode(false);
         }

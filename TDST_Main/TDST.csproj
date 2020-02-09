@@ -104,8 +104,8 @@
     <Content Include="Assets\jquery\jquery-1.3.2.min.js" />
     <Content Include="Assets\jquery\jquery-1.7.2.min.js" />
     <Content Include="Assets\js\phanquyen\group_role.js" />
+    <Content Include="Assets\js\phanquyen\qluser.js" />
     <Content Include="Assets\js\phanquyen\group_user.js" />
-    <Content Include="Assets\js\phanquyen\validate_bootstrap_3.js" />
     <Content Include="Assets\table\logo\logo.ico" />
     <Content Include="Assets\table\media\css\demo_page.css" />
     <Content Include="Assets\table\media\css\demo_table.css" />
@@ -608,7 +608,6 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Common\CommonConstants.cs" />
-    <Compile Include="Common\Encryptor.cs" />
     <Compile Include="Common\ExcelUploadConfig.cs" />
     <Compile Include="Common\UploadHelper.cs" />
     <Compile Include="Controllers\BaoCaoController.cs" />

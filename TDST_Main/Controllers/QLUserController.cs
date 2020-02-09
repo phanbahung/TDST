@@ -18,6 +18,7 @@ namespace TDST.Controllers
         public ActionResult user()
         {
             Group_UserDao daoQLUser = new Group_UserDao();
+            ViewBag.ListGroups =daoQLUser.ListGroup();
             return View(daoQLUser.ListUser());
         }
 
@@ -40,17 +41,37 @@ namespace TDST.Controllers
             return Json(dvcc, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult ListGroupByUser(string id)
+        {
+            Group_UserDao daoQLUser = new Group_UserDao();
+            var dvcc = daoQLUser.ListGroup_ByUser(id).ToList();
+            return Json(dvcc, JsonRequestBehavior.AllowGet);
+        }
+
         [HasCredential(RoleID = "USER_RemoveUserFromGroup_Post", MoTa = "Xóa User khỏi nhóm")]
-        public JsonResult RemoveUserFromGroup(string id)
+        public JsonResult RemoveUserFromGroup(string userName, string group)
         {
             Group_UserDao dao = new Group_UserDao();
-            var kq = dao.RemoveUserFromGroup(id);
+            var kq = dao.RemoveUserFromGroup(userName, int.Parse(group));
             //Check for NULL.
             //if (id != null)
             //{              
             //}
             return Json("0");// insertedRecords);
         }
+
+        [HasCredential(RoleID = "USER_RemoveUserFromGroup_Post", MoTa = "Xóa User khỏi nhóm")]
+        public JsonResult RemoveGroupFromUser(string userName, string group)
+        {
+            Group_UserDao dao = new Group_UserDao();
+            var kq = dao.RemoveGroupFromUser(userName, int.Parse(group));
+            //Check for NULL.
+            //if (id != null)
+            //{              
+            //}
+            return Json("0");// insertedRecords);
+        }
+
         [HasCredential(RoleID = "USER_AddUserToGroup_Post", MoTa = "Thêm User vào nhóm")]
         public JsonResult AddUserToGroup(string userName, string group)
         {
@@ -69,7 +90,29 @@ namespace TDST.Controllers
             }
             return Json(ketQua);// insertedRecords);
         }
-        #endregion      
+        #endregion
+        
+        public JsonResult DetailUser(string id)
+        {           
+            UserDao dao = new UserDao();
+            return Json(dao.GetByIdUser(int.Parse(id)), JsonRequestBehavior.AllowGet);
+        }
+
+        //[HasCredential(RoleID = "USER_UpdateUser_Post", MoTa = "Update user")]
+        public JsonResult UpdateUser(PUser_InputModel entity)
+        {
+            UserDao dao = new UserDao();
+            if (entity == null)
+            {
+                entity = new PUser_InputModel();
+            }
+
+            PUser userToUpdate= new PUser();
+            userToUpdate.FullName = entity.FullName;
+            userToUpdate.IdUser =  int.Parse(entity.IdUser);
+            userToUpdate.Status = entity.Status.Trim().ToUpper()=="TRUE"? true: false;
+            return Json(dao.UpdateUser(userToUpdate));
+        }
 
     }
 }
