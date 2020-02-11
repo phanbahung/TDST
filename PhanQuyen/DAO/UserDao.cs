@@ -19,12 +19,26 @@ namespace PhanQuyen.DAO
             db = new TDSTDbContext();
         }
 
-        //public long Insert(User entity)
-        //{
-        //    db.Users.Add(entity);
-        //    db.SaveChanges();
-        //    return entity.Id;
-        //}
+
+        public string NewUser(string userName, string fullName)
+        {
+            string ketQua = "";
+            PUser entity = new PUser();
+            entity.UserName = userName;
+            entity.FullName = fullName;
+            entity.Status = true;
+            entity.Password = Encryptor.MD5Hash(userName.Trim());
+            int result = db.PUsers.Where(x => x.UserName == entity.UserName).ToList().Count();
+            if (result == 0)
+            {
+                db.PUsers.Add(entity);
+                db.SaveChanges();
+                ketQua = entity.IdUser.ToString();
+            }
+            else ketQua = "Trùng user name";
+
+            return ketQua;
+        }
 
         public bool UpdateUser(PUser entity)
         {          
@@ -32,27 +46,32 @@ namespace PhanQuyen.DAO
             user.FullName = entity.FullName;
             user.Status = entity.Status;
             db.SaveChanges();
-            return true;                  
-
+            return true; 
         }
 
-        //public bool ChangePass(string userName, string newPass)
-        //{
-        //    try
-        //    {
-        //        var user = db.Users.SingleOrDefault(x=>x.UserName==userName);                
-        //        user.Password = newPass;
+        public bool CheckPassword(string userName, string password)
+        {
+            return db.PUsers.Count(x => x.UserName == userName && x.Password == password) > 0;
+        }
 
-        //        db.SaveChanges();
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        //logging
-        //        return false;
-        //    }
-
-        //}
+        public bool ChangePass(string userName, string newPass)
+        {
+            try
+            {
+                var user = db.PUsers.SingleOrDefault(x => x.UserName == userName);
+                user.Password = newPass;
+                //user.ModifiedDate = DateTime.Now;
+                //user.ModifiedBy = userName;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                //logging
+                return false;
+            }
+        }
+      
 
         //public IEnumerable<User> ListAllPaging(string searchString, int page, int pageSize)
         //{
@@ -151,7 +170,7 @@ namespace PhanQuyen.DAO
 
             if (result != null)
             {
-                if (result.Password.Trim()!= passWord.Trim())
+                if (result.Password!= passWord.Trim())
                 {
                     return PConstants.LOGIN_PASS_WRONG;
                 }
@@ -195,11 +214,7 @@ namespace PhanQuyen.DAO
         {
             return db.PUsers.Count(x => x.UserName == userName) > 0;
         }
-
-        public bool CheckPassword(string userName, string password)
-        {            
-            return db.PUsers.Count(x => x.UserName == userName &&x.Password==password) > 0;
-        }
+        
 
        
     }

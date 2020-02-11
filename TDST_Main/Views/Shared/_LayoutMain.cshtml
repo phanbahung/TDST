@@ -19,10 +19,7 @@
     <link href="~/Assets/table/media/css/jquery.dataTables_themeroller.css" rel="stylesheet" type="text/css" />
     <link href="~/Assets/table/themes/smoothness/jquery-ui-1.8.4.custom.css" rel="stylesheet" type="text/css" />  
         
-    <!-- User detail _ Phân quyền  -->
-    <script src="~/Assets/js/phanquyen/group_user.js"></script>
-    <script src="~/Assets/js/phanquyen/group_role.js"></script>
-    <script src="~/Assets/js/phanquyen/qluser.js"></script>
+   
     <script src="~/Assets/js/phanquyen/validate_bootstrap_3.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -322,7 +319,10 @@
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i> Tài khoản</a>
+                            <a href="/User/ChangePass"><i class="fa fa-user fa-fw"></i> Đổi mật khẩu</a>
+                        </li>
+                        <li>
+                            <a href="/User/Home"><i class="fa fa-user fa-fw"></i> Tài khoản</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-gear fa-fw"></i> Cài đặt</a>
@@ -379,18 +379,7 @@
    
       
 
-    <script type="text/javascript">
-	$(document).ready(function()
-	{
-		$('#example').dataTable(
-		{
-			"bJQueryUI": true,
-			"sPaginationType": "full_numbers"
-		});
 
-	}); // End ready
-
-    </script>
 
     @RenderSection("jsFooter", required: false)
 

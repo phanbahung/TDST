@@ -61,12 +61,12 @@ namespace PhanQuyen.DAO
             if (countRole > 0)
             {
                 // 2-- Đã có trong nhóm hay chưa
-                countRole = db.PGroup_Roles.Where(x => x.RoleName == entity.RoleName).ToList().Count();
+                countRole = db.PGroup_Roles.Where(x => x.RoleName == entity.RoleName&x.IdGroup==entity.IdGroup).ToList().Count();
                 if (countRole == 0)
                 {
                     db.PGroup_Roles.Add(entity);
                     db.SaveChanges();
-                    ketQua = "0";
+                    ketQua = entity.IdGR.ToString();
                 }
                 else ketQua = "Đã có Role này trong nhóm!";
             }

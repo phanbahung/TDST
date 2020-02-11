@@ -166,16 +166,14 @@ function AddGroupToUser() {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (r) {
-
             // alert(" record(s) deleted.");
-            if (r == "0") {
+            if ($.isNumeric(r)) {
                 $('#example1').dataTable().fnAddData(
-                            [group+"chua xong",
+                            [group,
                              group,
                               "<input type='button' id='" + userName + "' class='btn btn-danger' value='Xóa nhóm này' onclick='RemoveUserFromGroup(this);'>"]);
                 $('#inputNewUser').val("");
-            }
-
+            } else alert(r);
         },
         error: function (errormessage) {
             alert(errormessage.responseText);
@@ -186,3 +184,47 @@ function AddGroupToUser() {
 };
 
 // ---- End AddUserToGroup
+
+// --- Begin NewUser=================        
+function NewUser() {
+    var userName = $("input#inputNewUserName").val();
+    var fullName = $("input#inputNewFullName").val();
+    //alert(userName);
+    var urlAdd;
+    if (location.hostname == "localhost")
+        urlAdd = "/QlUser/NewUser";
+    else
+        urlAdd = "/nk/QlUser/NewUser";
+
+    //Send the JSON array to Controller using AJAX.
+    $.ajax({
+        type: "POST",
+        url: urlAdd,
+        data: JSON.stringify({ "UserName": userName,"FullName": fullName }),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (r) {
+            // alert(" record(s) deleted.");
+            if ($.isNumeric(r)) {
+                $('#tblUser').dataTable().fnAddData(
+                            [r,
+                             userName,
+                             fullName,
+                             "True",
+                              "<button type='button' class='btn btn-primary btn-sm' data-toggle='modal' data-target='#modalResetPass' onclick='return ResetPass("+ userName +")'> Reset pass " + userName+" </button>",
+                              "<button type='button' class='btn btn-primary btn-sm' data-toggle='modal' data-target='#modalGroup' onclick='return ListGroupByUser(" + userName + ")'> Thuộc nhóm </button>",
+                              "<button type='button' class='btn btn-primary btn-sm' data-toggle='modal' data-target='#modalUser' onclick='return DetailUser("+r+")'> Chi tiết </button>"
+                            ]);
+                $('#modalNewUser').modal('hide');               
+
+            }
+            else alert(r);
+
+        },
+        error: function (errormessage) {
+            alert(errormessage.responseText);
+        }
+    }); // end ajax
+
+};
+// ---- End NewGroup

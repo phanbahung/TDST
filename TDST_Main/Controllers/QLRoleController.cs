@@ -76,7 +76,7 @@ namespace TDST.Controllers
             return View(daoQLUser.ListGroup());
         }
 
-        #region Group_User
+        #region Group_Role
         //[HasCredential(RoleID = "ROLE_ListUserByGroup_Get", MoTa = "Hiển thị danh sách role theo nhóm")]
         public JsonResult ListRoleByGroup(string id)
         {

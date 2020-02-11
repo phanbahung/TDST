@@ -22,6 +22,13 @@ namespace TDST.Controllers
             return View(daoQLUser.ListUser());
         }
 
+        [HasCredential(RoleID = "USER_NewUser_Post", MoTa = "Tạo user mới")]
+        public JsonResult NewUser(string userName, string fullName)
+        {
+            UserDao dao = new UserDao();
+            return Json(dao.NewUser(userName, fullName));
+        }
+
         [HttpGet]
         //[HasCredential(RoleID = "USER_DanhSachGroupUser_Get", MoTa = "Hiển thị danh sách nhóm user")]
         public ActionResult group()
@@ -30,6 +37,14 @@ namespace TDST.Controllers
             RoleDao daoRole = new RoleDao();
             ViewBag.ListRoles = daoRole.Get_DS_Role();
             return View(daoQLUser.ListGroup());
+        }
+
+        
+        [HasCredential(RoleID = "GROUP_NewGroup_Post", MoTa = "Tạo group mới")]
+        public  JsonResult NewGroup(string groupName)
+        {
+            GroupDao dao = new GroupDao();            
+            return Json(dao.NewGroup(groupName));
         }
 
         #region Group_User

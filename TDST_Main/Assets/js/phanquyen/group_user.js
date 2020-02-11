@@ -97,12 +97,13 @@ function AddUserToGroup() {
         success: function (r) {
 
             // alert(" record(s) deleted.");
-            if (r == "0") {
+            if ($.isNumeric(r)) {
                 $('#example1').dataTable().fnAddData(
                             [userName,
                               "<input type='button' id='" + userName + "' class='btn btn-danger' value='Xóa user khỏi nhóm' onclick='RemoveUserFromGroup(this);'>"]);
                 $('#inputNewUser').val("");
             }
+            else alert(r);
 
         },
         error: function (errormessage) {
@@ -110,7 +111,6 @@ function AddUserToGroup() {
         }
     }); // end ajax
 
-
 };
-
 // ---- End AddUserToGroup
+

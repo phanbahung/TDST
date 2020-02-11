@@ -95,7 +95,7 @@ function AddRoleToGroup() {
             dataType: "json",
             success: function (r) {
                 // alert(" record(s) deleted.");
-                if (r == "0")
+                if ($.isNumeric(r)) 
                     {
                         $('#example2').dataTable().fnAddData(
                                     [RoleName,

@@ -103,6 +103,7 @@
     <Content Include="Assets\jquery-ui.js" />
     <Content Include="Assets\jquery\jquery-1.3.2.min.js" />
     <Content Include="Assets\jquery\jquery-1.7.2.min.js" />
+    <Content Include="Assets\js\phanquyen\group.js" />
     <Content Include="Assets\js\phanquyen\group_role.js" />
     <Content Include="Assets\js\phanquyen\qluser.js" />
     <Content Include="Assets\js\phanquyen\group_user.js" />
@@ -740,7 +741,6 @@
     <Content Include="Views\User\Home.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\QLUser\user.cshtml" />
-    <Content Include="Views\QLUser\role.cshtml" />
     <None Include="Properties\PublishProfiles\TDST.pubxml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\NhomChuong\edit.cshtml" />
@@ -751,6 +751,7 @@
     <Content Include="Views\QLRole\DsRole.cshtml" />
     <Content Include="Views\DanhMuc\TieuMuc.cshtml" />
     <Content Include="Views\NhomChuong\NhomChuong.cshtml" />
+    <Content Include="Views\User\ChangePass.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

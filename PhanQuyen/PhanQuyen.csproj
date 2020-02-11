@@ -59,6 +59,7 @@
     <Compile Include="Common\Encryptor.cs" />
     <Compile Include="DAO\Group_RoleDao.cs" />
     <Compile Include="DAO\Group_UserDao.cs" />
+    <Compile Include="DAO\GroupDao.cs" />
     <Compile Include="DAO\RoleDao.cs" />
     <Compile Include="DAO\UserDao.cs" />
     <Compile Include="Models\AttributeModel.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Common\PConstants.cs" />
     <Compile Include="Models\PUser_InputModel.cs" />
     <Compile Include="Models\ReflectionController.cs" />
+    <Compile Include="Models\UserChangePassModel.cs" />
     <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

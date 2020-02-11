@@ -4,7 +4,6 @@ using System.Linq;
 using TDST_CRUD.EF;
 using PhanQuyen.Models;
 
-
 namespace PhanQuyen.DAO
 {
     public class Group_UserDao
@@ -28,8 +27,7 @@ namespace PhanQuyen.DAO
         #region Quản lý GroupUser
 
         public List<GroupUser_ViewModel> ListUser_ByGroup(int idGroup)
-        {          
-
+        { 
             var nk = (from u in db.PGroup_Users
                       where (u.IdGroup == idGroup)
                       select new
@@ -44,14 +42,12 @@ namespace PhanQuyen.DAO
                           UserName = x.UserName,
                           IdGU = x.IdGU
                       });
-
             return nk.ToList();
         }
 
 
         public List<GroupUser_ViewModel> ListGroup_ByUser(string userName)
         {
-
             var nk = (from u in db.PGroup_Users
                       join g in db.PGroups on u.IdGroup equals g.IdGroup
                       where (u.UserName == userName)
@@ -87,8 +83,7 @@ namespace PhanQuyen.DAO
             db.SaveChanges();
             return 0;
         }
-
-
+        
         public string AddUserToGroup(PGroup_Users entity)
         {
             string ketQua = "";
@@ -102,7 +97,7 @@ namespace PhanQuyen.DAO
                 {
                     db.PGroup_Users.Add(entity);
                     db.SaveChanges();
-                    ketQua = "0";
+                    ketQua = entity.IdGU.ToString();
                 }
                 else ketQua = "Đã có user này trong nhóm!";
             }
@@ -111,35 +106,7 @@ namespace PhanQuyen.DAO
             return ketQua;// insertedRecords);
         }
 
-        #endregion Quản lý GroupUser
-
-
-        //public long Insert(User entity)
-        //{
-        //    db.Users.Add(entity);
-        //    db.SaveChanges();
-        //    return entity.Id;
-        //}
-
-        //public long Edit(User entity)
-        //{
-        //    db.Users.Add(entity);
-        //    db.SaveChanges();
-        //    return entity.Id;
-        //}
-        //public long ResetPass(User entity)
-        //{
-        //    db.Users.Add(entity);
-        //    db.SaveChanges();
-        //    return entity.Id;
-        //}
-
-        //public long LockUser(User entity)
-        //{
-        //    db.Users.Add(entity);
-        //    db.SaveChanges();
-        //    return entity.Id;
-        //}
+        #endregion Quản lý GroupUser       
 
         public List<CredentialViewModel> GetListCredential(string userName)
         {

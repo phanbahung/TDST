@@ -5,6 +5,21 @@
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
 }
 
+@section jsFooter{   
+
+    <script type="text/javascript">
+	$(document).ready(function()
+	{
+	    $('#tblRole').dataTable(
+		{
+			"bJQueryUI": true,
+			"sPaginationType": "full_numbers"
+		});
+	}); // End ready
+    </script>
+
+}
+
 <div class="panel-heading">
     0.3. Sanh sách role
 </div>
@@ -15,7 +30,7 @@
 }
 <div class="panel-body">
 
-    <table id="example" class="display" cellpadding="0" cellspacing="0" border="0">
+    <table id="tblRole" class="display" cellpadding="0" cellspacing="0" border="0">
         <thead>
             <tr>
                 <th>Id Role</th>
