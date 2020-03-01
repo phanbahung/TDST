@@ -123,6 +123,9 @@ namespace TDST.Controllers
                             }// Duyệt qua các hàng
                         }// Duyệt qua các cột (quý, mã đơn vị)              
 
+                        // Xong thì xóa
+                    fileUploaded.Delete();
+
                     }  //---------- End using
             }
             else

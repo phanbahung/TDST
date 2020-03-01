@@ -89,11 +89,11 @@ function ListGroupByUser(userName) {
         dataType: "json",
         success: function (result) {
             $("#hiddenUserName").text(userName);
-            $('#example1').dataTable().fnClearTable();
+            $('#tblGroupByUser').dataTable().fnClearTable();
 
             var i;
             for (i = 0; i < result.length; i++) {
-                $('#example1').dataTable().fnAddData(
+                $('#tblGroupByUser').dataTable().fnAddData(
                   [result[i].IdGroup,
                    result[i].GroupName,
                   "<input type='button' id='" + result[i].IdGroup + "' class='btn btn-danger' value='Xóa nhóm này' onclick='RemoveGroupFromUser(this);'>"
@@ -135,7 +135,7 @@ function RemoveGroupFromUser(button) {
             success: function (r) {
                 // alert(r + " record(s) deleted.");
                 //row.remove();
-                $('#example1').dataTable().fnDeleteRow(row[0]);
+                $('#tblGroupByUser').dataTable().fnDeleteRow(row[0]);
             },
             error: function (errormessage) {
                 alert(errormessage.responseText);
@@ -168,7 +168,7 @@ function AddGroupToUser() {
         success: function (r) {
             // alert(" record(s) deleted.");
             if ($.isNumeric(r)) {
-                $('#example1').dataTable().fnAddData(
+                $('#tblGroupByUser').dataTable().fnAddData(
                             [group,
                              group,
                               "<input type='button' id='" + userName + "' class='btn btn-danger' value='Xóa nhóm này' onclick='RemoveUserFromGroup(this);'>"]);
