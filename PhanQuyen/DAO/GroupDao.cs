@@ -32,9 +32,28 @@ namespace PhanQuyen.DAO
             
             return ketQua;
         }
-       
-        
 
-       
+
+        public string EditGroup(string groupName)
+        {
+            string ketQua = "";
+            PGroup entity = new PGroup();
+            entity.GroupName = groupName;
+            int result = db.PGroups.Where(x => x.GroupName == entity.GroupName).ToList().Count();
+            if (result == 0)
+            {
+                db.PGroups.Add(entity);
+                db.SaveChanges();
+                ketQua = entity.IdGroup.ToString();
+            }
+            else ketQua = "Trùng tên group";
+
+            return ketQua;
+        }
+
+
+
+
+
     }
 }

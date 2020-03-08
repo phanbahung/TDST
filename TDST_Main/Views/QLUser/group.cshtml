@@ -37,6 +37,7 @@
             <tr>                
                 <th>Id group</th>
                 <th>Tên group</th>
+                <th>Vùng dữ liệu</th>
                 <th>User thuộc group</th>
                 <th>Role của group</th>
             </tr>
@@ -47,12 +48,13 @@
                 <tr class="gradeA">
                     <td>@item.IdGroup</td>
                     <td>@item.GroupName </td>                    
+                    <td>@item.DataZone </td>                    
                     <td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalUser" onclick="return ListUserByGroup('@item.IdGroup')">
-                            Chi tiết
+                           User thuộc nhóm
                         </button> </td>
                     <td>
                         <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalRole" onclick="return ListRoleByGroup('@item.IdGroup')">
-                            Chi tiết
+                           Role thuộc nhóm
                         </button>
                     </td>
                 </tr>
