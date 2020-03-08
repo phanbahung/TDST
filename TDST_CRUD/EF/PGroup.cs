@@ -21,6 +21,9 @@ namespace TDST_CRUD.EF
         [StringLength(50)]
         public string GroupName { get; set; }
 
+        [StringLength(3)]
+        public string DataZone { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PGroup_Roles> PGroup_Roles { get; set; }
 

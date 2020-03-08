@@ -237,6 +237,11 @@ namespace TDST_CRUD.EF
                 .IsFixedLength()
                 .IsUnicode(false);
 
+            modelBuilder.Entity<PGroup>()
+                .Property(e => e.DataZone)
+                .IsFixedLength()
+                .IsUnicode(false);
+
             modelBuilder.Entity<PRole>()
                 .Property(e => e.ActionName)
                 .IsFixedLength()

@@ -7,7 +7,6 @@ using System.Web.Routing;
 using PhanQuyen.Models;
 
 
-
 namespace PhanQuyen.Models
 {
     public class HasCredentialAttribute : AuthorizeAttribute
@@ -62,7 +61,12 @@ namespace PhanQuyen.Models
         }
         private List<string> GetCredentialByLoggedInUser(string userName)
         {
-            var credentials = (List<string>)HttpContext.Current.Session[Common.PConstants.SESSION_CREDENTIALS];
+            //var credentials = (List<string>)HttpContext.Current.Session[Common.PConstants.SESSION_CREDENTIALS];
+            var roleAndZone = (List<RoleAndZone_Model>)HttpContext.Current.Session[Common.PConstants.SESSION_CREDENTIALS];
+            List<string> credentials =( from rz in roleAndZone
+                              select rz.RoleName).ToList();
+
+
             return credentials;
         }
     }

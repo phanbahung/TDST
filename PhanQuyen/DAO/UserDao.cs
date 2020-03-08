@@ -119,49 +119,28 @@ namespace PhanQuyen.DAO
         //}     
 
 
-        public List<string> GetListCredential_By_UserName(string userName)
+        public List<RoleAndZone_Model> GetListCredential_By_UserName(string userName)
         {
             var user = db.PUsers.Single(x => x.UserName == userName);
-            var data = (from gu in db.PGroup_Users                       
+            var data = (from g in db.PGroups
+                        join gu in db.PGroup_Users on g.IdGroup equals gu.IdGroup
                         join gr in db.PGroup_Roles on gu.IdGroup equals gr.IdGroup
-                        where gu.UserName == user.UserName
-                        select gr.RoleName.ToString().Trim()).ToList();
-                        //select new CredentialViewModel
-                        //{                             
-                        //    RoleName = gr.RoleName,
-                        //    IdGroup = g.IdGroup,
-                        //    GroupName = g.GroupName
-                            //UserGroupID = a.UserGroupID
-                            //public string IdGroup { get; set; }
-                            //public string GroupName { get; set; }
-                            //public string RoleName { get; set; }
-                            //public string ActionName { get; set; }
-                            //public string ControllerName { get; set; }
-                        //});
+                        where gu.UserName == user.UserName                     
+                        select new 
+                        {                             
+                            RoleName = gr.RoleName,
+                            ZoneData = g.DataZone                          
+                        })
+                         .ToList()
+                            .Select(x => new RoleAndZone_Model()
+                            {
+                                RoleName = x.RoleName,
+                                ZoneData = x.ZoneData                              
+                            }); ;
             
-            return data;
+            return data.ToList();
         }
-
-
-        //public List<string> GetListCredential_Backup(string userName)
-        //{
-        //    var user = db.Users.Single(x => x.UserName == userName);
-        //    var data = (from ug in db.User_Groups
-        //                join g in db.Groups on ug.IdUG equals g.IdGroup
-        //                join ga in db.Group_Actions on g.IdGroup equals ga.IdGA
-        //                where ug.UserName == user.UserName
-        //                select new
-        //                {
-        //                    RoleID = a.RoleID,
-        //                    UserGroupID = a.UserGroupID
-        //                }).AsEnumerable().Select(x => new Credential()
-        //                {
-        //                    RoleID = x.RoleID,
-        //                    UserGroupID = x.UserGroupID
-        //                });
-        //    List<string> meomeo = data.Select(x => x.RoleID).ToList();
-        //    return data.Select(x => x.RoleID).ToList();
-        //} 
+                
 
 
         public int Login(string userName, string passWord, bool isLoginAdmin = false)

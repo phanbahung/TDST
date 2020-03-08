@@ -21,12 +21,16 @@ namespace TDST.Controllers
             var session = (UserLogin)Session[Common.CommonConstants.USER_SESSION];
             UserDao dao = new UserDao();
             
-            List<string> listCredentials = new List<string>();
+            List<RoleAndZone_Model> list_RoleAndZone = new List<RoleAndZone_Model>();
+
+
             if (session != null)
             {
-                listCredentials = dao.GetListCredential_By_UserName(session.UserName);
+                list_RoleAndZone = dao.GetListCredential_By_UserName(session.UserName);
             }
 
+            List<string> listCredentials = (from rz in list_RoleAndZone 
+                                        select rz.RoleName).ToList();
 
             return View(listCredentials);
         }

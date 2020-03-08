@@ -69,6 +69,7 @@
     <Compile Include="Models\HasCredentialAttribute.cs" />
     <Compile Include="Models\Login_ViewModel.cs" />
     <Compile Include="Common\PConstants.cs" />
+    <Compile Include="Models\RoleAndZone_Model.cs" />
     <Compile Include="Models\PUser_InputModel.cs" />
     <Compile Include="Models\ReflectionController.cs" />
     <Compile Include="Models\UserChangePassModel.cs" />
