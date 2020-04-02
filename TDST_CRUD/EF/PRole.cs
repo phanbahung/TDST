@@ -11,6 +11,9 @@ namespace TDST_CRUD.EF
         [Key]
         public int IdRole { get; set; }
 
+        [StringLength(10)]
+        public string AppName { get; set; }
+
         [Required]
         [StringLength(50)]
         public string ActionName { get; set; }

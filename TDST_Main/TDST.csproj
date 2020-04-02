@@ -635,7 +635,7 @@
     <Compile Include="Models\BaoCaoTongHop.cs" />
     <Compile Include="Models\FileModel.cs" />
     <Compile Include="Models\GroupingModels.cs" />
-    <Compile Include="Models\ReflectionHoLaoController.cs" />
+    <Compile Include="Models\PhanQuyen_ReflectionController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

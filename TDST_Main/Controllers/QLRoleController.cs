@@ -28,7 +28,7 @@ namespace TDST.Controllers
         
         public void  UpdateRole()
         {
-            ReflectionHoLaoController reflection = new ReflectionHoLaoController();
+            PhanQuyen_ReflectionController reflection = new PhanQuyen_ReflectionController();
             PRole role = new PRole();
             List<AttributeModel> listAttrib;
             RoleDao daoRole = new RoleDao();
@@ -44,6 +44,7 @@ namespace TDST.Controllers
                     foreach (AttributeModel attrib in listAttrib)
                     {
                         role.ControllerName = controller.Name;
+                        role.AppName = "TDST";
                         role.ActionName = action.Name;
                         role.RoleName = attrib.RoleId;
                         role.MoTa = attrib.MoTa;
@@ -53,6 +54,7 @@ namespace TDST.Controllers
             }
 
         }
+
         // GET: QLUser
         //[HasCredential(RoleID = "CHUNGTU_UploadXMLFiles_Get", MoTa = "Hiển thị màn hình upload file XML")]
         public ActionResult Index()

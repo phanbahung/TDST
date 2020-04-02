@@ -17,7 +17,7 @@ namespace TDST.Controllers
         //[HasCredential(RoleID = "ORDER_UPDATESTATUS", MoTa ="kkeke")]
         public ActionResult Index()
         {
-            ReflectionHoLaoController reflection = new ReflectionHoLaoController();
+            PhanQuyen_ReflectionController reflection = new PhanQuyen_ReflectionController();
             List<Type> listController = reflection.GetControllers("TDST.Controllers");
             string result = "<ul>";
             foreach (Type controller in listController)
