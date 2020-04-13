@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using TDST.Models;
 using TDST_CRUD.EF;
-using PhanQuyen.Models;
+using BMTT.Models;
 
 namespace TDST.Controllers
 {
@@ -17,7 +17,7 @@ namespace TDST.Controllers
         //[HasCredential(RoleID = "ORDER_UPDATESTATUS", MoTa ="kkeke")]
         public ActionResult Index()
         {
-            PhanQuyen_ReflectionController reflection = new PhanQuyen_ReflectionController();
+            BMTT_ReflectionController reflection = new BMTT_ReflectionController();
             List<Type> listController = reflection.GetControllers("TDST.Controllers");
             string result = "<ul>";
             foreach (Type controller in listController)

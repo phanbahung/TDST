@@ -10,11 +10,11 @@ using TDST.Models;
 using TDST_CRUD.Dao;
 using TDST_CRUD.EF;
 using TDST_CRUD.ViewModels;
-using PhanQuyen.Models;
+using BMTT.Models;
 
 namespace TDST.Controllers
 {
-    public class ChungTuController : BaseController
+    public class ChungTuController : BMTT.Controllers.BaseController
     {
         
         [HttpGet]        

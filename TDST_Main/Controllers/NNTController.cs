@@ -7,7 +7,7 @@ using TDST_CRUD.Dao;
 
 namespace TDST.Controllers
 {
-    public class NNTController : BaseController
+    public class NNTController : BMTT.Controllers.BaseController
     {
         // GET: NNT
         public ActionResult Index()

@@ -6,12 +6,12 @@ using System.Linq;
 using System.Data.Entity.Infrastructure;
 using TDST_CRUD.Dao;
 
-using PhanQuyen.Models;
+using BMTT.Models;
 
 
 namespace TDST.Controllers
 {
-    public class BoChiTieuController : BaseController
+    public class BoChiTieuController : BMTT.Controllers.BaseController
     {
         TDSTDbContext db = new TDSTDbContext();
         // GET: BoChiTieu

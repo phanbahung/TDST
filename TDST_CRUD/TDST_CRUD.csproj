@@ -73,11 +73,6 @@
     <Compile Include="EF\NhomCH_CH.cs" />
     <Compile Include="EF\NhomTieuMuc.cs" />
     <Compile Include="EF\NhomTM_TM.cs" />
-    <Compile Include="EF\PGroup.cs" />
-    <Compile Include="EF\PGroup_Roles.cs" />
-    <Compile Include="EF\PGroup_Users.cs" />
-    <Compile Include="EF\PRole.cs" />
-    <Compile Include="EF\PUser.cs" />
     <Compile Include="EF\QuanLyNNT.cs" />
     <Compile Include="EF\QuanLyTM.cs" />
     <Compile Include="EF\sysdiagram.cs" />

@@ -7,9 +7,9 @@ using ViewModels;
 using TDST.Common;
 using TDST_CRUD.Dao;
 
-using PhanQuyen.DAO;
-using PhanQuyen.Models;
-using PhanQuyen.Common;
+using BMTT.DAO;
+using BMTT.Models;
+using BMTT.Common;
 
 namespace TDST.Controllers
 {
@@ -49,7 +49,7 @@ namespace TDST.Controllers
                     var listCredentials = dao.GetListCredential_By_UserName(model.UserName);
                     Session.Add(CommonConstants.SESSION_CREDENTIALS, listCredentials);
                     Session.Add(CommonConstants.USER_SESSION, userSession);
-                    return RedirectToAction("Home", "User");
+                    return RedirectToAction("Index", "User");
                 }
                 else if (result == PConstants.LOGIN_USER_NOT_EXIST)
                 {

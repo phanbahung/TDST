@@ -11,7 +11,7 @@ namespace TDST.Models
    public class FileModel
     {
         [Required(ErrorMessage ="Vui lòng chọn file XML.")]
-        [Display(Name ="Browse File")]
+        [Display(Name ="Chọn file")]
         public HttpPostedFileBase[] files { get; set; }
        
     }

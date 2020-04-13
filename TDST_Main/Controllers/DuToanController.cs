@@ -11,11 +11,11 @@ using TDST.Common;
 using TDST_CRUD.Dao;
 using TDST_CRUD.ViewModels;
 using ViewModels;
-using PhanQuyen.Models;
+using BMTT.Models;
 
 namespace TDST.Controllers
 {
-    public class DuToanController : BaseController
+    public class DuToanController : BMTT.Controllers.BaseController
     {
         public ActionResult Index()
         { 

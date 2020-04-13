@@ -4,12 +4,12 @@ using System.Linq;
 using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
-using PhanQuyen.Models;
+using BMTT.Models;
 
 
 namespace TDST.Models
 {
-    public class PhanQuyen_ReflectionController
+    public class BMTT_ReflectionController
     {
 
 

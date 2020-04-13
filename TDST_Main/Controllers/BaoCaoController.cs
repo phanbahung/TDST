@@ -14,7 +14,7 @@ using TDST;
 using System.Data.SqlClient;
 using TDST_CRUD.Dao;
 using TDST_CRUD.ViewModels;
-using PhanQuyen.Models;
+using BMTT.Models;
 
 namespace TDST.Controllers
 {

@@ -7,7 +7,7 @@ using System.Xml;
 using System.Collections.Generic;
 using TDST_CRUD.EF;
 using TDST_CRUD.Dao;
-using PhanQuyen.Models;
+using BMTT.Models;
 
 
 namespace TDST.Controllers

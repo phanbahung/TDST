@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BMTT, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\BMTT.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -56,6 +60,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PQ_Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\PQ_Models.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Security" />
@@ -612,7 +620,6 @@
     <Compile Include="Common\ExcelUploadConfig.cs" />
     <Compile Include="Common\UploadHelper.cs" />
     <Compile Include="Controllers\BaoCaoController.cs" />
-    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BoChiTieuController.cs" />
     <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\ChungTuController.cs" />
@@ -624,8 +631,6 @@
     <Compile Include="Controllers\NhomChuongController.cs" />
     <Compile Include="Controllers\NhomTieuMucController.cs" />
     <Compile Include="Controllers\NNTController.cs" />
-    <Compile Include="Controllers\QLRoleController.cs" />
-    <Compile Include="Controllers\QLUserController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -738,20 +743,17 @@
     <Content Include="Views\NNT\qltm.cshtml" />
     <Content Include="Views\BaoCao\chotso.cshtml" />
     <Content Include="Views\BaoCao\sotheodoi.cshtml" />
-    <Content Include="Views\User\Home.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
-    <Content Include="Views\QLUser\user.cshtml" />
     <None Include="Properties\PublishProfiles\TDST.pubxml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\NhomChuong\edit.cshtml" />
-    <Content Include="Views\QLUser\group.cshtml" />
     <Content Include="Views\Shared\403.cshtml" />
     <Content Include="Views\Login\PermissionDenied.cshtml" />
     <Content Include="Views\NhomTieuMuc\NhomTieuMuc.cshtml" />
-    <Content Include="Views\QLRole\DsRole.cshtml" />
     <Content Include="Views\DanhMuc\TieuMuc.cshtml" />
     <Content Include="Views\NhomChuong\NhomChuong.cshtml" />
     <Content Include="Views\User\ChangePass.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -765,10 +767,6 @@
     <Folder Include="UploadXML\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PhanQuyen\PhanQuyen.csproj">
-      <Project>{8c69f79c-759b-46a8-976c-4d476053c272}</Project>
-      <Name>PhanQuyen</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TDST_CRUD\TDST_CRUD.csproj">
       <Project>{76f20d86-a070-4234-8db2-53514d6b4faf}</Project>
       <Name>TDST_CRUD</Name>

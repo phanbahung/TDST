@@ -7,16 +7,16 @@ using ViewModels;
 using TDST.Common;
 using TDST_CRUD.Dao;
 using TDST_CRUD.ViewModels;
-using PhanQuyen.DAO;
-using PhanQuyen.Models;
-using PhanQuyen.Common;
+using BMTT.DAO;
+using BMTT.Models;
+using BMTT.Common;
 
 namespace TDST.Controllers
 {
-    public class UserController : BaseController
+    public class UserController : BMTT.Controllers.BaseController
     {        
 
-        public ActionResult Home()
+        public ActionResult Index()
         {
             var session = (UserLogin)Session[Common.CommonConstants.USER_SESSION];
             UserDao dao = new UserDao();
